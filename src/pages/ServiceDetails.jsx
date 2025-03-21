@@ -2,1007 +2,719 @@ import { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 import ReactStars from 'react-rating-stars-component';
-const mensShoes = [
+const carRepairServices = [
+  {
+    id: 'crs1',
+    title: 'Oil Change & Filter Replacement',
+    description: 'Regular oil and filter changes to ensure optimal engine performance and longevity.',
+    price: 350.00,
+    image: 'https://images.pexels.com/photos/13065690/pexels-photo-13065690.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+  },
+  {
+    id: 'crs2',
+    title: 'Brake Inspection & Repair',
+    description: 'Complete brake service including pads, rotors, and brake fluid check.',
+    price: 800.00,
+    image: 'https://images.pexels.com/photos/6870299/pexels-photo-6870299.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+  },
+  {
+    id: 'crs3',
+    title: 'Suspension & Steering Service',
+    description: 'Shock absorber replacement and steering system alignment for smoother rides.',
+    price: 1500.00,
+    image: 'https://images.pexels.com/photos/8986137/pexels-photo-8986137.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+  },
+  {
+    id: 'crs4',
+    title: 'Transmission Repair',
+    description: 'Manual and automatic transmission diagnostics and repairs.',
+    price: 3000.00,
+    image: 'https://images.pexels.com/photos/4116203/pexels-photo-4116203.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+  },
+  {
+    id: 'crs5',
+    title: 'Radiator & Cooling System Service',
+    description: 'Coolant flush, radiator repair, and cooling system pressure test.',
+    price: 1000.00,
+    image: 'https://images.pexels.com/photos/6720532/pexels-photo-6720532.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+  },
+  {
+    id: 'crs6',
+    title: 'Exhaust System Repair',
+    description: 'Fixing mufflers, catalytic converters, and exhaust leaks.',
+    price: 850.00,
+    image: 'https://images.pexels.com/photos/17575953/pexels-photo-17575953/free-photo-of-close-up-of-car-engine.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+  },
+  {
+    id: 'crs7',
+    title: 'Wheel Alignment & Balancing',
+    description: 'Precision wheel alignment and tire balancing for better fuel efficiency.',
+    price: 700.00,
+    image: 'https://images.pexels.com/photos/3807799/pexels-photo-3807799.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+  },
+  {
+    id: 'crs8',
+    title: 'Clutch Replacement',
+    description: 'Clutch plate and pressure plate replacement for smoother gear shifts.',
+    price: 2500.00,
+    image: 'https://images.pexels.com/photos/11074558/pexels-photo-11074558.jpeg?auto=compress&cs=tinysrgb&w=600'
+  },
+  {
+    id: 'crs9',
+    title: 'Engine Overhaul',
+    description: 'Complete engine disassembly, inspection, and rebuilding for better performance.',
+    price: 5000.00,
+    image: 'https://i.postimg.cc/jjmkwMTs/engine.jpg'
+  },
+  {
+    id: 'crs10',
+    title: 'Timing Belt Replacement',
+    description: 'Replacing worn timing belts to prevent engine failure.',
+    price: 1200.00,
+    image: 'https://images.pexels.com/photos/188777/pexels-photo-188777.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+  },
+  {
+    id: 'crs11',
+    title: 'Fuel System Cleaning',
+    description: 'Cleaning fuel injectors and throttle body for improved fuel efficiency.',
+    price: 900.00,
+    image: 'https://images.pexels.com/photos/11890958/pexels-photo-11890958.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+  },
+  {
+    id: 'crs12',
+    title: 'AC System Repair',
+    description: 'AC gas refilling, compressor service, and leak fixing for optimal cooling.',
+    price: 1350.00,
+    image: 'https://images.pexels.com/photos/24286596/pexels-photo-24286596/free-photo-of-car-engine-and-parts-under-the-hood.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+  }
+];
+
+
+const mechElectricalServices = [
+  {
+    id: 'me1',
+    title: 'Battery and Alternator Testing',
+    description: 'Check battery health, voltage output, and alternator performance to prevent starting issues.',
+    price: 450.00,
+    image: 'https://media.istockphoto.com/id/1477647139/photo/mechanic-checking-car-battery.jpg?s=612x612&w=0&k=20&c=OCvuZZMsfbTlcx7o7P9IG4QKDcBywzzZNMIRMEChNsk='
+  },
+  {
+    id: 'me2',
+    title: 'Starter Motor Repair',
+    description: 'Repair or replace faulty starter motors to ensure reliable engine cranking.',
+    price: 1100.00,
+    image: 'https://media.istockphoto.com/id/1453770972/photo/jumping-battery-car.jpg?s=612x612&w=0&k=20&c=8XxZCT-yPLJs2kDrZVIOf6MBxZrfyPjiabCp3dmR7rI='
+  },
+  {
+    id: 'me3',
+    title: 'Sensor and Fuse Replacement',
+    description: 'Diagnose and replace malfunctioning sensors and blown fuses across all systems.',
+    price: 300.00,
+    image: 'https://media.istockphoto.com/id/1352125116/photo/car-service-worker-replacing-automobile-fuse-in-engine.jpg?s=612x612&w=0&k=20&c=0hkLmAkI_y063jdTCLlMjBrQ9SSkz1NNC2Zh2PfLgSU='
+  },
+  {
+    id: 'me4',
+    title: 'Engine Fault Diagnosis',
+    description: 'Computerized diagnostics to identify engine issues quickly and accurately.',
+    price: 600.00,
+    image: 'https://media.istockphoto.com/id/1441159572/photo/african-female-professional-car-mechanic-repair-service-and-checking-car-engine-by.jpg?s=612x612&w=0&k=20&c=imtIYSuKU0hFimjSxSGjt9oFegAv4k1DVYfIkJdGDe0='
+  },
+  {
+    id: 'me5',
+    title: 'Ignition System Repair',
+    description: 'Fixing spark plugs, coils, and ignition timing for smooth engine performance.',
+    price: 750.00,
+    image: 'https://media.istockphoto.com/id/2168506792/photo/close-up-of-hydraulic-valve-internal-in-engine-of-the-car-to-adjust-the-ignition.jpg?s=612x612&w=0&k=20&c=zWt4eq9u6a4tlDY6mcLiSythVgWUuvTvVUfyUB4FfLs='
+  },
+  {
+    id: 'me6',
+    title: 'Wiring & Electrical Fault Repair',
+    description: 'Troubleshooting shorts, open circuits, and damaged wiring harnesses.',
+    price: 950.00,
+    image: 'https://media.istockphoto.com/id/1367507596/photo/electrician-master-repairs-cables-in-modern-car.jpg?s=612x612&w=0&k=20&c=WdsmJ7cqF8bVvqy90R_hOzUGForJc-ZaNDoAJ-Y6fSw='
+  },
+  {
+    id: 'me7',
+    title: 'Headlight & Taillight Electrical Fix',
+    description: 'Repair or replace lighting circuits, switches, and bulb holders.',
+    price: 250.00,
+    image: 'https://media.istockphoto.com/id/497953085/photo/taillights-car-accident.jpg?s=612x612&w=0&k=20&c=C_my9NagAvuDecaYjsxHAh5Bae0LUsegEOOnSMTsODg='
+  },
+  {
+    id: 'me8',
+    title: 'Power Window & Lock Repair',
+    description: 'Fix electrical faults in window regulators and central locking systems.',
+    price: 700.00,
+    image: 'https://media.istockphoto.com/id/1569692854/photo/auto-mechanic-remove-car-window-controls-panel-car-maintenance-service.jpg?s=612x612&w=0&k=20&c=3SqWBcsjk-PUDrb1xmd_56cDmz3-nEn9JSgT5hQsc8I='
+  },
+  {
+    id: 'me9',
+    title: 'ECU Programming & Replacement',
+    description: 'Reprogramming or replacing engine control units for better performance and diagnostics.',
+    price: 2800.00,
+    image: 'https://media.istockphoto.com/id/1992953381/photo/car-computer-repair-shop.jpg?s=612x612&w=0&k=20&c=jCQEjWAAfd8Ssc49j9GghsAMGJ3WuYrXN15ywdLazbI='
+  },
+  {
+    id: 'me10',
+    title: 'Instrument Cluster Repair',
+    description: 'Repair faulty speedometers, fuel gauges, and dashboard displays.',
+    price: 1200.00,
+    image: 'https://media.istockphoto.com/id/2161151225/photo/tangled-electronic-wiring-and-used-connectors-connector-for-wiring-used-spare-part-of-the.jpg?s=612x612&w=0&k=20&c=3yAB55mT54cu9oG4LufASv_p-NE-4-EgpxYD4WXxjvA='
+  },
+  {
+    id: 'me11',
+    title: 'Electric Cooling Fan Repair',
+    description: 'Diagnose and repair fan motors, relays, and temperature sensors.',
+    price: 650.00,
+    image: 'https://media.istockphoto.com/id/1833004760/photo/the-engine-cooling-fan-is-prepared-for-installation-under-the-hood-of-a-car-machine.jpg?s=612x612&w=0&k=20&c=9N1OXXEham3qYUG-2riuJNEGUlCpJUpI4unf06T9CDM='
+  },
+  {
+    id: 'me12',
+    title: 'Charging System Inspection',
+    description: 'Complete inspection of alternator, battery terminals, and voltage regulator.',
+    price: 500.00,
+    image: 'https://media.istockphoto.com/id/2176577170/photo/senior-woman-is-jumping-charger-cable-to-agm-battery-on-car.jpg?s=612x612&w=0&k=20&c=U0uju0Pc0sJsX04bbyNUbz5GmCBOTuDmOOl634NUsDs='
+  }
+];
+
+
+const paintBodyServices = [
+  {
+    id: 'pb1',
+    title: 'Full Body Respray',
+    description: 'Complete respray of the entire vehicle with premium automotive paint.',
+    price: 9500.00,
+    image: 'https://i.postimg.cc/7hZDPxyC/paint.jpg'
+  },
+  {
+    id: 'pb2',
+    title: 'Scratch and Dent Removal',
+    description: 'Removal of minor scratches and dents with paint blending for a flawless finish.',
+    price: 1200.00,
+    image: 'https://images.pexels.com/photos/12953618/pexels-photo-12953618.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+  },
+  {
+    id: 'pb3',
+    title: 'Bumper Repair and Repaint',
+    description: 'Repair cracked or scuffed bumpers and repaint to match original color.',
+    price: 1800.00,
+    image: 'https://images.pexels.com/photos/5233291/pexels-photo-5233291.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+  },
+  {
+    id: 'pb4',
+    title: 'Panel Beating',
+    description: 'Restore damaged panels to their original shape using precision tools.',
+    price: 2200.00,
+    image: 'https://images.pexels.com/photos/9827738/pexels-photo-9827738.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+  },
+  {
+    id: 'pb5',
+    title: 'Paint Touch-Up',
+    description: 'Small area paint correction and touch-up using color-matched paints.',
+    price: 800.00,
+    image: 'https://images.pexels.com/photos/5233261/pexels-photo-5233261.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+  },
+  {
+    id: 'pb6',
+    title: 'Rust Removal & Treatment',
+    description: 'Elimination of rust spots and application of anti-rust coating.',
+    price: 1300.00,
+    image: 'https://media.istockphoto.com/id/1174661121/photo/old-blue-car-with-a-rusty-wing-and-a-gray-wheel.jpg?s=612x612&w=0&k=20&c=ygrfiY4bltr2G5bpBfnk2XfbVbZhG5z6r-fkN5uRBT4='
+  },
+  {
+    id: 'pb7',
+    title: 'Car Polishing & Buffing',
+    description: 'Restore paint shine and remove surface swirls with machine polishing.',
+    price: 900.00,
+    image: 'https://media.istockphoto.com/id/1060499948/photo/car-polish-wax-worker-hands-applying-protective-tape-before-polishing-buffing-and-polishing.jpg?s=612x612&w=0&k=20&c=SQJYF3HgmFi9N9NwB-gp_Q4UNIiKtP1h_VY2G79oG18='
+  },
+  {
+    id: 'pb8',
+    title: 'Paintless Dent Removal (PDR)',
+    description: 'Remove minor dents without affecting factory paint using PDR tools.',
+    price: 1400.00,
+    image: 'https://media.istockphoto.com/id/2024631054/photo/process-of-paintless-dent-repair-on-car-body-the-mechanic-at-the-auto-shop-with-tools-to.jpg?s=612x612&w=0&k=20&c=DXLRexfsOLfN33qqt5Qoy4sGVqmCWCwmqJksmyMkeZM='
+  },
+  {
+    id: 'pb9',
+    title: 'Clear Coat Application',
+    description: 'Protect your paint job with a durable and glossy clear coat layer.',
+    price: 2000.00,
+    image: 'https://media.istockphoto.com/id/1268954445/photo/mechanic-installs-car-paint-protection-film.jpg?s=612x612&w=0&k=20&c=vzOb4Rlb5KXv8NpYB7LOZyaJBO3F354XqULN1QKaBcI='
+  },
+  {
+    id: 'pb10',
+    title: 'Headlight Restoration',
+    description: 'Buff and polish cloudy headlights to restore brightness and clarity.',
+    price: 600.00,
+    image: 'https://media.istockphoto.com/id/2151879559/photo/car-headlight-polishing.jpg?s=612x612&w=0&k=20&c=cAheknaTXgcyv-24Hyh9aUO6kSrYBm7rl-e7xhEk-B8='
+  },
+  {
+    id: 'pb11',
+    title: 'Custom Color Mixing',
+    description: 'Personalized paint mixing service to match or create custom vehicle colors.',
+    price: 1600.00,
+    image: 'https://media.istockphoto.com/id/488177095/photo/set-of-3d-hatchback-car.jpg?s=612x612&w=0&k=20&c=KkjJk35I_yVbbNYGaQ1je_AnbXY4VKSpkGBsuXeHOCo='
+  },
+  {
+    id: 'pb12',
+    title: 'Body Panel Replacement',
+    description: 'Replacement of severely damaged doors, fenders, or hood with paint-matched panels.',
+    price: 3500.00,
+    image: 'https://media.istockphoto.com/id/1358131581/photo/automobile-repairman-painter-hand-in-protective-glove-with-airbrush-pulverizer-painting-car.jpg?s=612x612&w=0&k=20&c=EqRUiuFY7nvP91EJwRMRIefvcnznazfP6Zindvanopw='
+  },
+  {
+    id: 'pb13',
+    title: 'Roof & Bonnet Respray',
+    description: 'Repaint faded or damaged roof and bonnet with factory-grade finish.',
+    price: 2800.00,
+    image: 'https://media.istockphoto.com/id/952750538/photo/stains-on-the-hood.jpg?s=612x612&w=0&k=20&c=ooueitHxmBzNB7EizKGsNR0HMNUcrC9HNnu4LxgXDT4='
+  },
+  {
+    id: 'pb14',
+    title: 'Ceramic Coating',
+    description: 'Protect your vehicle’s paint with a long-lasting ceramic shield.',
+    price: 4800.00,
+    image: 'https://media.istockphoto.com/id/2188438903/photo/professional-car-detailer-holds-air-random-orbital-sander-or-dual-action-polisher-in-hand.jpg?s=612x612&w=0&k=20&c=bNAeeZ6QgWISoku2p51xXTWpY52qtCT9Qmh1HDz5ai4='
+  }
+];
+
+
+
+const diagnosticServices = [
+  {
+    id: 'vd1',
+    title: 'Engine Diagnostics',
+    description: 'Comprehensive engine scan to detect misfires, sensor faults, and performance issues.',
+    price: 1800.00,
+    image: 'https://media.istockphoto.com/id/1350239751/photo/car-diagnostic-service-and-electronics-repair.jpg?s=612x612&w=0&k=20&c=6xSgzMp9KJJ8lN0hC1UcuqXuuZMLNFCgCkcju-Q0BTU='
+  },
+  {
+    id: 'vd2',
+    title: 'Check Engine Light Inspection',
+    description: 'Identify and resolve the reason behind your illuminated check engine light.',
+    price: 1000.00,
+    image: 'https://media.istockphoto.com/id/1181213164/vector/car-dashboard-warning-lights-icons-set-vector-illustration-image-vehicle-service-logo.jpg?s=612x612&w=0&k=20&c=lQCvj1bE1ZEJZDRH-ZCZqRClTgr6b3tBQYncdo9yBRU='
+  },
+  {
+    id: 'vd3',
+    title: 'ABS & Brake System Scan',
+    description: 'Diagnose ABS faults and check brake system sensors for optimal safety.',
+    price: 1500.00,
+    image: 'https://media.istockphoto.com/id/1258023748/photo/car-disassembly-brake-disc-and-brake-caliper-removed-selective-focus.jpg?s=612x612&w=0&k=20&c=v4hWMgCJ-KG2l_m0UfTHf-LPFCYkPCUzg-v1fsU5Oi8='
+  },
+  {
+    id: 'vd4',
+    title: 'Transmission Diagnostics',
+    description: 'Analyze transmission shifting issues and perform error code analysis.',
+    price: 2000.00,
+    image: 'https://media.istockphoto.com/id/2169327387/photo/automatic-change-of-brake-fluid-in-a-car-service.jpg?s=612x612&w=0&k=20&c=UCMNwqei059A9lRRBsFHjI6C_dyYe5vClHaBuf8w-Xs='
+  },
+  {
+    id: 'vd5',
+    title: 'Battery & Charging System Test',
+    description: 'Check battery health, alternator output, and charging system performance.',
+    price: 1200.00,
+    image: 'https://media.istockphoto.com/id/1213122410/photo/technician-measure-voltage-of-battery-in-the-car-at-service-station.jpg?s=612x612&w=0&k=20&c=GDNklQ8acHuFrsCcOXe2i4wSUqrzdx8kTed7rFPQKc8='
+  },
+  {
+    id: 'vd6',
+    title: 'OBD-II Code Scan',
+    description: 'On-board diagnostics scan for trouble codes with professional analysis.',
+    price: 800.00,
+    image: 'https://media.istockphoto.com/id/2203733486/photo/obd-or-obd-ii-scanner-in-use-by-technician-automotive-diagnostic-tool-in-use-for-scanning.jpg?s=612x612&w=0&k=20&c=4vwIZAGsHRC1pCWRySwZ55G5_EPAXSrN3u_BzFtDb0c='
+  },
+  {
+    id: 'vd7',
+    title: 'Fuel System Diagnostics',
+    description: 'Evaluate fuel pressure, injector performance, and fuel economy issues.',
+    price: 1600.00,
+    image: 'https://media.istockphoto.com/id/2188163252/photo/car-battery-maintenance-with-digital-overlay.jpg?s=612x612&w=0&k=20&c=JxQdtW9kEMMnRJ01c5HgZXw4-mUsjb0ih7-SgnWmFx8='
+  },
+  {
+    id: 'vd8',
+    title: 'Airbag System Scan',
+    description: 'Check SRS system for faults and ensure airbag readiness.',
+    price: 1400.00,
+    image: 'https://media.istockphoto.com/id/1599919768/photo/air-bag-sign-on-the-steering-wheel.jpg?s=612x612&w=0&k=20&c=IqxCnhkeN5oM4JZy8KQT3GCd5xuGgnTvLrZaFa7pp6M='
+  },
+  {
+    id: 'vd9',
+    title: 'Emission System Check',
+    description: 'Verify your vehicle meets emission standards and resolve pollution-related issues.',
+    price: 1500.00,
+    image: 'https://media.istockphoto.com/id/2083930218/photo/auto-mechanic-monitor-to-check-and-fixed-car-air-conditioner-system-in-car-garage-service-car.jpg?s=612x612&w=0&k=20&c=Ho-reXJyKDs_gZdbn8X4HRYSFLy5uJtWxYmwXOYrq_0='
+  },
+  {
+    id: 'vd10',
+    title: 'Cooling System Diagnostics',
+    description: 'Scan radiator, thermostat, and coolant sensors for overheating issues.',
+    price: 1300.00,
+    image: 'https://media.istockphoto.com/id/1168556251/photo/check-car-air-conditioning-system-refrigerant-recharge.jpg?s=612x612&w=0&k=20&c=RApZuCMS0gYqD12FBpsfGL5Rn4-InLkeBQJvBMtdegQ='
+  },
+  {
+    id: 'vd11',
+    title: 'Sensor & Module Diagnostics',
+    description: 'Full diagnostic of electronic control modules and vehicle sensors.',
+    price: 1800.00,
+    image: 'https://media.istockphoto.com/id/1330016219/photo/auto-electrician.jpg?s=612x612&w=0&k=20&c=gKDsGUN3ieQVskpuLJoKsk0LdOhaC7z4mrSMnWXlRhY='
+  },
+  {
+    id: 'vd12',
+    title: 'Steering & Suspension Diagnostic',
+    description: 'Identify issues in steering electronics and suspension modules.',
+    price: 1700.00,
+    image: 'https://media.istockphoto.com/id/2002640073/photo/car-engine-suspension-during-vehicle-maintenance.jpg?s=612x612&w=0&k=20&c=D7gpRn6p7eBJ0tYFGpxk7Tz1SQ4IGTmQUX0tsZRXPKU='
+  },
+  {
+    id: 'vd13',
+    title: 'Climate Control System Check',
+    description: 'Diagnose HVAC system errors and ensure consistent cabin temperature.',
+    price: 1000.00,
+    image: 'https://media.istockphoto.com/id/1901547765/photo/car-air-conditioning-repair-technician-man-checks-car-air-conditioning-system-refrigerant.jpg?s=612x612&w=0&k=20&c=RgMevlWS3ULPGa9fr75cXiva8urEmBg2jm3cM24-M1M='
+  },
+  {
+    id: 'vd14',
+    title: 'Pre-Purchase Diagnostic Inspection',
+    description: 'Get a full digital diagnostic report before buying a used vehicle.',
+    price: 2500.00,
+    image: 'https://media.istockphoto.com/id/1310795165/photo/auto-mechanic-using-car-diagnostic-tool.jpg?s=612x612&w=0&k=20&c=SKHWqGA2sGnbcj6gBM7vfa5rAVBTA9e-US1w8q_6Px4='
+  }
+];
+
+
+const accidentRepairServices = [
+  {
+    id: 'ar1',
+    title: 'Full Body Damage Repair',
+    description: 'Complete repair and restoration of vehicle body after accidents.',
+    price: 8000.00,
+    image: 'https://i.postimg.cc/BvXbqB45/after-acc.jpg'
+  },
+  {
+    id: 'ar2',
+    title: 'Bumper Replacement & Repair',
+    description: 'Fixing or replacing damaged front and rear bumpers.',
+    price: 3000.00,
+    image: 'https://media.istockphoto.com/id/1387858012/photo/new-plastic-car-bumper-on-white-background.jpg?s=612x612&w=0&k=20&c=YrMbOpFL7v3ubWRYfEcWAudyrITw3iaWzxWglYuaZLk='
+  },
+  {
+    id: 'ar3',
+    title: 'Fender Repair',
+    description: 'Straightening and refinishing dented or crumpled fenders.',
+    price: 2500.00,
+    image: 'https://media.istockphoto.com/id/183413919/photo/crashed-car.jpg?s=612x612&w=0&k=20&c=pNynsWFmbQzbGRAvLNBH6ZqsuOtLUIiJpO0f4KZDQCI='
+  },
+  {
+    id: 'ar4',
+    title: 'Windshield Replacement',
+    description: 'Complete windshield replacement with high-quality glass.',
+    price: 3500.00,
+    image: 'https://media.istockphoto.com/id/1432352474/photo/in-the-aftermath-of-an-accident-near-my-home-automobile-service-special-workers-replaced-the.jpg?s=612x612&w=0&k=20&c=bPPO7Tf0wCOXClhfRaMqDTN6hfZ2Odch-Ava4tXREUE='
+  },
+  {
+    id: 'ar5',
+    title: 'Headlight & Taillight Repair',
+    description: 'Fix or replace cracked or broken lights due to collision.',
+    price: 1800.00,
+    image: 'https://media.istockphoto.com/id/2197106106/photo/severely-damaged-rear-car-panel-and-taillight.jpg?s=612x612&w=0&k=20&c=nfkxHo6oDFVMy_iJw_zb87qk-Km-SGQj28wOCkmr7QI='
+  },
+  {
+    id: 'ar6',
+    title: 'Chassis Straightening',
+    description: 'Realign the vehicle frame for structural integrity.',
+    price: 7000.00,
+    image: 'https://media.istockphoto.com/id/2170656686/photo/close-up-of-car-underbody-on-the-lift-at-car-service-station.jpg?s=612x612&w=0&k=20&c=t3ivZrsOPdaqDnAqxlSnDhaGTf0aAgmZelhppDmd0ts='
+  },
+  {
+    id: 'ar7',
+    title: 'Paintless Dent Removal',
+    description: 'Smooth out minor dents without needing paintwork.',
+    price: 2200.00,
+    image: 'https://media.istockphoto.com/id/2158743215/photo/a-photo-of-paintless-dent-removal-glue-pucks-repairing-hail-damage-of-the-silver-car-in-the.jpg?s=612x612&w=0&k=20&c=1B72m9hBWLeumwWYhLptPlsSDP4JSTJUQ2d-Y_bZTRE='
+  },
+  {
+    id: 'ar8',
+    title: 'Panel Beating',
+    description: 'Professional reshaping and aligning of body panels.',
+    price: 4000.00,
+    image: 'https://media.istockphoto.com/id/537887872/photo/auto-body-repair-series-fixing-car-body.jpg?s=612x612&w=0&k=20&c=Em_OSY4NLebT12DmuW862cAESGtVnGcPssY6bqnHnzk='
+  },
+  {
+    id: 'ar9',
+    title: 'Crash Sensor Reset',
+    description: 'Recalibrate and reset safety systems post-accident.',
+    price: 2000.00,
+    image: 'https://media.istockphoto.com/id/2183350152/photo/close-up-of-car-dashboard-speedometer-and-tachometer-modern-car-interior.jpg?s=612x612&w=0&k=20&c=G18iZYh91r3JiFcVPHHUu0KB-uAqzyeCu_y0Bl4jcXg='
+  },
+  {
+    id: 'ar10',
+    title: 'Airbag System Reinstallation',
+    description: 'Install new airbags and test system functionality.',
+    price: 5000.00,
+    image: 'https://media.istockphoto.com/id/1924376056/photo/modern-car-showing-airbag-inside.jpg?s=612x612&w=0&k=20&c=vkbhygqQvzH8FW0hRXoAc5didsK8SErQjSM_MYZB9Gk='
+  },
+  {
+    id: 'ar11',
+    title: 'Paint Restoration',
+    description: 'Repaint accident-affected areas to match factory finish.',
+    price: 3500.00,
+    image: 'https://i.postimg.cc/7hZDPxyC/paint.jpg'
+  },
+  {
+    id: 'ar12',
+    title: 'Insurance Claim Support',
+    description: 'Assistance with documentation and repair process for claims.',
+    price: 0.00,
+    image: 'https://media.istockphoto.com/id/2062364285/photo/car-accident-and-insurance-money.jpg?s=612x612&w=0&k=20&c=b1OJx2-T3L9EIyM9mXcj5zJco_eaPHdBojJs2UMY01g='
+  },
+  {
+    id: 'ar13',
+    title: 'Wheel Alignment Check',
+    description: 'Ensure accurate wheel alignment post-collision.',
+    price: 1500.00,
+    image: 'https://media.istockphoto.com/id/1469093559/photo/at-a-repair-shop-a-car-mechanic-tightens-the-suspension-of-an-elevated-vehicle-with-a-spanner.jpg?s=612x612&w=0&k=20&c=xBh7ie0svqSy9DxvVPFo44uHSn5as1NA5ulPxUSwwDQ='
+  },
+  {
+    id: 'ar14',
+    title: 'Side Mirror Repair',
+    description: 'Replace or fix damaged side mirrors from accidents.',
+    price: 1200.00,
+    image: 'https://media.istockphoto.com/id/2182443174/photo/car-mirror-is-broken-need-reper.jpg?s=612x612&w=0&k=20&c=diwxVUntOqDvLcQ4RsMySbXgJY-prhxrFMt3EIoflfU='
+  },
+  {
+    id: 'ar15',
+    title: 'Underbody Inspection',
+    description: 'Inspect and repair any underbody damage post-crash.',
+    price: 2500.00,
+    image: 'https://media.istockphoto.com/id/1140032073/photo/view-of-car-undercarriage-when-lifted-on-hydraulic-lift-in-a-workshop-during-inspection.jpg?s=612x612&w=0&k=20&c=ALR6ttrUP9866LAI0aaiRA_1UsBAR6tvSqK1xSVaNyI='
+  },
+  {
+    id: 'ar16',
+    title: 'Post-Repair Road Test',
+    description: 'Road test to ensure vehicle drives smoothly after repairs.',
+    price: 0.00,
+    image: 'https://media.istockphoto.com/id/1448524803/vector/failure-in-education-do-not-pass-car-exam-flat-cartoon-vector-illustration-adolescent-girl.jpg?s=612x612&w=0&k=20&c=13mbshv3IoWZZrnTh6Q2h8jB14Ru_2k_BOrnKmIvd_8='
+  }
+];
+
+
+const maintenanceServices = [
   {
     id: 'ms1',
-    title: 'Nike Air Max',
-    description: 'Comfortable and stylish sneakers for everyday wear',
-    price: 1299.99,
-    image: 'https://images.pexels.com/photos/267326/pexels-photo-267326.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+    title: 'Engine Oil Change',
+    description: 'Complete engine oil drain and refill with quality oil and filter.',
+    price: 2500.00,
+    image: 'https://media.istockphoto.com/id/652660470/photo/auto-mechanic-service-and-repair.jpg?s=612x612&w=0&k=20&c=bEQwVRbOLw1i5w5q8Iz6llAKFEokFDZq5mLFq_khZ-o='
   },
   {
     id: 'ms2',
-    title: 'Adidas Ultraboost',
-    description: 'High-performance running shoes with superior cushioning',
-    price: 1590.99,
-    image: 'https://images.pexels.com/photos/29342151/pexels-photo-29342151/free-photo-of-modern-sports-shoes-on-wooden-background.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+    title: 'Brake Inspection & Replacement',
+    description: 'Check and replace brake pads, discs, and brake fluid if necessary.',
+    price: 3000.00,
+    image: 'https://media.istockphoto.com/id/2197500427/photo/close-up-of-car-disc-brake-in-workshop.jpg?s=612x612&w=0&k=20&c=n5aDbbqinJcLA-wW0Z3x7uikdndBZ5PdqlDq9KabzXM='
   },
   {
     id: 'ms3',
-    title: 'Puma Suede Classic',
-    description: 'Iconic design with a comfortable fit',
-    price: 899.99,
-    image: 'https://m.media-amazon.com/images/I/718eoAhoXqL._AC_SY500_.jpg'
+    title: 'Air Filter Replacement',
+    description: 'Replace engine air filter to maintain clean airflow and performance.',
+    price: 1000.00,
+    image: 'https://media.istockphoto.com/id/2202614431/photo/comparison-between-new-air-filter-and-used-air-filter-on-car-engine-bay.jpg?s=612x612&w=0&k=20&c=Z1Ai-f88h3yGPCzMHLyDzkLU2zyft6ESt1a0os8Te7g='
   },
   {
     id: 'ms4',
-    title: 'Reebok Club C',
-    description: 'Classic tennis shoes with a retro look',
-    price: 1790.00,
-    image: 'https://m.media-amazon.com/images/I/71hZ9ScUc4L._AC_SY500_.jpg'
+    title: 'Battery Health Check',
+    description: 'Test battery performance and clean terminals; replace if needed.',
+    price: 1800.00,
+    image: 'https://media.istockphoto.com/id/1251530338/photo/auto-mechanic-working-in-the-garage-service-and-maintenance-and-car-maintenance.jpg?s=612x612&w=0&k=20&c=yWF31I_0KILUboJoEDgImlyKOhqPcoMZAsnRNDV6Zfk='
   },
   {
     id: 'ms5',
-    title: 'New Balance 574',
-    description: 'Versatile sneakers with a timeless design',
-    price: 999.97,
-    image: 'https://m.media-amazon.com/images/I/71qnRadHD+L._AC_SY500_.jpg'
+    title: 'Coolant Flush & Replacement',
+    description: 'Flush out old coolant and refill with high-grade antifreeze.',
+    price: 2000.00,
+    image: 'https://media.istockphoto.com/id/2128861985/photo/focused-on-the-automotive-industry-within-the-contemporary-new-automobile-engine-room-machine.jpg?s=612x612&w=0&k=20&c=JPzV3j-Y_UlBnMFADJtvEvcGHZYJlVkXs1C1g-GkxVg='
   },
   {
     id: 'ms6',
-    title: 'Converse Chuck Taylor',
-    description: 'Classic high-top sneakers for a casual look',
-    price: 1549.00,
-    image: 'https://m.media-amazon.com/images/I/61jbjmVjrwL._AC_SY500_.jpg'
+    title: 'Tire Rotation & Pressure Check',
+    description: 'Rotate tires and ensure correct pressure for even wear.',
+    price: 1500.00,
+    image: 'https://media.istockphoto.com/id/1086003468/photo/the-refill-pressure-head-and-black-tyre-with-alloy-wheel-at-car-service-shop-center.jpg?s=612x612&w=0&k=20&c=ADGm5tEwEgdKIHgotXqWPLpIlseA8qPteQEkx_8kWjM='
   },
   {
     id: 'ms7',
-    title: 'Vans Old Skool',
-    description: 'Skate shoes with a durable construction',
-    price: 2000,
-    image: 'https://m.media-amazon.com/images/I/61P+ocONXOL._AC_SY500_.jpg'
+    title: 'Spark Plug Replacement',
+    description: 'Change spark plugs to improve fuel efficiency and ignition.',
+    price: 2200.00,
+    image: 'https://media.istockphoto.com/id/1258125364/photo/replacement-of-spark-plugs-in-a-modern-engine.jpg?s=612x612&w=0&k=20&c=3PxkCoppC8g7f1nWWn-GBiZjQocjz7sLuVj2Wpx8iJ8='
   },
   {
     id: 'ms8',
-    title: 'Asics Gel-Kayano',
-    description: 'Stability running shoes with advanced support',
-    price: 1499,
-    image: 'https://m.media-amazon.com/images/I/81QpazsoxLL._AC_SY500_.jpg'
+    title: 'Wiper Blade Replacement',
+    description: 'Install new wiper blades for clearer visibility during rain.',
+    price: 800.00,
+    image: 'https://media.istockphoto.com/id/2149245967/photo/close-up-of-a-black-car-wiper-car-detail.jpg?s=612x612&w=0&k=20&c=9j2o2AbV2OiMoNcHRtElQso8c1jBj_WZrOWjVL1Vab0='
   },
   {
     id: 'ms9',
-    title: 'Under Armour HOVR',
-    description: 'Innovative running shoes with energy return technology',
-    price: 1300.98,
-    image: 'https://m.media-amazon.com/images/I/91Th0Ipew0L._AC_SY575_.jpg'
+    title: 'Transmission Fluid Change',
+    description: 'Replace old transmission fluid to ensure smooth gear shifts.',
+    price: 3500.00,
+    image: 'https://media.istockphoto.com/id/2164910526/photo/automatic-change-of-brake-fluid-in-a-car-service.jpg?s=612x612&w=0&k=20&c=DP9ZJvqYojjKPzeMjwddP4wCqaOTEbrOEWYYXQI7lxQ='
   },
   {
     id: 'ms10',
-    title: 'Brooks Ghost',
-    description: 'Cushioned running shoes for a smooth ride',
-    price: 1156,
-    image: 'https://m.media-amazon.com/images/I/71DDpKWGtCL._AC_SY500_.jpg'
+    title: 'Full Service Inspection',
+    description: 'Complete multi-point inspection with full-service tune-up.',
+    price: 5000.00,
+    image: 'https://media.istockphoto.com/id/2203463408/photo/cropped-shot-of-mechanic-man-measuring-voltage-on-car-battery-in-auto-service.jpg?s=612x612&w=0&k=20&c=eltxl919IE798MF9gfiII1qQlu9tNzA0BswRKYlPJXo='
   },
   {
     id: 'ms11',
-    title: 'Saucony Jazz Original',
-    description: 'Retro running shoes with a comfortable fit',
-    price: 1800,
-    image: 'https://m.media-amazon.com/images/I/718fywc4osL._AC_SX500_.jpg'
+    title: 'Timing Belt Inspection',
+    description: 'Check and replace timing belt if worn to prevent engine failure.',
+    price: 4000.00,
+    image: 'https://media.istockphoto.com/id/1962526551/photo/twin-cam-engine-car-with-pulley-wheels-and-cam-belt.jpg?s=612x612&w=0&k=20&c=XD5Pi_BhVdQ18-CBz-gCdqrP6AIliq2ieQdPaQiyy3Y='
   },
   {
     id: 'ms12',
-    title: 'Hoka One One Clifton',
-    description: 'Lightweight running shoes with maximum cushioning',
-    price: 1760.55,
-    image: 'https://m.media-amazon.com/images/I/51NMmqg91YL._AC_SX500_.jpg'
+    title: 'Wheel Alignment',
+    description: 'Adjust the angles of wheels to the manufacturer’s specifications for optimal handling.',
+    price: 1700.00,
+    image: 'https://media.istockphoto.com/id/463462731/photo/computerized-wheel-alignment-machine-clamp.jpg?s=612x612&w=0&k=20&c=1TSPgkpZYY8ha69Fbp0Ny9oaAPtgGexcwmBbVXVB0_w='
   },
   {
     id: 'ms13',
-    title: 'Mizuno Wave Rider',
-    description: 'Responsive running shoes with a smooth ride',
-    price: 1399.00,
-    image: 'https://m.media-amazon.com/images/I/71HAyiqnabL._AC_SY500_.jpg'
+    title: 'Exhaust System Check',
+    description: 'Inspect exhaust components for blockages, rust, or leaks and replace if required.',
+    price: 2500.00,
+    image: 'https://media.istockphoto.com/id/2197738784/photo/car-exhaust-pipe-in-garage.jpg?s=612x612&w=0&k=20&c=i-hjL6-Mq23w5-Ky9PR6gcRMATBWXJTbMR_gsVbVNH8='
   },
   {
     id: 'ms14',
-    title: 'Timberland 6-Inch Boots',
-    description: 'Durable and stylish boots for all-weather conditions',
-    price: 4000.99,
-    image: 'https://m.media-amazon.com/images/I/81QJAdzJs+L._AC_SY500_.jpg'
-  },
-  {
-    id: 'ms15',
-    title: 'Jordan 1 Retro High',
-    description: 'Classic basketball sneakers with premium materials',
-    price: 3878.99,
-    image: 'https://m.media-amazon.com/images/I/51neFxMGXbL._AC_SX500_.jpg'
-  },
-  {
-    id: 'ms16',
-    title: 'Nike Blazer Mid 77',
-    description: 'Vintage-style sneakers with a sleek design',
-    price: 3459.99,
-    image: 'https://m.media-amazon.com/images/I/71M+2+N9t2L._AC_SY500_.jpg'
-  },
-  {
-    id: 'ms17',
-    title: 'Salomon Speedcross 5',
-    description: 'Trail running shoes with excellent grip and durability',
-    price: 5678.00,
-    image: 'https://m.media-amazon.com/images/I/71xfnveKB+L._AC_SY500_.jpg'
-  },
-  {
-    id: 'ms18',
-    title: 'Merrell Moab 2',
-    description: 'Hiking shoes designed for comfort and support',
-    price: 1599,
-    image: 'https://m.media-amazon.com/images/I/8128tBP5BNL._AC_SX500_.jpg'
-  },
-  {
-    id: 'ms19',
-    title: 'On Cloud 5',
-    description: 'Lightweight and comfortable everyday running shoes',
-    price: 1398,
-    image: 'https://m.media-amazon.com/images/I/71E2aJla3JL._AC_SY500_.jpg'
-  },
-  {
-    id: 'ms20',
-    title: 'Fila Disruptor II',
-    description: 'Chunky sneakers with a bold retro look',
-    price: 4000.99,
-    image: 'https://m.media-amazon.com/images/I/71haTpo3xZS._AC_SX500_.jpg'
-  }
-];
-
-const womensHeels = [
-  {
-    id: 'wh1',
-    title: 'Steve Madden Carrson',
-    description: 'Classic block heels with an adjustable ankle strap',
-    price: 1000,
-    image: 'https://m.media-amazon.com/images/I/71NJvyBX86L._AC_SX500_.jpg'
-  },
-  {
-    id: 'wh2',
-    title: 'Jessica Simpson Stiletto',
-    description: 'Elegant high heels with a pointed toe design',
-    price: 1300.00,
-    image: 'https://m.media-amazon.com/images/I/517wsfCX84L._AC_SY500_.jpg'
-  },
-  {
-    id: 'wh3',
-    title: 'Nine West Tatiana Pump',
-    description: 'Sleek and sophisticated pointed-toe pumps',
-    price: 679.55,
-    image: 'https://m.media-amazon.com/images/I/61z2HltvqiL._AC_SX500_.jpg'
-  },
-  {
-    id: 'wh4',
-    title: 'Sam Edelman Yaro',
-    description: 'Chic block heels with a minimalistic design',
-    price: 999,
-    image: 'https://m.media-amazon.com/images/I/61Yxa4vxRLL._AC_SY500_.jpg'
-  },
-  {
-    id: 'wh5',
-    title: 'Badgley Mischka Kiara',
-    description: 'Glamorous bridal heels with rhinestone embellishments',
-    price: 4490.99,
-    image: 'https://m.media-amazon.com/images/I/71lO3NjWXmL._AC_SY575_.jpg'
-  },
-  {
-    id: 'wh6',
-    title: 'Michael Kors Dorothy Flex',
-    description: 'Timeless pumps with a comfortable fit',
-    price: 3200,
-    image: 'https://m.media-amazon.com/images/I/71RtMNwKwyL._AC_SX500_.jpg'
-  },
-  {
-    id: 'wh7',
-    title: 'Christian Louboutin So Kate',
-    description: 'Luxury high heels with a signature red sole',
-    price: 795.00,
-    image: 'https://m.media-amazon.com/images/I/81q9MQDY69L._AC_SY500_.jpg'
-  },
-  {
-    id: 'wh8',
-    title: 'Stuart Weitzman Nudist',
-    description: 'Elegant ankle-strap heels for any occasion',
-    price: 3987,
-    image: 'https://m.media-amazon.com/images/I/71iXY23fviL._AC_SX500_.jpg'
-  },
-  {
-    id: 'wh9',
-    title: 'Aldo Stessy Pump',
-    description: 'Classic pointed-toe heels with a sleek finish',
-    price: 599,
-    image: 'https://images.pexels.com/photos/27204280/pexels-photo-27204280/free-photo-of-stilettos-negro.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load'
-  },
-  {
-    id: 'wh10',
-    title: 'Jimmy Choo Romy',
-    description: 'Designer heels with a timeless silhouette',
-    price: 6950,
-    image: 'https://m.media-amazon.com/images/I/61J8jZdpX3L._AC_SY500_.jpg'
-  },
-  {
-    id: 'wh11',
-    title: 'Stiletto Heels',
-    description: 'Elegant and fashionable stiletto heels for women',
-    price: 7000,
-    image: 'https://m.media-amazon.com/images/I/5138QwjOpsL._AC_SX522_.jpg'
-  },
-  {
-    id: 'wh12',
-    title: 'Block Heels',
-    description: 'Comfortable and stylish block heels for women',
-    price: 1860.99,
-    image: 'https://m.media-amazon.com/images/I/71HjMWSylpL._AC_SX500_.jpg'
-  },
-  {
-    id: 'wh13',
-    title: 'Wedge Heels',
-    description: 'Trendy and comfortable wedge heels for women',
-    price: 1250.55,
-    image: 'https://m.media-amazon.com/images/I/611lWHy0M2L._AC_SX500_.jpg'
-  },
-  {
-    id: 'wh14',
-    title: 'Platform Heels',
-    description: 'Stylish platform heels for a bold look',
-    price: 999.00,
-    image: 'https://m.media-amazon.com/images/I/716PbDMYE0L._AC_SY500_.jpg'
-  },
-  {
-    id: 'wh15',
-    title: 'Kitten Heels',
-    description: 'Chic and comfortable kitten heels for women',
-    price: 2000.00,
-    image: 'https://m.media-amazon.com/images/I/51YZ+grJRuL._AC_SY500_.jpg'
-  },
-  {
-    id: 'wh16',
-    title: 'Peep Toe Heels',
-    description: 'Fashionable peep toe heels for a stylish look',
-    price: 1800.99,
-    image: 'https://m.media-amazon.com/images/I/71NVq596w8L._AC_SY500_.jpg'
-  },
-  {
-    id: 'wh17',
-    title: 'Ankle Strap Heels',
-    description: 'Elegant ankle strap heels for women',
-    price: 1255.00,
-    image: 'https://m.media-amazon.com/images/I/81-cMJBytWL._AC_SY500_.jpg'
-  },
-  {
-    id: 'wh18',
-    title: 'Slingback Heels',
-    description: 'Stylish slingback heels for a comfortable fit',
-    price: 699.00,
-    image: 'https://m.media-amazon.com/images/I/615qTukQ2RL._AC_SY500_.jpg'
-  },
-  {
-    id: 'wh19',
-    title: 'Mule Heels',
-    description: 'Trendy mule heels for a fashionable look',
-    price: 890.00,
-    image: 'https://m.media-amazon.com/images/I/61J2fzAgSpL._AC_SX679_.jpg'
-  },
-  {
-    id: 'wh20',
-    title: 'Espadrille Heels',
-    description: 'Comfortable and stylish espadrille heels',
-    price: 999.99,
-    image: 'https://m.media-amazon.com/images/I/615-m7Fgv8L._AC_SY500_.jpg'
-  }
-];
-
-const kidsShoes = [
-  {
-    id: 'ks1',
-    title: 'Nike Kids Air Max',
-    description: 'Durable and fun sneakers for kids',
-    price: 590.99,
-    image: 'https://m.media-amazon.com/images/I/71T-iTOb1PL._AC_SY500_.jpg'
-  },
-  {
-    id: 'ks2',
-    title: 'Adidas Kids Superstar',
-    description: 'Classic and stylish sneakers for kids',
-    price: 4999,
-    image: 'https://m.media-amazon.com/images/I/81g4ZeFTJGL._AC_SY500_.jpg'
-  },
-  {
-    id: 'ks3',
-    title: 'Puma Kids Suede',
-    description: 'Comfortable and trendy sneakers for kids',
-    price: 3560.99,
-    image: 'https://m.media-amazon.com/images/I/71OHHynKOYL._AC_SX500_.jpg'
-  },
-  {
-    id: 'ks4',
-    title: 'Reebok Kids Classic',
-    description: 'Retro style sneakers for kids',
-    price: 4400,
-    image: 'https://m.media-amazon.com/images/I/61x2DKocV2L._AC_SX500_.jpg'
-  },
-  {
-    id: 'ks5',
-    title: 'New Balance Kids 574',
-    description: 'Versatile and durable sneakers for kids',
-    price: 540.99,
-    image: 'https://m.media-amazon.com/images/I/51g3h3kqrVL._AC_SY500_.jpg'
-  },
-  {
-    id: 'ks6',
-    title: 'Converse Kids Chuck Taylor',
-    description: 'Classic high-top sneakers for kids',
-    price: 499,
-    image: 'https://m.media-amazon.com/images/I/618J9VEzIXL._AC_SY695_.jpg'
-  },
-  {
-    id: 'ks7',
-    title: 'Vans Kids Old Skool',
-    description: 'Skate shoes with a durable construction for kids',
-    price: 350,
-    image: 'https://m.media-amazon.com/images/I/71kYDSF-SDL._AC_SX500_.jpg'
-  },
-  {
-    id: 'ks8',
-    title: 'Asics Kids Gel-Kayano',
-    description: 'Stability running shoes with advanced support for kids',
-    price: 500.99,
-    image: 'https://m.media-amazon.com/images/I/61K6PyuYkXL._AC_SY500_.jpg'
-  },
-  {
-    id: 'ks9',
-    title: 'Under Armour Kids HOVR',
-    description: 'Innovative running shoes with energy return technology for kids',
-    price: 699,
-    image: 'https://m.media-amazon.com/images/I/71pAqWT2qKL._AC_SX500_.jpg'
-  },
-  {
-    id: 'ks10',
-    title: 'Brooks Kids Ghost',
-    description: 'Cushioned running shoes for a smooth ride for kids',
-    price: 588,
-    image: 'https://m.media-amazon.com/images/I/71kCcsYqZUL._AC_SY500_.jpg'
-  },
-  {
-    id: 'ks11',
-    title: 'Saucony Kids Jazz Original',
-    description: 'Retro running shoes with a comfortable fit for kids',
-    price: 499,
-    image: 'https://m.media-amazon.com/images/I/71ZlDEJgAlL._AC_SX500_.jpg'
-  },
-  {
-    id: 'ks12',
-    title: 'Hoka One One Kids Clifton',
-    description: 'Lightweight running shoes with maximum cushioning for kids',
-    price: 600.00,
-    image: 'https://m.media-amazon.com/images/I/61U1zZlIPGL._AC_SY500_.jpg'
-  },
-  {
-    id: 'ks13',
-    title: 'Mizuno Kids Wave Rider',
-    description: 'Responsive running shoes with a smooth ride for kids',
-    price: 1500.00,
-    image: 'https://m.media-amazon.com/images/I/716KPC8qtBL._AC_SX500_.jpg'
-  },
-  {
-    id: 'ks14',
-    title: 'Timberland Kids 6-Inch Boots',
-    description: 'Durable and stylish boots for all-weather conditions for kids',
-    price: 1700.99,
-    image: 'https://m.media-amazon.com/images/I/81+PROtR+BL._AC_SY500_.jpg'
-  },
-  {
-    id: 'ks15',
-    title: 'Jordan Kids 1 Retro High',
-    description: 'Classic basketball sneakers with premium materials for kids',
-    price: 800.00,
-    image: 'https://m.media-amazon.com/images/I/61n43LPaK8L._AC_SY500_.jpg'
-  },
-  {
-    id: 'ks16',
-    title: 'Nike Kids Blazer Mid 77',
-    description: 'Vintage-style sneakers with a sleek design for kids',
-    price: 500.99,
-    image: 'https://m.media-amazon.com/images/I/41tp8vnukiL._AC_SY500_.jpg'
-  },
-  {
-    id: 'ks17',
-    title: 'Salomon Kids Speedcross 5',
-    description: 'Trail running shoes with excellent grip and durability for kids',
-    price: 1600,
-    image: 'https://m.media-amazon.com/images/I/81Qb4qwW+2L._AC_SY500_.jpg'
-  },
-  {
-    id: 'ks18',
-    title: 'Merrell Kids Moab 2',
-    description: 'Hiking shoes designed for comfort and support for kids',
-    price: 599,
-    image: 'https://m.media-amazon.com/images/I/61ybPUlw8jL._AC_SY500_.jpg'
-  },
-  {
-    id: 'ks19',
-    title: 'On Kids Cloud 5',
-    description: 'Lightweight and comfortable everyday running shoes for kids',
-    price: 699.00,
-    image: 'https://m.media-amazon.com/images/I/61xW-vAbF0L._AC_SX500_.jpg'
-  },
-  {
-    id: 'ks20',
-    title: 'Fila Kids Disruptor II',
-    description: 'Chunky sneakers with a bold retro look for kids',
-    price: 1000.00,
-    image: 'https://m.media-amazon.com/images/I/512ZB1oNzqL._AC_SX500_.jpg'
-  }
-];
-
-
-const runningShoes = [
-  {
-    id: 'rs1',
-    title: 'Nike Air Zoom Pegasus',
-    description: 'High-performance running shoes with responsive cushioning',
-    price: 1199.99,
-    image: 'https://images.pexels.com/photos/13525776/pexels-photo-13525776.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
-  },
-  {
-    id: 'rs2',
-    title: 'Adidas Ultraboost',
-    description: 'Comfortable and stylish running shoes with superior cushioning',
-    price: 1579.99,
-    image: 'https://images.pexels.com/photos/1407354/pexels-photo-1407354.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
-  },
-  {
-    id: 'rs3',
-    title: 'Asics Gel-Nimbus',
-    description: 'Premium running shoes with advanced support and cushioning',
-    price: 1449.99,
-    image: 'https://images.pexels.com/photos/6748322/pexels-photo-6748322.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
-  },
-  {
-    id: 'rs4',
-    title: 'Brooks Ghost',
-    description: 'Cushioned running shoes for a smooth ride',
-    price: 1100,
-    image: 'https://m.media-amazon.com/images/I/710A1Nf73hL._AC_SY500_.jpg'
-  },
-  {
-    id: 'rs5',
-    title: 'New Balance Fresh Foam',
-    description: 'Lightweight running shoes with maximum cushioning',
-    price: 1290.00,
-    image: 'https://images.pexels.com/photos/11743259/pexels-photo-11743259.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
-  },
-  {
-    id: 'rs6',
-    title: 'Saucony Triumph',
-    description: 'High-performance running shoes with superior comfort',
-    price: 1399.00,
-    image: 'https://m.media-amazon.com/images/I/61VRWs6aYJL._AC_SY500_.jpg'
-  },
-  {
-    id: 'rs7',
-    title: 'Hoka One One Clifton',
-    description: 'Lightweight running shoes with maximum cushioning',
-    price: 1299.00,
-    image: 'https://m.media-amazon.com/images/I/51NMmqg91YL._AC_SX500_.jpg'
-  },
-  {
-    id: 'rs8',
-    title: 'Mizuno Wave Rider',
-    description: 'Responsive running shoes with a smooth ride',
-    price: 1399,
-    image: 'https://m.media-amazon.com/images/I/71C7gIU9bbL._AC_SX500_.jpg'
-  },
-  {
-    id: 'rs9',
-    title: 'Under Armour HOVR',
-    description: 'Innovative running shoes with energy return technology',
-    price: 1500,
-    image: 'https://m.media-amazon.com/images/I/51NLpo6mebL._AC_SY500_.jpg'
-  },
-  {
-    id: 'rs10',
-    title: 'Salomon Speedcross 5',
-    description: 'Trail running shoes with excellent grip and durability',
-    price: 1499,
-    image: 'https://m.media-amazon.com/images/I/81jMdG98u8L._AC_SY500_.jpg'
-  },
-  {
-    id: 'rs11',
-    title: 'Nike ZoomX Vaporfly Next%',
-    description: 'High-performance marathon running shoes with carbon plate technology',
-    price: 2499,
-    image: 'https://images.pexels.com/photos/2529148/pexels-photo-2529148.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
-  },
-  {
-    id: 'rs12',
-    title: 'Adidas Adizero Adios Pro 3',
-    description: 'Elite racing shoes designed for speed and energy return',
-    price: 2190,
-    image: 'https://m.media-amazon.com/images/I/51Frc7yz1ML._AC_SY500_.jpg'
-  },
-  {
-    id: 'rs13',
-    title: 'Brooks Hyperion Elite 3',
-    description: 'Lightweight and responsive racing shoes for serious runners',
-    price: 1999.99,
-    image: 'https://m.media-amazon.com/images/I/51MG44HF+CL._AC_SY500_.jpg'
-  },
-  {
-    id: 'rs14',
-    title: 'Saucony Endorphin Speed 3',
-    description: 'Speed-focused running shoes with PWRRUN PB cushioning',
-    price: 1790.99,
-    image: 'https://m.media-amazon.com/images/I/71ZmJebQPxL._AC_SX500_.jpg'
-  },
-  {
-    id: 'rs15',
-    title: 'Hoka One One Carbon X 3',
-    description: 'Designed for long-distance running with carbon fiber plate',
-    price: 1995.00,
-    image: 'https://m.media-amazon.com/images/I/61Q7RRj+dRL._AC_SY500_.jpg'
-  },
-  {
-    id: 'rs16',
-    title: 'Asics Novablast 3',
-    description: 'High-cushioned daily trainers with a bouncy feel',
-    price: 1399.00,
-    image: 'https://m.media-amazon.com/images/I/71LwkuD8-OL._AC_SX500_.jpg'
-  },
-  {
-    id: 'rs17',
-    title: 'New Balance FuelCell Rebel v3',
-    description: 'Lightweight and flexible running shoes for speed training',
-    price: 1599,
-    image: 'https://m.media-amazon.com/images/I/713lb2nvnlL._AC_SX500_.jpg'
-  },
-  {
-    id: 'rs18',
-    title: 'Under Armour Flow Velociti Wind 2',
-    description: 'Lightweight trainers with Flow cushioning technology',
-    price: 1400,
-    image: 'https://m.media-amazon.com/images/I/51NLpo6mebL._AC_SY500_.jpg'
-  },
-  {
-    id: 'rs19',
-    title: 'Puma Deviate Nitro 2',
-    description: 'Versatile performance running shoes with Nitro foam',
-    price: 1500.00,
-    image: 'https://m.media-amazon.com/images/I/51O55ZRXPXL._AC_SY500_.jpg'
-  },
-  {
-    id: 'rs20',
-    title: 'Mizuno Wave Rebellion Pro',
-    description: 'Designed for elite runners with extreme energy return',
-    price: 2200,
-    image: 'https://m.media-amazon.com/images/I/71C7gIU9bbL._AC_SX500_.jpg'
-  }
-];
-
-const boots = [
-  {
-    id: 'bt1',
-    title: 'Timberland 6-Inch Premium Waterproof Boots',
-    description: 'Durable and stylish boots for all-weather conditions',
-    price: 5699.99,
-    image: 'https://m.media-amazon.com/images/I/71Ww77gmXGL._AC_SY500_.jpg'
-  },
-  {
-    id: 'bt2',
-    title: 'Dr. Martens 1460 Smooth Leather Boots',
-    description: 'Classic combat boots with a durable construction',
-    price: 1000.99,
-    image: 'https://m.media-amazon.com/images/I/61gBJFoVfzL._AC_SX500_.jpg'
-  },
-  {
-    id: 'bt3',
-    title: 'UGG Classic Short II Boots',
-    description: 'Comfortable and warm boots for cold weather',
-    price: 1299.99,
-    image: 'https://m.media-amazon.com/images/I/718b-5aEyTL._AC_SX500_.jpg'
-  },
-  {
-    id: 'bt4',
-    title: 'Sorel Caribou Waterproof Boots',
-    description: 'Rugged and insulated boots for extreme conditions',
-    price: 1599,
-    image: 'https://m.media-amazon.com/images/I/81xL9A8tR0L._AC_SY500_.jpg'
-  },
-  {
-    id: 'bt5',
-    title: 'Columbia Newton Ridge Plus II Waterproof Hiking Boots',
-    description: 'Durable hiking boots with superior traction',
-    price: 999,
-    image: 'https://m.media-amazon.com/images/I/61ad61gxW0L._AC_SY535_.jpg'
-  },
-  {
-    id: 'bt6',
-    title: 'Blundstone Original 500 Series',
-    description: 'Classic Chelsea boots with a rugged design',
-    price: 1799,
-    image: 'https://m.media-amazon.com/images/I/71VQgUqG+DL._AC_SX500_.jpg'
-  },
-  {
-    id: 'bt7',
-    title: 'Red Wing Heritage Iron Ranger',
-    description: 'Premium leather boots with a vintage look',
-    price: 4000.00,
-    image: 'https://m.media-amazon.com/images/I/61G4ycb+AGL._AC_SY500_.jpg'
-  },
-  {
-    id: 'bt8',
-    title: 'Ariat Heritage Roper Western Boots',
-    description: 'Stylish and comfortable western boots',
-    price: 1299,
-    image: 'https://m.media-amazon.com/images/I/717NJ8KumhL._AC_SY500_.jpg'
-  },
-  {
-    id: 'bt9',
-    title: 'Hunter Original Tall Rain Boots',
-    description: 'Iconic rain boots with a waterproof design',
-    price: 1499,
-    image: 'https://m.media-amazon.com/images/I/518FQ9aWqdL._AC_SY500_.jpg'
-  },
-  {
-    id: 'bt10',
-    title: 'Frye Harness 12R Boots',
-    description: 'Classic harness boots with a rugged style',
-    price: 2980,
-    image: 'https://m.media-amazon.com/images/I/51Tg8waM7aL._AC_SY500_.jpg'
-  },
-  {
-    id: 'bt11',
-    title: 'Merrell Moab 2 Mid Waterproof Hiking Boots',
-    description: 'Comfortable and durable hiking boots',
-    price: 1290,
-    image: 'https://m.media-amazon.com/images/I/815Tjn6vk9L._AC_SX500_.jpg'
-  },
-  {
-    id: 'bt12',
-    title: 'Wolverine 1000 Mile Boots',
-    description: 'Handcrafted leather boots with a timeless design',
-    price: 3400,
-    image: 'https://m.media-amazon.com/images/I/515zfih69tS._AC_SY500_.jpg'
-  },
-  {
-    id: 'bt13',
-    title: 'Keen Targhee III Waterproof Mid Boots',
-    description: 'Versatile and waterproof hiking boots',
-    price: 1300,
-    image: 'https://m.media-amazon.com/images/I/714uhl2mPsL._AC_SX500_.jpg'
-  },
-  {
-    id: 'bt14',
-    title: 'L.L.Bean Bean Boots',
-    description: 'Classic duck boots with a waterproof design',
-    price: 1100,
-    image: 'https://m.media-amazon.com/images/I/61Pcyv5FZTL._AC_SY500_.jpg'
-  },
-  {
-    id: 'bt15',
-    title: 'Salomon Quest 4D 3 GTX Hiking Boots',
-    description: 'High-performance hiking boots with advanced support',
-    price: 2200,
-    image: 'https://m.media-amazon.com/images/I/81PLWwT+coL._AC_SY500_.jpg'
-  },
-  {
-    id: 'bt16',
-    title: 'Danner Mountain Light Boots',
-    description: 'Premium hiking boots with a classic design',
-    price: 3700,
-    image: 'https://m.media-amazon.com/images/I/61UBKWNaINL._AC_SY500_.jpg'
-  },
-  {
-    id: 'bt17',
-    title: 'Timberland PRO Boondock Work Boots',
-    description: 'Rugged work boots with superior protection',
-    price: 1800.00,
-    image: 'https://m.media-amazon.com/images/I/91dBCMJ8t2L._AC_SY500_.jpg'
-  },
-  {
-    id: 'bt18',
-    title: 'Skechers Verdict Boots',
-    description: 'Comfortable and durable boots for everyday wear',
-    price: 7000,
-    image: 'https://m.media-amazon.com/images/I/71yDeWkxjeL._AC_SX500_.jpg'
-  },
-  {
-    id: 'bt19',
-    title: 'Clarks Desert Boots',
-    description: 'Classic desert boots with a timeless style',
-    price: 1900,
-    image: 'https://m.media-amazon.com/images/I/519YYsni4WS._AC_SY500_.jpg'
-  },
-  {
-    id: 'bt20',
-    title: 'Bogs Classic High Waterproof Insulated Boots',
-    description: 'Insulated boots for cold and wet conditions',
+    title: 'Cabin Filter Replacement',
+    description: 'Install a new cabin air filter for improved air quality inside your car.',
     price: 1200.00,
-    image: 'https://m.media-amazon.com/images/I/81e63BNQNoL._AC_SY695_.jpg'
+    image: 'https://media.istockphoto.com/id/2201114254/photo/a-mechanic-changes-the-cabin-air-filter-of-a-car-dirty-car-cabin-air-filter-timely-car-service.jpg?s=612x612&w=0&k=20&c=_djoF5aU_5g7ZWjGqsa7AaGiCA8M341HTMH_hWw28M4='
+  }
+];  
+
+const tireServices = [
+  {
+    id: 'ts1',
+    title: 'Tire Fitting',
+    description: 'Professional installation of new tires on all vehicle types.',
+    price: 1500.00,
+    image: 'https://media.istockphoto.com/id/701032426/photo/car-mechanic-hands-replace-brakes-in-garage.jpg?s=612x612&w=0&k=20&c=reD240itLvL0Y3N5NNKm7s9k3G6EkdioEdWYXfEzJAw='
+  },
+  {
+    id: 'ts2',
+    title: 'Tire Balancing',
+    description: 'Ensure smooth driving by balancing tire weight evenly.',
+    price: 1200.00,
+    image: 'https://media.istockphoto.com/id/1192910232/photo/mechanic-man-working-on-balancing-machine.jpg?s=612x612&w=0&k=20&c=EE4o-gzygJnhph4-w5J2Mjfi-5B1sh9iBCgE20qLbHI='
+  },
+  {
+    id: 'ts3',
+    title: 'Puncture Repairs',
+    description: 'Quick and reliable puncture repairs for all tires.',
+    price: 800.00,
+    image: 'https://media.istockphoto.com/id/2170826024/photo/flat-tire-car-damage-insurance.jpg?s=612x612&w=0&k=20&c=TAOJxN1JGybeTqfHRvUNzWvTznPfmjDiVqQ50TnOjbQ='
+  },
+  {
+    id: 'ts4',
+    title: 'Wheel Alignment',
+    description: 'Precise wheel alignment to improve vehicle handling.',
+    price: 2000.00,
+    image: 'https://media.istockphoto.com/id/2106472694/photo/brake-pad-and-tire-change-at-auto-repair-shop.jpg?s=612x612&w=0&k=20&c=G4-me_2NPW0Rpl7pS-HKlGv3YiRHhqd0EWwd3sXSMl4='
+  },
+  {
+    id: 'ts5',
+    title: 'Wheel Rotation',
+    description: 'Rotate tires to promote even tread wear.',
+    price: 1000.00,
+    image: 'https://media.istockphoto.com/id/1077225004/photo/seasonal-wheels-replacement.jpg?s=612x612&w=0&k=20&c=19cv4cEJeOA89vyzR4ohG92n-3pyCXaHwklJiWIw58I='
+  },
+  {
+    id: 'ts6',
+    title: 'Nitrogen Inflation',
+    description: 'Inflate tires with nitrogen for better performance and pressure retention.',
+    price: 500.00,
+    image: 'https://media.istockphoto.com/id/1974865020/photo/a-pressure-gauge-that-determines-tire-pressure-tire-inflation-process.jpg?s=612x612&w=0&k=20&c=pogcQrSoqh5RMcXIoE1y0vYLzAAWw4HWgXzO83gwNYU='
+  },
+  {
+    id: 'ts7',
+    title: 'Tire Inspection',
+    description: 'Comprehensive tire inspection for safety and wear issues.',
+    price: 600.00,
+    image: 'https://media.istockphoto.com/id/1394550566/photo/a-auto-mechanic-inflates-a-tire-with-an-air-tire-inflating-gun.jpg?s=612x612&w=0&k=20&c=LsApAdx8uRrcFW3QRDGzgJRo1K0QO5DSRuQ5uTAXMYg='
+  },
+  {
+    id: 'ts8',
+    title: 'Tire Pressure Check',
+    description: 'Ensure correct tire pressure for optimal performance and safety.',
+    price: 300.00,
+    image: 'https://media.istockphoto.com/id/1335957246/photo/close-up-of-mechanics-hand-checking-the-air-pressure-of-a-tyre-in-auto-repair-service.jpg?s=612x612&w=0&k=20&c=h5H32CSUZw6-XkaGX3MzVcnK37UEuZDDRI1MZBtzNMA='
+  },
+  {
+    id: 'ts9',
+    title: 'Rim Repairs',
+    description: 'Fix damaged or bent rims to restore wheel balance.',
+    price: 2500.00,
+    image: 'https://media.istockphoto.com/id/2203289482/photo/multi-colored-paints-on-a-car-car-sheet-metal-elements-covered-with-rust-cheap-car-repair.jpg?s=612x612&w=0&k=20&c=qKM5Gd3fXR1WdCd67HseizNyyLwOgg718pKZCijOZqI='
+  },
+  {
+    id: 'ts10',
+    title: 'Winter Tire Installation',
+    description: 'Install winter tires for better traction in snowy conditions.',
+    price: 1800.00,
+    image: 'https://media.istockphoto.com/id/1177501406/photo/new-tyre-for-car-or-lorry-held-by-worker-of-contemporary-machine-repair-service.jpg?s=612x612&w=0&k=20&c=ixzo9izDDsbCjJwggpcMna2mpV4EQ8Cn3apKn0JsSWw='
+  },
+  {
+    id: 'ts11',
+    title: 'Performance Tire Upgrade',
+    description: 'Upgrade to high-performance tires for enhanced driving.',
+    price: 3500.00,
+    image: 'https://media.istockphoto.com/id/174572916/photo/dyno-testing.jpg?s=612x612&w=0&k=20&c=cUBfetodAXww4eHlmlMDlubHHBpVsHvvvfpZlCiRa8Y='
+  },
+  {
+    id: 'ts12',
+    title: 'Tire Storage',
+    description: 'Secure storage of off-season tires.',
+    price: 1000.00,
+    image: 'https://media.istockphoto.com/id/1328185586/photo/group-of-new-tires-for-sale-at-a-tire-store.jpg?s=612x612&w=0&k=20&c=4uwl-BM8TN5sR_y8QBlliaWrT6iH95vuBli_lFxMirk='
+  },
+  {
+    id: 'ts13',
+    title: 'Tire Bead Sealing',
+    description: 'Seal the tire bead to stop slow leaks around the rim.',
+    price: 950.00,
+    image: 'https://media.istockphoto.com/id/1201294077/photo/car-tire-repair.jpg?s=612x612&w=0&k=20&c=fQvw7g4_BqV9SMD3Nmib6BM4Sbhhoqh6_vSLxeTbYCY='
+  },
+  {
+    id: 'ts14',
+    title: 'Run-Flat Tire Service',
+    description: 'Special care and replacement of run-flat tire systems.',
+    price: 2200.00,
+    image: 'https://media.istockphoto.com/id/1367623001/photo/closeup-of-a-deflated-or-flat-tire-that-has-been-neglected-for-days-of-an-automobile-parked.jpg?s=612x612&w=0&k=20&c=W5d0MINawYUExRM3crK0cAXyOzh01Mg4Vai_NBjWvsU='
+  },
+  {
+    id: 'ts15',
+    title: 'Valve Stem Replacement',
+    description: 'Replace old or leaking valve stems during tire service.',
+    price: 400.00,
+    image: 'https://media.istockphoto.com/id/2078102146/photo/detail-of-the-valve-with-black-cover-on-silver-wheel-of-the-car.jpg?s=612x612&w=0&k=20&c=D7qVmzU6uabZTVT5jHwDo1M3aFBR-bkK6AiF-AOwMcg='
+  },
+  {
+    id: 'ts16',
+    title: 'Flat Tire Rescue',
+    description: 'On-site flat tire rescue and temporary fixes.',
+    price: 2000.00,
+    image: 'https://media.istockphoto.com/id/1324661234/photo/belt-hook-on-the-tire-of-the-towed-car.jpg?s=612x612&w=0&k=20&c=BShaE59Gk2dugGAoKeqNBP4fDvzBJQ6NbDHIQxk5_7k='
   }
 ];
 
-const sandals = [
-  {
-    id: 'sd1',
-    title: 'Birkenstock Arizona',
-    description: 'Classic two-strap sandals with a contoured footbed',
-    price: 670.99,
-    image: 'https://images.pexels.com/photos/112285/pexels-photo-112285.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
-  },
-  {
-    id: 'sd2',
-    title: 'Teva Original Universal',
-    description: 'Comfortable and durable sandals for outdoor adventures',
-    price: 490.99,
-    image: 'https://m.media-amazon.com/images/I/71NvGOU0Z6L._AC_SX500_.jpg'
-  },
-  {
-    id: 'sd3',
-    title: 'Chaco Z/1 Classic',
-    description: 'Adjustable strap sandals with excellent arch support',
-    price: 1040,
-    image: 'https://m.media-amazon.com/images/I/61OH0UszdML._AC_SY500_.jpg'
-  },
-  {
-    id: 'sd4',
-    title: 'Rainbow Sandals Single Layer',
-    description: 'Comfortable leather flip-flops with a non-slip sole',
-    price: 590,
-    image: 'https://m.media-amazon.com/images/I/71qLDIHUsJL._AC_SX500_.jpg'
-  },
-  {
-    id: 'sd5',
-    title: 'OluKai Ohana',
-    description: 'Water-resistant sandals with a cushioned footbed',
-    price: 690,
-    image: 'https://m.media-amazon.com/images/I/61DUTFmXtvL._AC_SY500_.jpg'
-  },
-  {
-    id: 'sd6',
-    title: 'Reef Fanning',
-    description: 'Comfortable flip-flops with a built-in bottle opener',
-    price: 540.99,
-    image: 'https://m.media-amazon.com/images/I/71G-ZhWnPLL._AC_SY500_.jpg'
-  },
-  {
-    id: 'sd7',
-    title: 'KEEN Newport H2',
-    description: 'Waterproof sandals with a secure fit and toe protection',
-    price: 1090.99,
-    image: 'https://m.media-amazon.com/images/I/71iZWH47gJL._AC_SY500_.jpg'
-  },
-  {
-    id: 'sd8',
-    title: 'ECCO Yucatan',
-    description: 'Comfortable and supportive sandals for long walks',
-    price: 1299.99,
-    image: 'https://m.media-amazon.com/images/I/61cTaD8nQLL._AC_SX500_.jpg'
-  },
-  {
-    id: 'sd9',
-    title: 'Clarks Arla Glison',
-    description: 'Lightweight and cushioned sandals for everyday wear',
-    price: 666.99,
-    image: 'https://m.media-amazon.com/images/I/71Oa1jmasOL._AC_SY500_.jpg'
-  },
-  {
-    id: 'sd10',
-    title: 'Vionic Tide II',
-    description: 'Orthotic sandals with excellent arch support',
-    price: 777.99,
-    image: 'https://m.media-amazon.com/images/I/61AsgKk7A5L._AC_SX522_.jpg'
-  },
-  {
-    id: 'sd11',
-    title: 'Crocs Classic Clog',
-    description: 'Comfortable and lightweight clogs for casual wear',
-    price: 400.99,
-    image: 'https://m.media-amazon.com/images/I/81NhIkaIE-L._AC_SX500_.jpg'
-  },
-  {
-    id: 'sd12',
-    title: 'Skechers Reggae Trailway',
-    description: 'Sporty sandals with a cushioned footbed',
-    price: 450,
-    image: 'https://m.media-amazon.com/images/I/710sX9aTXwL._AC_SX500_.jpg'
-  },
-  {
-    id: 'sd13',
-    title: 'Merrell Terran Lattice II',
-    description: 'Comfortable and stylish sandals for outdoor activities',
-    price: 790,
-    image: 'https://m.media-amazon.com/images/I/71SA2RGyGZL._AC_SX500_.jpg'
-  },
-  {
-    id: 'sd14',
-    title: 'Sanuk Yoga Sling 2',
-    description: 'Soft and flexible sandals with a yoga mat footbed',
-    price: 800,
-    image: 'https://m.media-amazon.com/images/I/71lbqqAEf3L._AC_SX500_.jpg'
-  },
-  {
-    id: 'sd15',
-    title: 'Adidas Adilette Comfort',
-    description: 'Comfortable slide sandals with a cushioned footbed',
-    price: 500,
-    image: 'https://m.media-amazon.com/images/I/61LehY06bEL._AC_SX500_.jpg'
-  },
-  {
-    id: 'sd16',
-    title: 'Havaianas Top Flip Flops',
-    description: 'Classic and comfortable flip-flops for casual wear',
-    price: 199,
-    image: 'https://m.media-amazon.com/images/I/61EIzVgVXOL._AC_SY500_.jpg'
-  },
-  {
-    id: 'sd17',
-    title: 'Teva Hurricane XLT2',
-    description: 'Durable and comfortable sandals for outdoor adventures',
-    price: 690.99,
-    image: 'https://m.media-amazon.com/images/I/711-2R0DJLL._AC_SX500_.jpg'
-  },
-  {
-    id: 'sd18',
-    title: 'Birkenstock Gizeh',
-    description: 'Stylish thong sandals with a contoured footbed',
-    price: 999.00,
-    image: 'https://m.media-amazon.com/images/I/71k5f-kc8SL._AC_SY675_.jpg'
-  },
-  {
-    id: 'sd19',
-    title: 'Reef Cushion Breeze',
-    description: 'Soft and comfortable flip-flops for everyday wear',
-    price: 299,
-    image: 'https://m.media-amazon.com/images/I/61pjOf1ixoL._AC_SY500_.jpg'
-  },
-  {
-    id: 'sd20',
-    title: 'KEEN Whisper',
-    description: 'Lightweight and comfortable sandals for outdoor activities',
-    price: 899.99,
-    image: 'https://m.media-amazon.com/images/I/71iZWH47gJL._AC_SY500_.jpg'
-  }
-];
-
-const slippers = [
-  {
-    id: 'sl1',
-    title: 'UGG Scuffette II',
-    description: 'Cozy and warm slippers with a sheepskin lining',
-    price: 899.99,
-    image: 'https://m.media-amazon.com/images/I/716tm9x1efL._AC_SY500_.jpg'
-  },
-  {
-    id: 'sl2',
-    title: 'Sorel Nakiska Slipper',
-    description: 'Comfortable slippers with a wool blend lining',
-    price: 6000.99,
-    image: 'https://m.media-amazon.com/images/I/81RHg+NOzSL._AC_SY500_.jpg'
-  },
-  {
-    id: 'sl3',
-    title: 'Acorn Moc Slippers',
-    description: 'Soft and warm slippers with a memory foam insole',
-    price: 4000.99,
-    image: 'https://m.media-amazon.com/images/I/61vku+FgaKL._AC_SY675_.jpg'
-  },
-  {
-    id: 'sl4',
-    title: 'Minnetonka Cally Slipper',
-    description: 'Classic moccasin slippers with a cozy lining',
-    price: 5400,
-    image: 'https://m.media-amazon.com/images/I/71WMH6SOIRL._AC_SY500_.jpg'
-  },
-  {
-    id: 'sl5',
-    title: 'Dearfoams Fireside Sydney',
-    description: 'Shearling slippers with a durable outsole',
-    price: 3500,
-    image: 'https://m.media-amazon.com/images/I/61BXlM9oJDL._AC_SY500_.jpg'
-  },
-  {
-    id: 'sl6',
-    title: 'Haflinger AS Classic Slipper',
-    description: 'Wool slippers with a supportive footbed',
-    price: 1999.55,
-    image: 'https://m.media-amazon.com/images/I/51iUpaz7xrL._AC_SY500_.jpg'
-  },
-  {
-    id: 'sl7',
-    title: 'Glerups Wool Slippers',
-    description: 'Comfortable wool slippers with a leather sole',
-    price: 1190,
-    image: 'https://m.media-amazon.com/images/I/61ZUD3aZS4L._AC_SY500_.jpg'
-  },
-  {
-    id: 'sl8',
-    title: 'L.L.Bean Wicked Good Moccasins',
-    description: 'Shearling-lined moccasin slippers for ultimate comfort',
-    price: 1500,
-    image: 'https://m.media-amazon.com/images/I/81XXV0t9rsL._AC_SY500_.jpg'
-  },
-  {
-    id: 'sl9',
-    title: 'Isotoner Microterry Clog Slippers',
-    description: 'Soft and cushioned slippers with a memory foam insole',
-    price: 1600,
-    image: 'https://m.media-amazon.com/images/I/71UfgU1wnHS._AC_SY500_.jpg'
-  },
-  {
-    id: 'sl10',
-    title: 'RockDove Two-Tone Memory Foam Slippers',
-    description: 'Comfortable and stylish slippers with a memory foam insole',
-    price: 2400.00,
-    image: 'https://m.media-amazon.com/images/I/71aCdbd8q5L._AC_SY500_.jpg'
-  },
-  {
-    id: 'sl11',
-    title: 'Vionic Gemma Mule Slippers',
-    description: 'Orthotic slippers with excellent arch support',
-    price: 698.99,
-    image: 'https://m.media-amazon.com/images/I/71R+5wQTW9L._AC_SY500_.jpg'
-  },
-  {
-    id: 'sl12',
-    title: 'Tempur-Pedic Men’s Slippers',
-    description: 'Memory foam slippers with a durable outsole',
-    price: 1400,
-    image: 'https://m.media-amazon.com/images/I/51SEIeNES7L._AC_SY500_.jpg'
-  },
-  {
-    id: 'sl13',
-    title: 'UGG Ascot Slipper',
-    description: 'Luxurious suede slippers with a sheepskin lining',
-    price: 1090.99,
-    image: 'https://m.media-amazon.com/images/I/81EqkuuvokL._AC_SY500_.jpg'
-  },
-  {
-    id: 'sl14',
-    title: 'Skechers BOBS Keepsakes Ice Angel Slipper',
-    description: 'Warm and cozy slippers with a faux fur lining',
-    price: 400,
-    image: 'https://m.media-amazon.com/images/I/81hgqX0Be1L._AC_SX500_.jpg'
-  },
-  {
-    id: 'sl15',
-    title: 'Lands’ End Suede Moc Slippers',
-    description: 'Classic moccasin slippers with a soft lining',
-    price: 499,
-    image: 'https://m.media-amazon.com/images/I/618KJGPMg0L._AC_SY500_.jpg'
-  },
-  {
-    id: 'sl16',
-    title: 'Bearpaw Loki II Slipper',
-    description: 'Sheepskin slippers with a cushioned footbed',
-    price: 590,
-    image: 'https://m.media-amazon.com/images/I/71BeZCCf1XL._AC_SY500_.jpg'
-  },
-  {
-    id: 'sl17',
-    title: 'Acorn Spa Wrap Slipper',
-    description: 'Soft and adjustable slippers with a memory foam insole',
-    price: 1200,
-    image: 'https://m.media-amazon.com/images/I/71Yp1C3NjeL._AC_SY500_.jpg'
-  },
-  {
-    id: 'sl18',
-    title: 'UGG Coquette Slipper',
-    description: 'Cozy and warm slippers with a sheepskin lining',
-    price: 999,
-    image: 'https://m.media-amazon.com/images/I/61daCfExwKL._AC_SY500_.jpg'
-  },
-  {
-    id: 'sl19',
-    title: 'Dearfoams Rebecca Microfiber Velour Slipper',
-    description: 'Soft and cushioned slippers with a memory foam insole',
-    price: 600,
-    image: 'https://m.media-amazon.com/images/I/81pweFfHc7L._AC_SX500_.jpg'
-  },
-  {
-    id: 'sl20',
-    title: 'Haflinger AT Wool Slippers',
-    description: 'Comfortable wool slippers with a supportive footbed',
-    price: 700,
-    image: 'https://m.media-amazon.com/images/I/81vtc4baVIL._AC_SX522_.jpg'
-  }
-];
 
 const formalShoes = [
   {
@@ -1440,13 +1152,13 @@ function ServiceDetails() {
   // Function to get the service items based on the service ID
   const getServiceItems = (serviceId) => {
     switch (serviceId) {
-      case '1': return mensShoes;
-      case '2': return womensHeels;
-      case '3': return kidsShoes;
-      case '4': return runningShoes;
-      case '5': return boots;
-      case '6': return sandals;
-      case '7': return slippers;
+      case '1': return carRepairServices;
+      case '2': return mechElectricalServices;
+      case '3': return paintBodyServices;
+      case '4': return diagnosticServices;
+      case '5': return accidentRepairServices;
+      case '6': return maintenanceServices;
+      case '7': return tireServices;
       case '8': return formalShoes;
       case '9': return sportsShoes;
       case '10': return customShoes;

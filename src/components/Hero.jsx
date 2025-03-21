@@ -3,8 +3,8 @@ import Typewriter from "typewriter-effect";
 import SearchBar from "./SearchBar"; // Import SearchBar component
 
 const videos = [
-  "https://videos.pexels.com/video-files/29951359/12854089_2560_1440_25fps.mp4",
-  "https://videos.pexels.com/video-files/5700368/5700368-uhd_2560_1440_24fps.mp4",
+  "https://videos.pexels.com/video-files/8987066/8987066-uhd_2560_1440_30fps.mp4",
+  "https://videos.pexels.com/video-files/6872474/6872474-uhd_1440_2560_25fps.mp4",
 
 ];
 
@@ -66,9 +66,9 @@ function Hero() {
           <Typewriter
             options={{
               strings: [
-                "step into comfort with WalkWise",
-                "premium footwear for every occasion",
-                "find your perfect pair today",
+                "expert Auto Repair & Maintenance",
+                "keeping you on the road – One Fix at a Time",
+                "where Quality Repairs Meet Exceptional Service",
               ],
               autoStart: true,
               loop: true,

@@ -35,13 +35,13 @@ function Navbar() {
   };
 
   return (
-    <nav className="bg-white shadow-lg fixed w-full z-50">
+    <nav className="bg-blue-300 shadow-lg fixed w-full z-50">
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center">
-            <img src="https://i.postimg.cc/gkCftp2m/free-photo-of-pair-of-brand-sneakers-removebg-preview.png" alt="walkwise shoe store" className="h-14 w-14 mr-2" />
+            <img src="https://i.postimg.cc/gJCNMjt8/brenxlogo.jpg" alt="brenxx-auto-services" className="h-8 w-20 mr-2" />
             <Link to="/" className="text-xl">
-              <span className="text-blue-500">WalkWise shoe store</span>
+              <span className="text-blue-700">BRENXX-AUTO</span>
             </Link>
           </div>
 
@@ -77,7 +77,7 @@ function Navbar() {
             </button>
             <button 
               onClick={() => setIsOpen(!isOpen)} 
-              className="p-2 bg-green-600 rounded-full w-10 h-10 flex items-center justify-center"
+              className="p-2 bg-blue-600 rounded-full w-10 h-10 flex items-center justify-center"
             >
               {isOpen ? <FiX className="h-6 w-6" /> : <FiMenu className="h-6 w-6" />}
             </button>

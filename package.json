@@ -1,5 +1,5 @@
 {
-  "name": "jengi-laptops",
+  "name": "brenxx-auto-services",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -11,8 +11,8 @@
   },
   "dependencies": {
     "@emailjs/browser": "^4.3.3",
+    "brenxx-auto-services": "file:",
     "framer-motion": "^11.0.8",
-    "jengi-laptops": "file:",
     "lucide-react": "^0.344.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
