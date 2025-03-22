@@ -198,7 +198,7 @@ const paintBodyServices = [
     title: 'Bumper Repair and Repaint',
     description: 'Repair cracked or scuffed bumpers and repaint to match original color.',
     price: 1800.00,
-    image: 'https://images.pexels.com/photos/5233291/pexels-photo-5233291.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+    image: 'https://i.postimg.cc/jjfHL0rv/IMG-20250227-WA0032-1.jpg'
   },
   {
     id: 'pb4',
@@ -275,7 +275,7 @@ const paintBodyServices = [
     title: 'Ceramic Coating',
     description: 'Protect your vehicle’s paint with a long-lasting ceramic shield.',
     price: 4800.00,
-    image: 'https://media.istockphoto.com/id/2188438903/photo/professional-car-detailer-holds-air-random-orbital-sander-or-dual-action-polisher-in-hand.jpg?s=612x612&w=0&k=20&c=bNAeeZ6QgWISoku2p51xXTWpY52qtCT9Qmh1HDz5ai4='
+    image: 'https://i.postimg.cc/1XmwC8VY/IMG-20250228-WA0000.jpg'
   }
 ];
 
@@ -722,7 +722,7 @@ const vehicleDetailingAndTuningServices = [
     title: 'Full Body Wash',
     description: 'Thorough cleaning of the vehicle’s exterior body and wheels.',
     price: 1200.00,
-    image: 'https://media.istockphoto.com/id/2159258058/photo/worker-washing-car.jpg?s=612x612&w=0&k=20&c=6MP7sNjAJvp1uueI7cY0TB2vVFiz7Newp3YKCy9ou3E='
+    image: 'https://i.postimg.cc/J0xcMNWL/IMG-20250227-WA0039.jpg'
   },
   {
     id: 'vd2',
@@ -838,244 +838,217 @@ const brakeAndSuspensionServices = [
     title: 'Brake Pad Replacement',
     description: 'Replace worn brake pads with high-performance options.',
     price: 3000.00,
-    image: 'https://media.istockphoto.com/id/183764878/photo/disc-brake.jpg?s=612x612'
+    image: 'https://media.istockphoto.com/id/1820437580/photo/used-car-brake-pads-in-the-hands-of-a-mechanic-with-brake-discs-and-brake-calipers-on-the.jpg?s=612x612&w=0&k=20&c=joXC4aiyu-dBYLaZNOLZqDtBdmKT_obrG_94ozvpB2o='
   },
   {
     id: 'bs2',
     title: 'Brake Fluid Flush',
     description: 'Remove old fluid and replace with manufacturer-approved brake fluid.',
     price: 1200.00,
-    image: 'https://media.istockphoto.com/id/1182234584/photo/checking-and-filling-brake-fluid.jpg?s=612x612'
+    image: 'https://media.istockphoto.com/id/2150924580/photo/dusty-red-car-in-garage-for-repair.jpg?s=612x612&w=0&k=20&c=mX7B20WZIPTvEeW42SiYOHcYckeeiojMQ04rbF1d2gI='
   },
   {
     id: 'bs3',
     title: 'Brake Disc/Rotor Resurfacing',
     description: 'Smooth and resurface brake rotors to restore stopping power.',
     price: 2500.00,
-    image: 'https://media.istockphoto.com/id/1064383382/photo/brake-disc-maintenance.jpg?s=612x612'
+    image: 'https://media.istockphoto.com/id/626146076/photo/disk-brake-machine-working-to-rebuild-serface.jpg?s=612x612&w=0&k=20&c=MyczrDlqwMyd020EOCoR6BcxRiuhx-KR6c7dDpZQpqk='
   },
   {
     id: 'bs4',
     title: 'Brake Caliper Servicing',
     description: 'Repair, lubricate or replace sticking brake calipers.',
     price: 2800.00,
-    image: 'https://media.istockphoto.com/id/1466048232/photo/car-brake-caliper.jpg?s=612x612'
+    image: 'https://media.istockphoto.com/id/2165488002/photo/automotive-maintenanceclose-up-of-the-brake-mechanism-of-a-car.jpg?s=612x612&w=0&k=20&c=cCekn6kw5lHQOVtSabnrJYdU7wT7tOI4NffLJpYGpFo='
   },
   {
     id: 'bs5',
     title: 'Suspension System Inspection',
     description: 'Check for worn-out shocks, struts, bushings, and mounts.',
     price: 1000.00,
-    image: 'https://media.istockphoto.com/id/1331743691/photo/suspension-car.jpg?s=612x612'
+    image: 'https://media.istockphoto.com/id/2007558151/photo/closeup-cars-suspension-system-focusing-on-the-axle-and-cv-joint-area.jpg?s=612x612&w=0&k=20&c=xE37r3h2Gd8Ddp4DoxMqotNeWup3jNL36w-omBsFSr8='
   },
   {
     id: 'bs6',
     title: 'Shock Absorber Replacement',
     description: 'Restore ride comfort with new shocks or struts.',
     price: 5500.00,
-    image: 'https://media.istockphoto.com/id/1155411807/photo/shock-absorber.jpg?s=612x612'
+    image: 'https://media.istockphoto.com/id/946261062/photo/bottom-view-of-wheel-and-shock-absorber-of-vehicle.jpg?s=612x612&w=0&k=20&c=w-1POmKRJGzBLYRRDmyUPUcW0-2fGRuIDuLmyHsEP8U='
   },
   {
     id: 'bs7',
     title: 'Steering Rack Repair',
     description: 'Fix issues in the power steering rack for smooth turning.',
     price: 6000.00,
-    image: 'https://media.istockphoto.com/id/1358479094/photo/power-steering-rack.jpg?s=612x612'
+    image: 'https://media.istockphoto.com/id/1198916270/photo/car-bottom-view-wishbone-power-steering-rack-arm-suspension-and-etc-system-of-saloon-or-sedan.jpg?s=612x612&w=0&k=20&c=PHGosX6U0K65CiGa8kHeU2Llfyi5X94fXC1BNrEDG2A='
   },
   {
     id: 'bs8',
     title: 'Brake Line Replacement',
     description: 'Replace rusty or damaged brake lines to prevent leaks.',
     price: 3200.00,
-    image: 'https://media.istockphoto.com/id/1450566211/photo/repairing-brake-lines.jpg?s=612x612'
+    image: 'https://media.istockphoto.com/id/2181635433/photo/drum-brake-shoes.jpg?s=612x612&w=0&k=20&c=5wgBoOeIrnvuLPJ3Nh41jKn0wMkFpgN2LyOm-e76EkI='
   },
   {
     id: 'bs9',
     title: 'Control Arm Replacement',
     description: 'Restore suspension geometry with new control arms and ball joints.',
     price: 4500.00,
-    image: 'https://media.istockphoto.com/id/1465558907/photo/front-suspension-control-arm.jpg?s=612x612'
+    image: 'https://media.istockphoto.com/id/1390082936/photo/broken-car-ball-joint-on-pickup-track.jpg?s=612x612&w=0&k=20&c=SK9E-c_DrUGjRc08WKHAT79cMxehNQaX5cr8O27vpdU='
   },
   {
     id: 'bs10',
     title: 'Brake Light Inspection & Replacement',
     description: 'Ensure all brake lights function correctly for safety.',
     price: 500.00,
-    image: 'https://media.istockphoto.com/id/1434463815/photo/brake-light-bulb-replacement.jpg?s=612x612'
+    image: 'https://images.pexels.com/photos/8986034/pexels-photo-8986034.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
   },
   {
     id: 'bs11',
     title: 'Suspension Bushing Replacement',
     description: 'Replace worn-out rubber bushings to reduce vibration and noise.',
     price: 3000.00,
-    image: 'https://media.istockphoto.com/id/1447724045/photo/replacing-bushings-in-suspension.jpg?s=612x612'
+    image: 'https://media.istockphoto.com/id/1409490917/photo/mechanic-repairs-the-running-gear-of-a-car-car-hands-of-a-mechanic-close-up-small-business.jpg?s=612x612&w=0&k=20&c=bp_uIoa6aP9DNHbZezeOOT-yLdKhQEixLSEa6oOXNU0='
   },
   {
     id: 'bs12',
     title: 'Wheel Alignment',
     description: 'Ensure proper tracking and handling with a full alignment.',
     price: 2000.00,
-    image: 'https://media.istockphoto.com/id/1128339266/photo/laser-wheel-alignment.jpg?s=612x612'
+    image: 'https://media.istockphoto.com/id/2106472694/photo/brake-pad-and-tire-change-at-auto-repair-shop.jpg?s=612x612&w=0&k=20&c=G4-me_2NPW0Rpl7pS-HKlGv3YiRHhqd0EWwd3sXSMl4='
   },
   {
     id: 'bs13',
     title: 'Suspension Lift or Lowering Kits',
     description: 'Customize ride height with lift or lowering kit installations.',
     price: 7000.00,
-    image: 'https://media.istockphoto.com/id/1220579465/photo/suspension-upgrade-on-off-road-vehicle.jpg?s=612x612'
+    image: 'https://media.istockphoto.com/id/2007558151/photo/closeup-cars-suspension-system-focusing-on-the-axle-and-cv-joint-area.jpg?s=612x612&w=0&k=20&c=xE37r3h2Gd8Ddp4DoxMqotNeWup3jNL36w-omBsFSr8='
   },
   {
     id: 'bs14',
     title: 'ABS Diagnostics & Repair',
     description: 'Scan and fix issues in the Anti-lock Braking System (ABS).',
     price: 3500.00,
-    image: 'https://media.istockphoto.com/id/1341961353/photo/abs-warning-light-on-dashboard.jpg?s=612x612'
+    image: 'https://media.istockphoto.com/id/2073383462/photo/car-dashboard-lights-engine-light.jpg?s=612x612&w=0&k=20&c=II4sn1cTDVhYQlS0zW6ZBNNxSM8oehhy0wfR-cJQNN4='
   }
 ];
 
 
-const customShoes = [
+const batteryServices = [
   {
-    id: 'cs1',
-    title: 'Custom Nike Air Force 1',
-    description: 'Personalized Nike Air Force 1 with unique designs',
-    price: 1999,
-    image: 'https://m.media-amazon.com/images/I/61CvkMbMvUL._AC_SX500_.jpg'
+    id: 'bt1',
+    title: 'Battery Health Check',
+    description: 'Comprehensive battery diagnostics to ensure optimal performance.',
+    price: 500.00,
+    image: 'https://media.istockphoto.com/id/2148440620/photo/automotive-battery-tester-diagnosis-defective-battery.jpg?s=612x612&w=0&k=20&c=CfZ_ZcUxqZ_uLL0IiHQW8efupWD9wEGGisqAQZf9TQQ='
   },
   {
-    id: 'cs2',
-    title: 'Custom Adidas Superstar',
-    description: 'Personalized Adidas Superstar with custom colors',
-    price: 1690.90,
-    image: 'https://m.media-amazon.com/images/I/51i7PijBpsL._AC_SY500_.jpg'
+    id: 'bt2',
+    title: 'Battery Terminal Cleaning',
+    description: 'Clean corroded terminals to improve battery connectivity.',
+    price: 300.00,
+    image: 'https://media.istockphoto.com/id/510384660/photo/washed-battery-with-foam-when-cleaning-the-car.jpg?s=612x612&w=0&k=20&c=afEPuA25jiMJpaNUrvS_xWqSXXrmX9-RE3MetGSu7MY='
   },
   {
-    id: 'cs3',
-    title: 'Custom Converse Chuck Taylor',
-    description: 'Personalized Converse Chuck Taylor with unique patterns',
-    price: 1490,
-    image: 'https://m.media-amazon.com/images/I/71PZufzlWUL._AC_SY500_.jpg'
+    id: 'bt3',
+    title: 'Jump Start Service',
+    description: 'On-the-spot jump-start for dead batteries.',
+    price: 800.00,
+    image: 'https://media.istockphoto.com/id/2003519130/photo/it-seems-like-this-old-car-wont-start.jpg?s=612x612&w=0&k=20&c=8D4CKbL7XDmdowhF7fsUgNMj3-RdiaYcM6nx6F7bc-g='
   },
   {
-    id: 'cs4',
-    title: 'Custom Vans Old Skool',
-    description: 'Personalized Vans Old Skool with custom designs',
-    price: 1390,
-    image: 'https://m.media-amazon.com/images/I/71qOGzXG4ZL._AC_SY500_.jpg'
+    id: 'bt4',
+    title: 'Battery Replacement (Standard)',
+    description: 'Install a new standard battery with safe disposal of old one.',
+    price: 4500.00,
+    image: 'https://media.istockphoto.com/id/2181048283/photo/a-mechanic-replaces-a-car-battery-in-a-vehicles-engine-bay-during-routine-maintenance-at-a.jpg?s=612x612&w=0&k=20&c=Y53v-TK_4oXGlm43WuOEHgLMQGqdPW7-22qcLTwLahU='
   },
   {
-    id: 'cs5',
-    title: 'Custom Samba shoes',
-    description: 'Personalized Samba Suede with unique colorways',
-    price: 1590,
-    image: 'https://m.media-amazon.com/images/I/51zl3wjdxXL._AC_SY500_.jpg'
+    id: 'bt5',
+    title: 'Battery Replacement (High-Performance)',
+    description: 'Install high-capacity battery for performance vehicles.',
+    price: 7000.00,
+    image: 'https://media.istockphoto.com/id/2181048197/photo/a-mechanic-is-working-on-the-battery-of-a-car-in-a-garage.jpg?s=612x612&w=0&k=20&c=mhpLvArUrOv9S67TrLXyjlObk8ekckGWVhiKoW3Nyuk='
   },
   {
-    id: 'cs6',
-    title: 'Reebok Classic',
-    description: 'Personalized Reebok Classic with custom graphics',
-    price: 1499.60,
-    image: 'https://m.media-amazon.com/images/I/71pgtafNCYL._AC_SX500_.jpg'
+    id: 'bt6',
+    title: 'Hybrid Vehicle Battery Check',
+    description: 'Diagnostics and maintenance of hybrid car batteries.',
+    price: 3000.00,
+    image: 'https://media.istockphoto.com/id/2185359123/photo/inspection-hand-holding-battery-capacity-tester-ev-battery-voltmeter-car-inspector-service.jpg?s=612x612&w=0&k=20&c=UPoWfj42J36mQr5zUJOgxypr8_7AQu4CLVgJ4SOwdh0='
   },
   {
-    id: 'cs7',
-    title: 'New Balance 574',
-    description: 'Personalized New Balance 574 with unique designs',
-    price: 1699.90,
-    image: 'https://m.media-amazon.com/images/I/61ppi6+55HL._AC_SY500_.jpg'
+    id: 'bt7',
+    title: 'Battery Load Testing',
+    description: 'Test battery under load to detect weak or failing units.',
+    price: 1000.00,
+    image: 'https://media.istockphoto.com/id/2168393131/photo/technician-diagnosing-health-of-automobile-alternator-with-instrument-test-result-suggested.jpg?s=612x612&w=0&k=20&c=ArSJmJt3ePKH6zvLDv2mlpAeNlu6PfssebRxAqjDZqw='
   },
   {
-    id: 'cs8',
-    title: 'Custom Asics Gel-Lyte',
-    description: 'Personalized Asics Gel-Lyte with custom colors',
-    price: 1590.99,
-    image: 'https://m.media-amazon.com/images/I/61xtNlSGBTL._AC_SY500_.jpg'
+    id: 'bt8',
+    title: 'Battery Charging Service',
+    description: 'Slow or fast charging options for low-voltage batteries.',
+    price: 600.00,
+    image: 'https://media.istockphoto.com/id/2148502928/photo/car-battery-is-charged-by-the-device.jpg?s=612x612&w=0&k=20&c=fLV4ebPqtYXSKchEzFKwR2kzN5PC6XnTaJhp_Aw-UeM='
   },
   {
-    id: 'cs9',
-    title: 'Custom Under Armour HOVR',
-    description: 'Personalized Under Armour HOVR with unique patterns',
-    price: 1790.99,
-    image: 'https://m.media-amazon.com/images/I/71px1HywCML._AC_SY500_.jpg'
+    id: 'bt9',
+    title: 'Remote Battery Monitoring Installation',
+    description: 'Install sensors for real-time battery health alerts.',
+    price: 2500.00,
+    image: 'https://media.istockphoto.com/id/2175572315/photo/battery-capacity-tester-ev-battery-voltmeter-car-inspector-service-power-industrial-fuel.jpg?s=612x612&w=0&k=20&c=UG7vHhr1JAtqO0IqqXMvXW0gcjshIu4PlWxDUXhSLf0='
   },
   {
-    id: 'cs10',
-    title: 'Loafers',
-    description: 'Personalized Loafers',
-    price: 1300.99,
-    image: 'https://m.media-amazon.com/images/I/91Lh38a3zVL._AC_SX500_.jpg'
+    id: 'bt10',
+    title: 'Alternator Check',
+    description: 'Ensure your alternator is charging the battery correctly.',
+    price: 1500.00,
+    image: 'https://media.istockphoto.com/id/1339901432/photo/car-starter-battery-voltage-measured-with-multimeter-voltage-is-around-13-volts-as-the.jpg?s=612x612&w=0&k=20&c=DiHXHmRa9Jqh_CyiBK4MExgVk7lBjafVZgBEOPxQh24='
   },
   {
-    id: 'cs11',
-    title: 'Custom Nike Blazer',
-    description: 'Nike Blazer with custom designs',
-    price: 1460.00,
-    image: 'https://m.media-amazon.com/images/I/71-jPCZa7yL._AC_SY500_.jpg'
+    id: 'bt11',
+    title: 'Parasitic Drain Test',
+    description: 'Find hidden power drains that kill your battery overnight.',
+    price: 1800.00,
+    image: 'https://media.istockphoto.com/id/1384858577/photo/master-repairs-wires-in-modern-car-alarm-security-system.jpg?s=612x612&w=0&k=20&c=g2PvoVRrrkJNfRpvmxdMBtGrzWjladR99J80sFbikHM='
   },
   {
-    id: 'cs12',
-    title: 'Custom Salomon Speedcross',
-    description: 'Personalized Salomon Speedcross with unique colorways',
-    price: 1250,
-    image: 'https://m.media-amazon.com/images/I/712NXPEhJnL._AC_SX500_.jpg'
+    id: 'bt12',
+    title: 'Battery Mount Replacement',
+    description: 'Replace loose or broken battery brackets/mounts.',
+    price: 900.00,
+    image: 'https://media.istockphoto.com/id/1671428879/photo/the-battery-installed-in-the-car-engine.jpg?s=612x612&w=0&k=20&c=AWCWxKqr6JRhVBi1oAywOHp-WckBI80iKBwUReI1RSg='
   },
   {
-    id: 'cs13',
-    title: 'Custom Merrell Moab',
-    description: 'Personalized Merrell Moab with custom graphics',
-    price: 1700,
-    image: 'https://m.media-amazon.com/images/I/71+bYd627OL._AC_SX500_.jpg'
+    id: 'bt13',
+    title: 'Battery Cable Replacement',
+    description: 'Install new battery cables for better power transfer.',
+    price: 1300.00,
+    image: 'https://media.istockphoto.com/id/1471623754/photo/photo-of-car-battery-positive-wire.jpg?s=612x612&w=0&k=20&c=h35qjhKQAoWTLWyPElIgrrcp336d7mlO_SVzI6_SWDM='
   },
   {
-    id: 'cs14',
-    title: 'Custom On Cloud',
-    description: 'Personalized On Cloud with unique designs',
-    price: 2200,
-    image: 'https://m.media-amazon.com/images/I/71-WU2V8NiL._AC_SY500_.jpg'
+    id: 'bt14',
+    title: 'Emergency Roadside Battery Swap',
+    description: 'Mobile service for urgent battery replacements on the road.',
+    price: 5200.00,
+    image: 'https://media.istockphoto.com/id/1421037391/photo/roadside-assistance.jpg?s=612x612&w=0&k=20&c=yl_dHjZgfkhI_IHGT6M3-HS5daoTh0WJm-wafaWfVng='
   },
   {
-    id: 'cs15',
-    title: 'Custom Balenciaga Triple S',
-    description: 'Personalized Balenciaga Triple S with custom textures',
-    price: 2000,
-    image: 'https://m.media-amazon.com/images/I/51Rf5OR8FXL._AC_SY575_.jpg'
+    id: 'bt15',
+    title: 'Recycled Battery Installation',
+    description: 'Eco-friendly refurbished battery replacements at lower cost.',
+    price: 3500.00,
+    image: 'https://media.istockphoto.com/id/960780272/photo/a-car-battery.jpg?s=612x612&w=0&k=20&c=MJ6t4pYEU-n8bA95nQ234gF7O-ggQRgEMLqA-VzYaSg='
   },
   {
-    id: 'cs16',
-    title: 'Custom Yeezy Boost 350',
-    description: 'Personalized Yeezy Boost 350 with unique patterns',
-    price: 1000,
-    image: 'https://m.media-amazon.com/images/I/516PaKynEWL._AC_SY500_.jpg'
-  },
-  {
-    id: 'cs17',
-    title: 'Custom Gucci Ace Sneakers',
-    description: 'Personalized Gucci Ace Sneakers with embroidered designs',
-    price: 4060,
-    image: 'https://m.media-amazon.com/images/I/61yLuuHGJpL._AC_SX500_.jpg'
-  },
-  {
-    id: 'cs18',
-    title: 'Custom Off-White x Nike',
-    description: 'Personalized Off-White x Nike with custom deconstruction',
-    price: 3400,
-    image: 'https://m.media-amazon.com/images/I/61xb0id8vEL._AC_SY500_.jpg'
-  },
-  {
-    id: 'cs19',
-    title: 'Custom Vans Slip-On',
-    description: 'Personalized Vans Slip-On with unique patterns',
-    price: 1300,
-    image: 'https://m.media-amazon.com/images/I/51epcuSkaQL._AC_SX500_.jpg'
-  },
-  {
-    id: 'cs20',
-    title: 'Custom Prada Cloudbust Thunder',
-    description: 'Personalized Prada Cloudbust Thunder with futuristic design',
-    price: 4990,
-    image: 'https://m.media-amazon.com/images/I/61aofYn-XAL._AC_SY500_.jpg'
+    id: 'bt16',
+    title: 'Battery Disposal & Recycling',
+    description: 'Safe and responsible disposal of used car batteries.',
+    price: 400.00,
+    image: 'https://media.istockphoto.com/id/1292288024/photo/a-pallet-with-used-car-batteries-awaiting-recycling.jpg?s=612x612&w=0&k=20&c=WX6rSFPWWGAp0p6Jg2eJrjN-okbZ_9gUn2RwNCKXHrQ='
   }
 ];
+
 
 function ServiceDetails() {
   const { id } = useParams();
@@ -1092,8 +1065,8 @@ function ServiceDetails() {
       case '6': return maintenanceServices;
       case '7': return tireServices;
       case '8': return vehicleDetailingAndTuningServices;
-      case '9': return sportsShoes;
-      case '10': return customShoes;
+      case '9': return brakeAndSuspensionServices;
+      case '10': return batteryServices;
       default: return [];
     }
   };
