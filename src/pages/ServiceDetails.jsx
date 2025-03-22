@@ -716,291 +716,223 @@ const tireServices = [
 ];
 
 
-const formalShoes = [
+const vehicleDetailingAndTuningServices = [
   {
-    id: 'fs1',
-    title: 'Allen Edmonds Park Avenue',
-    description: 'Classic cap-toe oxford with premium leather',
-    price: 3950,
-    image: 'https://m.media-amazon.com/images/I/61PBBCkhnzL._AC_SY500_.jpg'
+    id: 'vd1',
+    title: 'Full Body Wash',
+    description: 'Thorough cleaning of the vehicle’s exterior body and wheels.',
+    price: 1200.00,
+    image: 'https://media.istockphoto.com/id/2159258058/photo/worker-washing-car.jpg?s=612x612&w=0&k=20&c=6MP7sNjAJvp1uueI7cY0TB2vVFiz7Newp3YKCy9ou3E='
   },
   {
-    id: 'fs2',
-    title: 'Johnston & Murphy Melton',
-    description: 'Elegant cap-toe oxford with a sleek design',
-    price: 2700.00,
-    image: 'https://m.media-amazon.com/images/I/61Mz9GKSEjL._AC_SX500_.jpg'
+    id: 'vd2',
+    title: 'Engine Detailing',
+    description: 'Deep cleaning and dressing of engine bay with safe products.',
+    price: 2000.00,
+    image: 'https://media.istockphoto.com/id/2178053789/photo/blue-collar-worker-work-at-car-service-workshop.jpg?s=612x612&w=0&k=20&c=cnxoSBc7aYQKE-Zefq_8qbsdt6X7JIAkTvj1lhKg__4='
   },
   {
-    id: 'fs3',
-    title: 'Cole Haan Original Grand',
-    description: 'Comfortable and stylish wingtip oxford',
-    price: 1500.66,
-    image: 'https://m.media-amazon.com/images/I/711x0rt1tZL._AC_SY500_.jpg'
+    id: 'vd3',
+    title: 'Interior Deep Clean',
+    description: 'Vacuuming, dusting, and shampooing of seats and carpets.',
+    price: 2200.00,
+    image: 'https://media.istockphoto.com/id/853745938/photo/worker-cleaning-seat-inside-the-car.jpg?s=612x612&w=0&k=20&c=2oLDzQZKMYKbg8VeHaZx1-m_9TyP8DNI0qL2YMnVvkU='
   },
   {
-    id: 'fs4',
-    title: 'Magnanni Santiago',
-    description: 'Handcrafted double monk strap with a modern look',
-    price: 3250.00,
-    image: 'https://m.media-amazon.com/images/I/61SOYxP+jdL._AC_SY500_.jpg'
+    id: 'vd4',
+    title: 'Leather Seat Conditioning',
+    description: 'Clean and condition leather or synthetic seats for durability and shine.',
+    price: 2000.00,
+    image: 'https://images.pexels.com/photos/18198185/pexels-photo-18198185/free-photo-of-black-leather-car-seat.jpeg?auto=compress&cs=tinysrgb&w=600'
   },
   {
-    id: 'fs5',
-    title: 'Florsheim Kenmoor',
-    description: 'Classic wingtip oxford with brogue detailing',
-    price: 2000.50,
-    image: 'https://m.media-amazon.com/images/I/81uqVH3VtPL._AC_SX500_.jpg'
+    id: 'vd5',
+    title: 'Turbo Installation',
+    description: 'Boost performance by installing a custom turbocharger kit.',
+    price: 15000.00,
+    image: 'https://media.istockphoto.com/id/1473402444/photo/turbo-charger-on-race-car-engine.jpg?s=612x612&w=0&k=20&c=15IaSTU9hquzK8BTp4i3BcZloAYMASKxbSmQ95Y1NBo='
   },
   {
-    id: 'fs6',
-    title: 'Stacy Adams Dickinson',
-    description: 'Elegant cap-toe oxford with a polished finish',
-    price: 8500.00,
-    image: 'https://m.media-amazon.com/images/I/81osCUGO2cL._AC_SX500_.jpg'
+    id: 'vd6',
+    title: 'ECU Remapping',
+    description: 'Tuning your ECU for optimal performance, fuel efficiency, or torque.',
+    price: 8000.00,
+    image: 'https://media.istockphoto.com/id/1158234390/photo/two-young-car-mechanics-colleagues-servicing-the-car.jpg?s=612x612&w=0&k=20&c=UWzUmHiPq6xqn4iwU22O5lCuWTHWW1Hv9gbdLlQwERg='
   },
   {
-    id: 'fs7',
-    title: 'Bruno Magli Maioco',
-    description: 'Luxurious leather oxford with a sleek design',
+    id: 'vd7',
+    title: 'Seat Upgrade & Custom Covers',
+    description: 'Upgrade your vehicle’s comfort with seat padding and stylish covers.',
+    price: 3500.00,
+    image: 'https://media.istockphoto.com/id/1039113102/photo/covers-for-car-seats-in-store.jpg?s=612x612&w=0&k=20&c=cDuriaZRqxG6TwLczCCxAffcFEeMb0dIrTXJCF7mgMo='
+  },
+  {
+    id: 'vd8',
+    title: 'Dashboard Polishing',
+    description: 'Clean and polish dashboard and trims to restore shine.',
+    price: 900.00,
+    image: 'https://media.istockphoto.com/id/1990168945/photo/modern-car-interior-dashboard.jpg?s=612x612&w=0&k=20&c=EcfzFJj4uTQHfsY4qAlfsNbxjSrfamFPHH1HL02h2X0='
+  },
+  {
+    id: 'vd9',
+    title: 'Tire Dressing',
+    description: 'Restore deep black look and protect tires from cracking.',
+    price: 700.00,
+    image: 'https://media.istockphoto.com/id/1054839056/photo/car-mechanic-changes-tires-in-the-repair-shop.jpg?s=612x612&w=0&k=20&c=KlJVrYnbGrlz2KZqPjV8g7Borot_7e6s-ZFXRaSavus='
+  },
+  {
+    id: 'vd10',
+    title: 'Glass & Mirror Coating',
+    description: 'Hydrophobic coating on all glass for rain repellency and visibility.',
+    price: 1300.00,
+    image: 'https://media.istockphoto.com/id/1439468451/photo/rear-view-mirror-or-door-mirror-of-gray-car.jpg?s=612x612&w=0&k=20&c=7bdtY5diG2sjOgZpysBjiTeoAavXzVpxSxt9Jqw_mk8='
+  },
+  {
+    id: 'vd11',
+    title: 'Performance Air Intake Upgrade',
+    description: 'Install a high-flow cold air intake for better throttle response.',
     price: 4500.00,
-    image: 'https://m.media-amazon.com/images/I/610bI5AfQ5L._AC_SY500_.jpg'
+    image: 'https://media.istockphoto.com/id/1193036945/photo/air-filter-with-turbocharger-in-racing-car-engine.jpg?s=612x612&w=0&k=20&c=s6n5iYiN64MzoboqRAVpBJw5MxrkO7CZTD8aL1CvdRY='
   },
   {
-    id: 'fs8',
-    title: 'To Boot New York Felix',
-    description: 'Modern and stylish loafer with a comfortable fit',
-    price: 3000.90,
-    image: 'https://m.media-amazon.com/images/I/71gJaFbYx3S._AC_SY500_.jpg'
+    id: 'vd12',
+    title: 'Exhaust System Enhancement',
+    description: 'Sporty sound and improved airflow with custom exhaust.',
+    price: 7000.00,
+    image: 'https://media.istockphoto.com/id/1185435839/photo/image-of-car-in-process-of-replacement-new-tire-in-repair-shop.jpg?s=612x612&w=0&k=20&c=USEQSMfd7TpudHhmrZJyOK0h0RSmKDHAVvlBetDa-kM='
   },
   {
-    id: 'fs9',
-    title: 'Santoni Carter',
-    description: 'Handcrafted leather oxford with a classic design',
-    price: 4950,
-    image: 'https://m.media-amazon.com/images/I/81g4dLbLIBL._AC_SX500_.jpg'
+    id: 'vd13',
+    title: 'Interior LED Ambient Lighting',
+    description: 'Install multicolor interior LED strips for a premium cabin vibe.',
+    price: 1800.00,
+    image: 'https://media.istockphoto.com/id/627583910/photo/winter-driving.jpg?s=612x612&w=0&k=20&c=BccA_9QNMMBox3Ki9h7ip0hQgPBM2O_KuCfkPlqFfw4='
   },
   {
-    id: 'fs10',
-    title: 'Mezlan Torino',
-    description: 'Elegant monk strap with a modern look',
-    price: 3700.00,
-    image: 'https://m.media-amazon.com/images/I/713bhZ8KCzL._AC_SX500_.jpg'
+    id: 'vd14',
+    title: 'Paint Correction & Buffing',
+    description: 'Removes swirl marks and brings back showroom shine.',
+    price: 3000.00,
+    image: 'https://media.istockphoto.com/id/1174973760/photo/auto-detailing-car.jpg?s=612x612&w=0&k=20&c=5YovpqlLv3i7DgCpzoFpOE6mV53rFUo3pw0ooFtmlcg='
   },
   {
-    id: 'fs11',
-    title: 'Salvatore Ferragamo Cap-Toe Oxford',
-    description: 'Luxurious leather oxford with a sleek design',
-    price: 6950.00,
-    image: 'https://images.pexels.com/photos/293405/pexels-photo-293405.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+    id: 'vd15',
+    title: 'Wheel Alignment & Balancing',
+    description: 'Ensure proper handling and tire life with precision alignment.',
+    price: 2500.00,
+    image: 'https://media.istockphoto.com/id/1227609881/photo/wheel-alignment-equipment-on-a-car-wheel-in-a-repair-station.jpg?s=612x612&w=0&k=20&c=Vyi7sbyW2D4XtMkGjbssZBKYF645KiKPXbo_GUxXOAc='
   },
   {
-    id: 'fs12',
-    title: 'Gucci Horsebit Loafer',
-    description: 'Iconic loafer with a classic design',
-    price: 7300.00,
-    image: 'https://images.pexels.com/photos/267320/pexels-photo-267320.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
-  },
-  {
-    id: 'fs13',
-    title: 'Church\'s Shannon',
-    description: 'Handcrafted leather derby with a timeless look',
-    price: 6500.00,
-    image: 'https://m.media-amazon.com/images/I/51NhLHEbW-L._AC_SY500_.jpg'
-  },
-  {
-    id: 'fs14',
-    title: 'Bally Straton',
-    description: 'Elegant leather oxford with a modern design',
-    price: 4950.00,
-    image: 'https://m.media-amazon.com/images/I/61MkJMKrLnL._AC_SY695_.jpg'
-  },
-  {
-    id: 'fs15',
-    title: 'Hugo Boss Kensington',
-    description: 'Stylish and comfortable leather oxford',
-    price: 2950.00,
-    image: 'https://m.media-amazon.com/images/I/61a007G-bTL._AC_SX500_.jpg'
-  },
-  {
-    id: 'fs16',
-    title: 'Ted Baker Camroon',
-    description: 'Modern and stylish leather oxford',
-    price: 1950.66,
-    image: 'https://m.media-amazon.com/images/I/5185E89kYuL._AC_SY500_.jpg'
-  },
-  {
-    id: 'fs17',
-    title: 'Paul Smith Berty',
-    description: 'Elegant leather oxford with a sleek design',
-    price: 3950,
-    image: 'https://m.media-amazon.com/images/I/71UXzp8bnzL._AC_SY500_.jpg'
-  },
-  {
-    id: 'fs18',
-    title: 'Tom Ford Austin',
-    description: 'Luxurious leather oxford with a modern look',
-    price: 2000,
-    image: 'https://m.media-amazon.com/images/I/81V9sQh9zWL._AC_SX500_.jpg'
-  },
-  {
-    id: 'fs19',
-    title: 'Prada Cap-Toe Oxford',
-    description: 'Elegant leather oxford with a classic design',
-    price: 2300,
-    image: 'https://m.media-amazon.com/images/I/618OKBz5ZoL._AC_SX500_.jpg'
-  },
-  {
-    id: 'fs20',
-    title: 'Versace Medusa Loafer',
-    description: 'Iconic loafer with a luxurious design',
-    price: 8950,
-    image: 'https://images.pexels.com/photos/29868311/pexels-photo-29868311/free-photo-of-blue-loafer-with-orange-laces-on-reflective-surface.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+    id: 'vd16',
+    title: 'Complete Comfort & Performance Package',
+    description: 'Includes detailing, seat conditioning, ambient lighting & ECU tune.',
+    price: 20000.00,
+    image: 'https://media.istockphoto.com/id/1466769217/photo/tourists-in-safari-off-road-vehicle-exploring-national-park-in-kenya-east-africa.jpg?s=612x612&w=0&k=20&c=lrs_3TtUiaWMQ8jQEtau7bfMxFw6gnnxzH1mzw1lUB0='
   }
 ];
 
-const sportsShoes = [
+
+const brakeAndSuspensionServices = [
   {
-    id: 'ss1',
-    title: 'Nike Air Zoom Pegasus',
-    description: 'High-performance running shoes with responsive cushioning',
-    price: 1190,
-    image: 'https://m.media-amazon.com/images/I/715CB+-nHZL._AC_SY500_.jpg'
+    id: 'bs1',
+    title: 'Brake Pad Replacement',
+    description: 'Replace worn brake pads with high-performance options.',
+    price: 3000.00,
+    image: 'https://media.istockphoto.com/id/183764878/photo/disc-brake.jpg?s=612x612'
   },
   {
-    id: 'ss2',
-    title: 'Adidas Ultraboost',
-    description: 'Comfortable and stylish running shoes with superior cushioning',
-    price: 1500,
-    image: 'https://m.media-amazon.com/images/I/71ljZ6ZzfxL._AC_SX500_.jpg'
+    id: 'bs2',
+    title: 'Brake Fluid Flush',
+    description: 'Remove old fluid and replace with manufacturer-approved brake fluid.',
+    price: 1200.00,
+    image: 'https://media.istockphoto.com/id/1182234584/photo/checking-and-filling-brake-fluid.jpg?s=612x612'
   },
   {
-    id: 'ss3',
-    title: 'Asics Gel-Nimbus',
-    description: 'Premium running shoes with advanced support and cushioning',
-    price: 1490.99,
-    image: 'https://m.media-amazon.com/images/I/81ddYKf0i+L._AC_SY500_.jpg'
+    id: 'bs3',
+    title: 'Brake Disc/Rotor Resurfacing',
+    description: 'Smooth and resurface brake rotors to restore stopping power.',
+    price: 2500.00,
+    image: 'https://media.istockphoto.com/id/1064383382/photo/brake-disc-maintenance.jpg?s=612x612'
   },
   {
-    id: 'ss4',
-    title: 'Brooks Ghost',
-    description: 'Cushioned running shoes for a smooth ride',
-    price: 1399.99,
-    image: 'https://m.media-amazon.com/images/I/71PEqzpHuiL._AC_SY500_.jpg'
+    id: 'bs4',
+    title: 'Brake Caliper Servicing',
+    description: 'Repair, lubricate or replace sticking brake calipers.',
+    price: 2800.00,
+    image: 'https://media.istockphoto.com/id/1466048232/photo/car-brake-caliper.jpg?s=612x612'
   },
   {
-    id: 'ss5',
-    title: 'New Balance Fresh Foam',
-    description: 'Lightweight running shoes with maximum cushioning',
-    price: 1290.89,
-    image: 'https://m.media-amazon.com/images/I/71LskQt7fcS._AC_SY500_.jpg'
+    id: 'bs5',
+    title: 'Suspension System Inspection',
+    description: 'Check for worn-out shocks, struts, bushings, and mounts.',
+    price: 1000.00,
+    image: 'https://media.istockphoto.com/id/1331743691/photo/suspension-car.jpg?s=612x612'
   },
   {
-    id: 'ss6',
-    title: 'Saucony Triumph',
-    description: 'High-performance running shoes with superior comfort',
-    price: 1300,
-    image: 'https://m.media-amazon.com/images/I/81z8jUEyxzL._AC_SX500_.jpg'
+    id: 'bs6',
+    title: 'Shock Absorber Replacement',
+    description: 'Restore ride comfort with new shocks or struts.',
+    price: 5500.00,
+    image: 'https://media.istockphoto.com/id/1155411807/photo/shock-absorber.jpg?s=612x612'
   },
   {
-    id: 'ss7',
-    title: 'Hoka One One Clifton',
-    description: 'Lightweight running shoes with maximum cushioning',
-    price: 1260.90,
-    image: 'https://m.media-amazon.com/images/I/611FNCoJBkL._AC_SX500_.jpg'
+    id: 'bs7',
+    title: 'Steering Rack Repair',
+    description: 'Fix issues in the power steering rack for smooth turning.',
+    price: 6000.00,
+    image: 'https://media.istockphoto.com/id/1358479094/photo/power-steering-rack.jpg?s=612x612'
   },
   {
-    id: 'ss8',
-    title: 'Mizuno Wave Rider',
-    description: 'Responsive running shoes with a smooth ride',
-    price: 1377.00,
-    image: 'https://m.media-amazon.com/images/I/51U8aiiciAL._AC_SX500_.jpg'
+    id: 'bs8',
+    title: 'Brake Line Replacement',
+    description: 'Replace rusty or damaged brake lines to prevent leaks.',
+    price: 3200.00,
+    image: 'https://media.istockphoto.com/id/1450566211/photo/repairing-brake-lines.jpg?s=612x612'
   },
   {
-    id: 'ss9',
-    title: 'Under Armour HOVR',
-    description: 'Innovative running shoes with energy return technology',
-    price: 1700.99,
-    image: 'https://m.media-amazon.com/images/I/51NLpo6mebL._AC_SY500_.jpg'
+    id: 'bs9',
+    title: 'Control Arm Replacement',
+    description: 'Restore suspension geometry with new control arms and ball joints.',
+    price: 4500.00,
+    image: 'https://media.istockphoto.com/id/1465558907/photo/front-suspension-control-arm.jpg?s=612x612'
   },
   {
-    id: 'ss10',
-    title: 'Salomon Speedcross 5',
-    description: 'Trail running shoes with excellent grip and durability',
-    price: 1490.99,
-    image: 'https://m.media-amazon.com/images/I/51BJqVzfXEL._AC_SY500_.jpg'
+    id: 'bs10',
+    title: 'Brake Light Inspection & Replacement',
+    description: 'Ensure all brake lights function correctly for safety.',
+    price: 500.00,
+    image: 'https://media.istockphoto.com/id/1434463815/photo/brake-light-bulb-replacement.jpg?s=612x612'
   },
   {
-    id: 'ss11',
-    title: 'Puma Ignite',
-    description: 'Comfortable and stylish running shoes with superior cushioning',
-    price: 1900.99,
-    image: 'https://m.media-amazon.com/images/I/71F5Jdi76GL._AC_SX500_.jpg'
+    id: 'bs11',
+    title: 'Suspension Bushing Replacement',
+    description: 'Replace worn-out rubber bushings to reduce vibration and noise.',
+    price: 3000.00,
+    image: 'https://media.istockphoto.com/id/1447724045/photo/replacing-bushings-in-suspension.jpg?s=612x612'
   },
   {
-    id: 'ss12',
-    title: 'Reebok Floatride',
-    description: 'Lightweight running shoes with responsive cushioning',
-    price: 1300,
-    image: 'https://m.media-amazon.com/images/I/71GEeN660+L._AC_SY500_.jpg'
+    id: 'bs12',
+    title: 'Wheel Alignment',
+    description: 'Ensure proper tracking and handling with a full alignment.',
+    price: 2000.00,
+    image: 'https://media.istockphoto.com/id/1128339266/photo/laser-wheel-alignment.jpg?s=612x612'
   },
   {
-    id: 'ss13',
-    title: 'Nike Metcon',
-    description: 'High-performance training shoes with superior stability',
-    price: 1280,
-    image: 'https://m.media-amazon.com/images/I/61x5TyxcEML._AC_SY500_.jpg'
+    id: 'bs13',
+    title: 'Suspension Lift or Lowering Kits',
+    description: 'Customize ride height with lift or lowering kit installations.',
+    price: 7000.00,
+    image: 'https://media.istockphoto.com/id/1220579465/photo/suspension-upgrade-on-off-road-vehicle.jpg?s=612x612'
   },
   {
-    id: 'ss14',
-    title: 'Adidas Adizero',
-    description: 'Lightweight running shoes with maximum speed',
-    price: 1400,
-    image: 'https://m.media-amazon.com/images/I/71e0LcRgvKL._AC_SX500_.jpg'
-  },
-  {
-    id: 'ss15',
-    title: 'Asics Gel-Kayano',
-    description: 'Stability running shoes with advanced support',
-    price: 1500,
-    image: 'https://m.media-amazon.com/images/I/61BSnL7TQWL._AC_SY500_.jpg'
-  },
-  {
-    id: 'ss16',
-    title: 'Brooks Adrenaline',
-    description: 'Cushioned running shoes with superior stability',
-    price: 1290,
-    image: 'https://m.media-amazon.com/images/I/8137IeVv7oL._AC_SX500_.jpg'
-  },
-  {
-    id: 'ss17',
-    title: 'New Balance 1080',
-    description: 'Lightweight running shoes with maximum cushioning',
-    price: 1490,
-    image: 'https://m.media-amazon.com/images/I/81QpazsoxLL._AC_SY500_.jpg'
-  },
-  {
-    id: 'ss18',
-    title: 'Saucony Kinvara',
-    description: 'Lightweight running shoes with a responsive ride',
-    price: 1100,
-    image: 'https://m.media-amazon.com/images/I/81kItCdZzpL._AC_SX500_.jpg'
-  },
-  {
-    id: 'ss19',
-    title: 'Hoka One One Bondi',
-    description: 'Maximum cushioning running shoes for a smooth ride',
-    price: 1400,
-    image: 'https://m.media-amazon.com/images/I/51Gq5BEyaRL._AC_SX500_.jpg'
-  },
-  {
-    id: 'ss20',
-    title: 'Mizuno Wave Inspire',
-    description: 'Stability running shoes with a smooth ride',
-    price: 1300,
-    image: 'https://m.media-amazon.com/images/I/61tB94EW9sL._AC_SX500_.jpg'
+    id: 'bs14',
+    title: 'ABS Diagnostics & Repair',
+    description: 'Scan and fix issues in the Anti-lock Braking System (ABS).',
+    price: 3500.00,
+    image: 'https://media.istockphoto.com/id/1341961353/photo/abs-warning-light-on-dashboard.jpg?s=612x612'
   }
 ];
+
 
 const customShoes = [
   {
@@ -1159,7 +1091,7 @@ function ServiceDetails() {
       case '5': return accidentRepairServices;
       case '6': return maintenanceServices;
       case '7': return tireServices;
-      case '8': return formalShoes;
+      case '8': return vehicleDetailingAndTuningServices;
       case '9': return sportsShoes;
       case '10': return customShoes;
       default: return [];
