@@ -14,31 +14,47 @@ export function CartProvider({ children }) {
   }, [cartItems]);
 
   const addToCart = (item) => {
-    setCartItems(prevItems => {
-      const existingItem = prevItems.find(i => i.id === item.id && i.size === item.size && i.color === item.color);
+    setCartItems((prevItems) => {
+      const existingItem = prevItems.find(
+        (i) =>
+          i.id === item.id &&
+          i.serviceType === item.serviceType &&
+          i.vehicleType === item.vehicleType
+      );
       if (existingItem) {
-        return prevItems;
+        return prevItems; // If the item already exists, don't add it again
       }
-      return [...prevItems, item];
+      return [...prevItems, item]; // Add the new item to the cart
     });
   };
 
-  const removeFromCart = (itemId, size, color) => {
-    setCartItems(prevItems => prevItems.filter(item => !(item.id === itemId && item.size === size && item.color === color)));
+  const removeFromCart = (itemId, serviceType, vehicleType) => {
+    setCartItems((prevItems) =>
+      prevItems.filter(
+        (item) =>
+          !(
+            item.id === itemId &&
+            item.serviceType === serviceType &&
+            item.vehicleType === vehicleType
+          )
+      )
+    );
   };
 
   const clearCart = () => {
-    setCartItems([]);
+    setCartItems([]); // Clear all items from the cart
   };
 
   return (
-    <CartContext.Provider value={{ 
-      cartItems, 
-      addToCart, 
-      removeFromCart, 
-      clearCart,
-      totalItems: cartItems.length 
-    }}>
+    <CartContext.Provider
+      value={{
+        cartItems,
+        addToCart,
+        removeFromCart,
+        clearCart,
+        totalItems: cartItems.length,
+      }}
+    >
       {children}
     </CartContext.Provider>
   );

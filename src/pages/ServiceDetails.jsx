@@ -1072,32 +1072,31 @@ function ServiceDetails() {
   };
 
   const serviceItems = getServiceItems(id);
-
-  // Function to handle adding an item to the cart with selected size, color, and rating
-  const handleAddToCart = (item, selectedSize, selectedColor, rating) => {
+  const handleAddToCart = (item, selectedServiceType, selectedVehicleType, rating) => {
     const itemWithDetails = {
       ...item,
-      size: selectedSize,
-      color: selectedColor,
+      serviceType: selectedServiceType,
+      vehicleType: selectedVehicleType,
       rating: rating,
     };
     addToCart(itemWithDetails);
   };
+
 
   return (
     <div className="min-h-screen bg-gray-50 pt-20 pb-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h1 className="text-3xl font-bold mb-8">Available Products</h1>
         <img
-          src="https://i.postimg.cc/pLhvc3cR/saf.jpg"
+          src="https://i.postimg.cc/gJCNMjt8/brenxlogo.jpg"
           alt="Promotional Banner"
-          className="w-full h-8 object-fit mb-8"
+          className="w-28 h-8 object-cover mb-8"
         />
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {serviceItems.map((item) => {
-            const [selectedSize, setSelectedSize] = useState('');
-            const [selectedColor, setSelectedColor] = useState('');
+            const [selectedServiceType, setSelectedServiceType] = useState('');
+            const [selectedVehicleType, setSelectedVehicleType] = useState('');
             const [rating, setRating] = useState(0);
 
             const ratingChanged = (newRating) => {
@@ -1117,50 +1116,40 @@ function ServiceDetails() {
                   <h3 className="text-lg font-semibold mb-1">{item.title}</h3>
                   <p className="text-gray-600 text-sm mb-3">{item.description}</p>
 
-                  {/* Size Selection */}
+                  {/* Service Type Selection */}
                   <div className="mb-2">
-                    <label htmlFor={`size-${item.id}`} className="block text-sm font-medium text-gray-700">
-                      Size
+                    <label htmlFor={`serviceType-${item.id}`} className="block text-sm font-medium text-gray-700">
+                      Service Type
                     </label>
                     <select
-                      id={`size-${item.id}`}
-                      value={selectedSize}
-                      onChange={(e) => setSelectedSize(e.target.value)}
+                      id={`serviceType-${item.id}`}
+                      value={selectedServiceType}
+                      onChange={(e) => setSelectedServiceType(e.target.value)}
                       className="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm rounded-md"
                     >
-                      <option value="">Select size</option>
-                      <option value="2">2</option>
-                      <option value="3">3</option>
-                      <option value="4">4</option>
-                      <option value="5">5</option>
-                      <option value="6">6</option>
-                      <option value="7">7</option>
-                      <option value="8">8</option>
-                      <option value="9">9</option>
-                      <option value="10">10</option>
+                      <option value="">Select service type</option>
+                      <option value="Basic">Basic</option>
+                      <option value="Premium">Premium</option>
+                      <option value="Full Package">Full Package</option>
                     </select>
                   </div>
 
-                  {/* Color Selection */}
+                  {/* Vehicle Type Selection */}
                   <div className="mb-2">
-                    <label htmlFor={`color-${item.id}`} className="block text-sm font-medium text-gray-700">
-                      Colour
+                    <label htmlFor={`vehicleType-${item.id}`} className="block text-sm font-medium text-gray-700">
+                      Vehicle Type
                     </label>
                     <select
-                      id={`color-${item.id}`}
-                      value={selectedColor}
-                      onChange={(e) => setSelectedColor(e.target.value)}
+                      id={`vehicleType-${item.id}`}
+                      value={selectedVehicleType}
+                      onChange={(e) => setSelectedVehicleType(e.target.value)}
                       className="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm rounded-md"
                     >
-                      <option value="">select colour</option>
-                      <option value="Black">Black</option>
-                      <option value="White">White</option>
-                      <option value="White">purple</option>
-                      <option value="Red">Red</option>
-                      <option value="White">pink</option>
-                      <option value="Blue">Blue</option>
-                      <option value="White">yellow</option>
-                      <option value="Green">Green</option>
+                      <option value="">Select vehicle type</option>
+                      <option value="Sedan">Sedan</option>
+                      <option value="SUV">SUV</option>
+                      <option value="Truck">Truck</option>
+                      <option value="Motorcycle">Motorcycle</option>
                     </select>
                   </div>
 
@@ -1180,9 +1169,9 @@ function ServiceDetails() {
                   <div className="flex justify-between items-center">
                     <span className="text-blue-600 font-bold text-lg">KSH {item.price}</span>
                     <button
-                      onClick={() => handleAddToCart(item, selectedSize, selectedColor, rating)}
+                      onClick={() => handleAddToCart(item, selectedServiceType, selectedVehicleType, rating)}
                       className="bg-blue-500 hover:bg-green-600 text-white px-3 py-1 rounded text-sm"
-                      disabled={!selectedSize || !selectedColor}
+                      disabled={!selectedServiceType || !selectedVehicleType}
                     >
                       Add to Cart
                     </button>

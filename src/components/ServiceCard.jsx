@@ -5,7 +5,7 @@ function ServiceCard({ service }) {
   return (
     <motion.div
       whileHover={{ scale: 1.05 }}
-      className="bg-white rounded-lg shadow-lg overflow-hidden w-full"
+      className="bg-blue-100 rounded-lg shadow-lg overflow-hidden w-full"
     >
       <div className="relative overflow-hidden" style={{ paddingBottom: '56.25%' }}>
         <img

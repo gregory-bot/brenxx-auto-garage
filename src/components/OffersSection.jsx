@@ -9,13 +9,13 @@ function OffersSection() {
 
   const offers = [
     {
-      title: '50% Off on All Sneakers',
+      title: 'Your One-Stop Garage – Great Deals Await',
       images: [
-        'https://m.media-amazon.com/images/I/61Ht6pj0JiL._AC_SX500_.jpg',
-        'https://m.media-amazon.com/images/I/81-jOUp91hL._AC_SY500_.jpg',
-        'https://m.media-amazon.com/images/I/71RWZOtOqwL._AC_SX500_.jpg',
-        'https://m.media-amazon.com/images/I/81HaPIj3C9L._AC_SY500_.jpg',
-        'https://m.media-amazon.com/images/S/al-na-9d5791cf-3faf/01667e57-f9fa-4867-901b-90f3c276992e._SL850_FMjpg_.jpg',
+        'https://i.postimg.cc/rFxWMKdK/LOGO.jpg',
+        'https://i.postimg.cc/jjmkwMTs/engine.jpg',
+        'https://i.postimg.cc/7hZDPxyC/paint.jpg',
+        'https://i.postimg.cc/ryxVnW0Z/paint.jpg',
+        'https://i.postimg.cc/zXszk9g9/carousel.jpg',
       ],
     },
   ];
@@ -33,12 +33,17 @@ function OffersSection() {
         isFading ? 'opacity-0' : 'opacity-100'
       }`}
     >
-      <h2
-        className="text-3xl font-bold bg-blue-600 mb-4"
-        style={{ fontFamily: 'Courier New, monospace' }}
-      >
-        Offers upto 50% off
-      </h2>
+<h2
+  className="text-3xl font-bold bg-blue-200 mb-4"
+  style={{
+    fontFamily: 'Courier New, monospace',
+    borderRadius: '12px', // Rounded corners
+    padding: '1rem'        // Optional: adds spacing inside the box
+  }}
+>
+  Keeping you on the road – special discounts available🙂
+</h2>
+
       <div className="grid grid-cols-1 gap-4">
         {offers.map((offer, index) => (
           <div key={index} className="mb-4 relative">
@@ -58,7 +63,7 @@ function OffersSection() {
                     alt={`Offer ${index + 1} Image ${idx + 1}`}
                     className="h-full object-cover"
                   />
-                  <div className="absolute top-2 left-2 bg-blue-600 text-white text-xs font-bold rounded-full px-2 py-1">
+                  <div className="absolute top-2 left-2 bg-red-600 text-white text-xs font-bold rounded-full px-2 py-1">
                     50% OFF
                   </div>
                 </div>
@@ -70,9 +75,9 @@ function OffersSection() {
       <div className="flex justify-end mt-4">
         <button
           onClick={handleSeeAllClick}
-          className="bg-purple-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md transition-colors duration-200"
+          className="bg-blue-500 hover:bg-blue-700 text-white px-4 py-2 rounded-md transition-colors duration-200"
         >
-          See All
+          see all
         </button>
       </div>
     </div>
