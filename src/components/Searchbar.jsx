@@ -5,16 +5,16 @@ import { useNavigate } from "react-router-dom"; // For navigation
 
 // Example services list with IDs
 const services = [
-  { id: 1, name: "Men's Sneakers" },
-  { id: 2, name: "Women's Heels" },
-  { id: 3, name: "Kids' Shoes" },
-  { id: 4, name: "Running Shoes" },
-  { id: 5, name: "Boots" },
-  { id: 6, name: "Sandals" },
-  { id: 7, name: "Slippers" },
-  { id: 8, name: "Formal Shoes" },
-  { id: 9, name: "Sports Shoes" },
-  { id: 10, name: "Custom Shoes" },
+  { id: 1, name: "Car Repair & Service" },
+  { id: 2, name: "Mechanical & Electrical Repairs" },
+  { id: 3, name: "Paint & Body Work" },
+  { id: 4, name: "Vehicle Diagnostics" },
+  { id: 5, name: "Accident Repairs" },
+  { id: 6, name: "Maintenance Services" },
+  { id: 7, name: "Tire Services" },
+  { id: 8, name: "Vehicle Detailing" },
+  { id: 9, name: "Brake & Suspension Services" },
+  { id: 10, name: "Battery Check & Replacement" },
   { id: 11, name: "Offers" },
 ];
 
@@ -74,7 +74,7 @@ const SearchBar = ({ onSearch }) => {
   };
 
   return (
-    <div className="flex flex-col items-center w-full">
+    <div className="flex flex-col items-center w-full relative">
       <div className="relative w-68">
         {/* Search Input */}
         <input
@@ -88,7 +88,7 @@ const SearchBar = ({ onSearch }) => {
         
         {/* Search Button with Spinner */}
         <button
-          className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-red-600 hover:bg-blue-700 text-white rounded-full p-3 transition duration-300 shadow-md"
+          className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-blue-600 hover:bg-blue-700 text-white rounded-full p-3 transition duration-300 shadow-md"
           disabled={loading}
         >
           {loading ? (
@@ -101,7 +101,7 @@ const SearchBar = ({ onSearch }) => {
 
       {/* Display search suggestions */}
       {query && showSuggestions && filteredServices.length > 0 && (
-        <ul className="bg-white w-80 border border-gray-200 shadow-lg mt-2 rounded-lg overflow-hidden text-black">
+        <ul className="bg-white w-80 border border-gray-200 shadow-lg mt-2 rounded-lg overflow-hidden text-black absolute top-full z-50">
           {filteredServices.map((service, index) => (
             <li
               key={service.id}
@@ -118,7 +118,7 @@ const SearchBar = ({ onSearch }) => {
 
       {/* No results found message */}
       {query && showSuggestions && filteredServices.length === 0 && !loading && (
-        <p className="text-red-500 mt-2">No matching services found🥲.</p>
+        <p className="text-red-500 mt-2 absolute top-full z-50">No matching services found🥲.</p>
       )}
     </div>
   );
