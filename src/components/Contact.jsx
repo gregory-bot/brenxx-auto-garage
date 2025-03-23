@@ -1,178 +1,125 @@
-import React, { useState } from 'react';
-import { Facebook, Twitter, Instagram, Phone, Mail, MapPin, Send } from 'lucide-react';
+import React from 'react';
+import { FaFacebook, FaInstagram, FaTwitter, FaLinkedin, FaTiktok } from 'react-icons/fa'; // Import social media icons
 
-const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
-  });
-  const [status, setStatus] = useState('');
-
-  // Replace this URL with your Google Apps Script web app URL
-  const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbw71KwHjccFtF7OV_e43ZEYrxfB6NuzEWKI2sq6iFzdhG5O1v0yoHW32j3IiXca17qQwA/exec';
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setStatus('sending');
-
-    try {
-      const response = await fetch(GOOGLE_SCRIPT_URL, {
-        method: 'POST',
-        mode: 'no-cors', // Important for cross-origin requests to Google Scripts
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          name: formData.name,
-          email: formData.email,
-          message: formData.message
-        })
-      });
-
-      setStatus('success');
-      setFormData({ name: '', email: '', message: '' });
-      setTimeout(() => setStatus(''), 3000);
-    } catch (error) {
-      console.error('Error:', error);
-      setStatus('error');
-      setTimeout(() => setStatus(''), 3000);
-    }
-  };
-
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
-
+const ContactSection = () => {
   return (
-    <section id="contact" className="bg-gray-50 py-20">
+    <footer id="contact" className="bg-gray-800 text-white py-8">
       <div className="container mx-auto px-4">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-4xl font-bold text-red-600 text-center mb-12">Contact Us</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            <div>
-              <div className="bg-blue-100 rounded-lg shadow-md p-8">
-                <h3 className="text-2xl font-semibold mb-6">Get in Touch</h3>
-                <div className="space-y-6">
-                  <div className="flex items-center space-x-4">
-                    <Mail className="text-blue-600 w-6 h-6" />
-                    <div>
-                      <p className="font-medium">Email</p>
-                      <a href="kipngenogregory@gmail.com" className="text-gray-600 hover:text-blue-600">
-                      kipngenogregory@gmail.com
-                      </a>
-                    </div>
-                  </div>
-                  <div className="flex items-center space-x-4">
-                    <Phone className="text-blue-600 w-6 h-6" />
-                    <div>
-                      <p className="font-medium">phone</p>
-                      <a href="tel:+254748163492" className="text-gray-600 hover:text-blue-600">
-                      +254748163492
-                      </a>
-                    </div>
-                  </div>
-                  <div className="flex items-center space-x-4">
-                    <MapPin className="text-blue-600 w-6 h-6" />
-                    <div>
-                      <p className="font-medium">address</p>
-                      <p className="text-gray-600">
-                        Walkwise shoe center, Nairobi, Kenya
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div className="mt-8">
-                  <h4 className="font-medium mb-4">follow Us</h4>
-                  <div className="flex space-x-4">
-                    <a href="#" className="text-gray-600 hover:text-blue-600 transition-colors">
-                      <Facebook className="w-6 h-6" />
-                    </a>
-                    <a href="#" className="text-gray-600 hover:text-blue-600 transition-colors">
-                      <Twitter className="w-6 h-6" />
-                    </a>
-                    <a href="#" className="text-gray-600 hover:text-blue-600 transition-colors">
-                      <Instagram className="w-6 h-6" />
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
+        {/* Contact Section Header */}
+        <h2 className="text-3xl font-bold text-center mb-8">Contact Us</h2>
 
-            <div>
-              <form onSubmit={handleSubmit} className="bg-green-100 rounded-lg shadow-md p-8">
-                <div className="space-y-6">
-                  <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-purple-600 mb-1">
-                      name
-                    </label>
-                    <input
-                      type="text"
-                      id="name"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      required
-                      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-purple-600 mb-1">
-                      email
-                    </label>
-                    <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      required
-                      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-purple-600 mb-1">
-                      message
-                    </label>
-                    <textarea
-                      id="message"
-                      name="message"
-                      value={formData.message}
-                      onChange={handleChange}
-                      required
-                      rows={4}
-                      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
-                    ></textarea>
-                  </div>
-                  <button
-                    type="submit"
-                    disabled={status === 'sending'}
-                    className={`w-full bg-blue-600 text-white py-3 px-6 rounded-md hover:bg-blue-700 transition-colors flex items-center justify-center space-x-2 ${
-                      status === 'sending' ? 'opacity-75 cursor-not-allowed' : ''
-                    }`}
-                  >
-                    <Send className="w-5 h-5" />
-                    <span>
-                      {status === 'sending' ? 'Sending...' : 'Send Message'}
-                    </span>
-                  </button>
-                  {status === 'success' && (
-                    <p className="text-green-600 text-center font-medium">message sent successfully😊</p>
-                  )}
-                  {status === 'error' && (
-                    <p className="text-red-600 text-center font-medium">failed to send message. Please try again.</p>
-                  )}
-                </div>
-              </form>
+        <div className="flex flex-wrap justify-between">
+          {/* Contact Information */}
+          <div className="w-full md:w-1/3 mb-6 md:mb-0">
+            <h3 className="text-xl font-bold mb-2">Brenxx Auto Services</h3>
+            <p>Your trusted partner for vehicle repair and maintenance.</p>
+            <p className="mt-4">📍 Location: 2nd Avenue, Garden Estate, Nairobi</p>
+            <p>📞 Phone: +254 798 363 800</p>
+            <p>📧 Email: info@brenxxauto.com</p>
+          </div>
+
+          {/* Google Maps Embed */}
+          <div className="w-full md:w-1/3 mb-6 md:mb-0">
+            <div
+              style={{
+                width: '100%',
+                height: '200px',
+                borderRadius: '12px',
+                overflow: 'hidden',
+              }}
+            >
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.9199496230976!2d36.79675407487849!3d-1.2158976355530395!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f3d5edfa7d25b%3A0x1ac8bb30a1bd6d00!2sGerman%20Point!5e0!3m2!1sen!2ske!4v1729664230851!5m2!1sen!2ske"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              ></iframe>
             </div>
           </div>
+
+          {/* Opening Hours */}
+          <div className="w-full md:w-1/3">
+            <h3 className="text-xl font-bold mb-2">🕒 Opening Hours</h3>
+            <p>Monday - Friday: 8am - 6pm</p>
+            <p>Saturday: 9am - 4pm</p>
+            <p>Sunday: Closed</p>
+          </div>
+        </div>
+
+        {/* Contact Form */}
+        <div className="mt-8">
+          <h3 className="text-xl font-bold mb-4 text-center">Send Us a Message</h3>
+          <form className="max-w-lg mx-auto">
+            <div className="mb-4">
+              <input
+                type="text"
+                placeholder="Your Name"
+                className="w-full px-4 py-2 rounded-lg bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+            </div>
+            <div className="mb-4">
+              <input
+                type="email"
+                placeholder="Your Email"
+                className="w-full px-4 py-2 rounded-lg bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+            </div>
+            <div className="mb-4">
+              <textarea
+                placeholder="Your Message"
+                rows="4"
+                className="w-full px-4 py-2 rounded-lg bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              ></textarea>
+            </div>
+            <div className="text-center">
+              <button
+                type="submit"
+                className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition duration-300"
+              >
+                Send Message
+              </button>
+            </div>
+          </form>
+        </div>
+
+        {/* Social Media Links */}
+        <div className="flex justify-center mt-8 space-x-6">
+          <a
+            href="https://www.facebook.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-400 hover:text-blue-500"
+          >
+            <FaFacebook size={24} />
+          </a>
+          <a
+            href="https://www.instagram.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-400 hover:text-pink-500"
+          >
+            <FaInstagram size={24} />
+          </a>
+          <a
+            href="https://www.tiktok.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-400 hover:text-black"
+          >
+            <FaTiktok size={24} />
+          </a>
+        </div>
+
+        {/* Footer Copyright */}
+        <div className="mt-8 text-center">
+          <p>&copy; {new Date().getFullYear()} Brenxx Auto Services. All rights reserved.</p>
         </div>
       </div>
-    </section>
+    </footer>
   );
 };
 
-export default Contact;
+export default ContactSection;

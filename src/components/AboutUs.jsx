@@ -2,10 +2,10 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
 const images = [
-  "https://i.postimg.cc/TPCxV8cf/jkuat.jpg",
-  "https://i.postimg.cc/mkVn6njR/samba.jpg",
-  "https://images.pexels.com/photos/293404/pexels-photo-293404.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-  "https://images.pexels.com/photos/267202/pexels-photo-267202.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+  "https://i.postimg.cc/rFxWMKdK/LOGO.jpg",
+  "https://i.postimg.cc/zXszk9g9/carousel.jpg",
+  "https://i.postimg.cc/jjfHL0rv/IMG-20250227-WA0032-1.jpg",
+  "https://i.postimg.cc/xCLwRvxK/diagnostics.jpg"
 ];
 
 function AboutUs() {
@@ -22,10 +22,14 @@ function AboutUs() {
   }, []);
 
   return (
-    <section className="py-16 bg-gray-50">
+    <section className="py-16 bg-yellow-50"> {/* Changed background to black */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Heading Above the Image Carousel */}
+        <h2 className="text-3xl text-blue-600 font-bold mb-6 text-center" style={{ fontFamily: 'Courier New, monospace' }}>
+          About Brenxx auto services
+        </h2>
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-          
           {/* Smooth Image Carousel */}
           <div className="relative w-full h-[400px] overflow-hidden rounded-lg shadow-lg">
             {images.map((img, imgIndex) => (
@@ -45,26 +49,19 @@ function AboutUs() {
 
           {/* About Us Content */}
           <div>
-            <h2 className="text-3xl text-blue-600 font-bold mb-6">About Walkwise Shoe Store Services</h2>
-            <p className="text-green-600 mb-6">
-              At Walkwise, we’re your go-to destination for premium footwear. With a passion for quality and style, we offer a wide range of shoes for men, women, and kids, ensuring comfort, durability, and the latest trends for every step of your journey.
+            <p className="text-black mb-6">
+              We are a fully fledged and registered motor vehicle repair and
+              maintenance garage run by highly specialists in different fields.
+              </p>
+              <p className="text-black mb-6">
+                From motor vehicle diagnostics, mechanical repairs, maintenance service, accident repairs plus professional spray painting, Brenxx Auto got you covered.
+                </p>
+                <p className="text-black mb-6">
+                  We are located in Nairobi County along the 2nd Avenue – Garden estate, with
+              state of the art security system (including CCTV Surveillance) that ensures our
+              clients' vehicles are safe and secure while they are at Brenxx Auto.
             </p>
-
-            {/* Google Maps Embed */}
-            <div className="rounded-lg overflow-hidden shadow-lg h-[200px] relative">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d249.30104864432104!2d36.8250994!3d-1.2838218!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f1129fc5ce763%3A0x777d4b970984a739!2sJENGI%20HOUSE!5e0!3m2!1sen!2ske!4v1738734442412!5m2!1sen!2ske"
-                width="100%"
-                height="100%"
-                style={{ border: 0 }}
-                allowFullScreen=""
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                className="absolute inset-0"
-              ></iframe>
-            </div>
           </div>
-
         </div>
       </div>
     </section>
