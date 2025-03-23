@@ -162,7 +162,7 @@ function OffersPage() {
               <div key={offer.id} className="bg-white rounded-lg shadow-lg overflow-hidden max-w-xs">
                 <div className="relative overflow-hidden" style={{ paddingBottom: '56.25%' }}>
                   <img src={offer.image} alt={offer.title} className="absolute top-0 left-0 w-full h-full object-contain" />
-                  <div className="absolute top-2 left-2 bg-red-600 text-white text-xs font-bold rounded-full px-2 py-1">
+                  <div className="absolute top-0 left-2 bg-blue-600 text-white text-xs font-bold rounded-full px-2 py-1">
                     50% OFF
                   </div>
                 </div>
