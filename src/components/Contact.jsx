@@ -24,8 +24,8 @@ const ContactSection = () => {
             <div className="w-full md:w-1/3">
               <h3 className="text-xl font-semibold mb-2">Brenxx Auto Services</h3>
               <p>Your trusted partner for vehicle repair and maintenance.</p>
-              <p>📞 <strong>Phone:</strong> +254 798 363 800</p>
-              <p>📧 <strong>Email:</strong> info@brenxxauto.com</p>
+              <p>📞 <strong>Phone:</strong> +254 799686363</p>
+              <p>📧 <strong>Email:</strong> brenxxautogarage@gmail.com</p>
               <p className="mt-4 flex items-center">
                 <FaMapMarkerAlt className="mr-2 text-red-500" /> {/* Red map marker icon */}
                 <strong>Location:</strong>{' '}

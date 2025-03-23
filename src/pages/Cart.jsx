@@ -12,7 +12,7 @@ function Cart() {
       .join('\n')}`;
 
     const encodedMessage = encodeURIComponent(message);
-    window.open(`https://wa.me/254748163492?text=${encodedMessage}`, '_blank');
+    window.open(`https://wa.me/254 799686363?text=${encodedMessage}`, '_blank');
   };
 
   const handleEmailOrder = () => {
@@ -24,7 +24,7 @@ function Cart() {
       )
       .join('\n')}`;
 
-    window.location.href = `mailto:kipngenogregory@gmail.com?subject=${encodeURIComponent(
+    window.location.href = `mailto:brenxxautogarage@gmail.com?subject=${encodeURIComponent(
       subject
     )}&body=${encodeURIComponent(body)}`;
   };
