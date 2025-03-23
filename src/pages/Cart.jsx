@@ -3,15 +3,13 @@ import { useCart } from '../context/CartContext';
 function Cart() {
   const { cartItems, removeFromCart } = useCart();
 
-  const total = cartItems.reduce((sum, item) => sum + (item.price || 0), 0);
-
   const handleWhatsAppOrder = () => {
     const message = `Hi🙂 I would like to book the following services from Brenxx Auto Garage:\n\n${cartItems
       .map(
         (item) =>
-          `${item.title} - KSH ${item.price} (Service Type: ${item.serviceType}, Vehicle Type: ${item.vehicleType}, Rating: ${item.rating})`
+          `${item.title} (Service Type: ${item.serviceType}, Vehicle Type: ${item.vehicleType}, Rating: ${item.rating})`
       )
-      .join('\n')}\n\nTotal: KSH ${total.toFixed(2)}`;
+      .join('\n')}`;
 
     const encodedMessage = encodeURIComponent(message);
     window.open(`https://wa.me/254748163492?text=${encodedMessage}`, '_blank');
@@ -22,9 +20,9 @@ function Cart() {
     const body = `Order Details:\n\n${cartItems
       .map(
         (item) =>
-          `${item.title} - KSH ${item.price} (Service Type: ${item.serviceType}, Vehicle Type: ${item.vehicleType}, Rating: ${item.rating})`
+          `${item.title} (Service Type: ${item.serviceType}, Vehicle Type: ${item.vehicleType}, Rating: ${item.rating})`
       )
-      .join('\n')}\n\nTotal: KSH ${total.toFixed(2)}`;
+      .join('\n')}`;
 
     window.location.href = `mailto:kipngenogregory@gmail.com?subject=${encodeURIComponent(
       subject
@@ -59,7 +57,6 @@ function Cart() {
                   <p className="text-sm text-blue-600">Service Type: {item.serviceType}</p>
                   <p className="text-sm text-blue-600">Vehicle Type: {item.vehicleType}</p>
                   <p className="text-sm text-pink-600">Rating: {item.rating}</p>
-                  <p className="text-lg font-bold mt-1">KSH {item.price}</p>
                 </div>
                 <button
                   onClick={() => removeFromCart(item.id, item.serviceType, item.vehicleType)}
@@ -71,11 +68,6 @@ function Cart() {
             ))}
 
             <div className="mt-6 pt-6 border-t">
-              <div className="flex justify-between items-center mb-6">
-                <span className="text-lg font-semibold">Total:</span>
-                <span className="text-2xl font-bold">KSH {total.toFixed(2)}</span>
-              </div>
-
               <div className="space-y-4">
                 <button
                   onClick={handleWhatsAppOrder}

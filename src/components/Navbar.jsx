@@ -77,7 +77,7 @@ function Navbar() {
             </button>
             <button 
               onClick={() => setIsOpen(!isOpen)} 
-              className="p-2 bg-blue-600 rounded-full w-10 h-10 flex items-center justify-center"
+              className="p-2 bg-blue-400 rounded-full w-10 h-10 flex items-center justify-center"
             >
               {isOpen ? <FiX className="h-6 w-6" /> : <FiMenu className="h-6 w-6" />}
             </button>
@@ -88,7 +88,7 @@ function Navbar() {
       {/* Mobile Navigation - Left Side */}
       {isMobile && (
         <div
-          className={`fixed top-0 left-0 h-full w-64 bg-blue-400 transform transition-transform duration-300 ease-in-out ${
+          className={`fixed top-0 left-0 h-full w-64 bg-blue-200 transform transition-transform duration-300 ease-in-out ${
             isOpen ? 'translate-x-0' : '-translate-x-full'
           } z-50 mobile-menu`}
           style={{ width: '230px' }}

@@ -49,7 +49,7 @@ const services = [
     id: 7,
     title: 'Tire Services',
     description: 'Tire fitting, balancing, and puncture repairs for all vehicles.',
-    image: 'https://images.pexels.com/photos/5733659/pexels-photo-5733659.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1', // Replace as needed
+    image: 'https://i.postimg.cc/hvhDNJbr/tire.jpg', // Replace as needed
     price: false
   },
   {

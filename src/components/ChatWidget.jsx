@@ -32,55 +32,43 @@ export default function ChatWidget() {
     setIsBotTyping(true); // Show typing indicator
     setTimeout(() => {
       const serviceResponses = {
-        'mens shoes':
-          'We have a wide range of men\'s shoes including sneakers, formal shoes, and boots. Check our catalog for more details.',
-        'womens heels':
-          'Explore our collection of women\'s heels with various styles and colors. Visit our website for more options.',
-        'kids shoes':
-          'We offer a variety of kids shoes that are comfortable and durable. Browse our kids section for more.',
-        'running shoes':
-          'Our running shoes are designed for comfort and performance. Check out our latest collection.',
-        'boots': 'Stay stylish and warm with our range of boots. Visit our website to see more.',
-        'sandals':
-          'We have a variety of sandals perfect for any occasion. Check our catalog for more details.',
-        'slippers':
-          'Our slippers are comfortable and perfect for indoor use. Browse our collection online.',
-        'formal shoes':
-          'Find the perfect formal shoes for any occasion. Visit our website for more options.',
-        'sports shoes':
-          'Enhance your performance with our sports shoes. Check out our latest collection.',
-        'custom shoes':
-          'Personalize your shoes with our custom shoe service. Visit our website for more details.',
+        'diagnostics':
+          'We offer advanced vehicle diagnostics to identify and resolve issues efficiently. How can we assist you further?',
+        'mechanical repairs':
+          'Our team specializes in mechanical repairs for all types of vehicles. What specific issue are you facing?',
+        'maintenance':
+          'Regular maintenance is key to keeping your vehicle in top condition. We provide comprehensive maintenance services. Would you like to schedule an appointment?',
+        'accident repairs':
+          'We handle accident repairs with precision and care. Bring your vehicle in for an assessment, and we’ll get it back on the road.',
+        'spray painting':
+          'Our professional spray painting services ensure your vehicle looks as good as new. What color are you considering?',
       };
 
       const greetings = ['hello', 'hi', 'hey', 'mambo', 'sasa', 'niaje', 'vipi', 'habari', 'how are you', 'good afternoon', 'good morning', 'good evening', 'uko aje', 'greetings'];
       const serviceKeywords = [
-        'shoes',
-        'heels',
-        'boots',
-        'sandals',
-        'slippers',
-        'formal',
-        'sports',
-        'custom',
-        'running',
-        'kids',
-        'mens',
-        'womens',
+        'diagnostics',
+        'mechanical',
+        'repairs',
+        'maintenance',
+        'accident',
+        'spray',
+        'painting',
+        'vehicle',
+        'car',
+        'service',
       ];
 
       const services = [
-        { id: 1, name: "Men's Sneakers" },
-        { id: 2, name: "Women's Heels" },
-        { id: 3, name: "Kids' Shoes" },
-        { id: 4, name: "Running Shoes" },
-        { id: 5, name: "Boots" },
-        { id: 6, name: "Sandals" },
-        { id: 7, name: "Slippers" },
-        { id: 8, name: "Formal Shoes" },
-        { id: 9, name: "Sports Shoes" },
-        { id: 10, name: "Custom Shoes" },
-        { id: 11, name: "Offers" },
+        { id: 1, name: "Car Repair & Service" },
+        { id: 2, name: "Mechanical & Electrical Repairs" },
+        { id: 3, name: "Paint & Body Work" },
+        { id: 4, name: "Vehicle Diagnostics" },
+        { id: 5, name: "Accident Repairs" },
+        { id: 6, name: "Maintenance Services" },
+        { id: 7, name: "Tire Services" },
+        { id: 8, name: "Vehicle Detailing" },
+        { id: 9, name: "Brake & Suspension Services" },
+        { id: 10, name: "Battery Check & Replacement" },
       ];
 
       const userRequest = newMessage.trim().toLowerCase();
@@ -104,7 +92,8 @@ export default function ChatWidget() {
             .join('\n')}\n\nCheck our website for more details!`;
         } else {
           botResponse =
-            'I’m here to help! You can ask about our services like "Mens Shoes", "Womens Heels", or "Kids Shoes". Or check our website for more options.';
+            'I’m here to help! You can ask about our services like "Vehicle Diagnostics", "Mechanical Repairs", or "Spray Painting".';
+
         }
       }
 
@@ -114,7 +103,7 @@ export default function ChatWidget() {
         { text: botResponse, sender: 'bot', timestamp: new Date() },
       ]);
       setIsBotTyping(false); // Hide typing indicator
-    }, 2000); // Simulate a 2-second delay for bot response
+    }, 3000); // Simulate a 3-second delay for bot response
   };
 
   return (
