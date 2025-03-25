@@ -7,7 +7,7 @@ const carRepairServices = [
     id: 'crs1',
     title: 'Oil Change & Filter Replacement',
     description: 'Regular oil and filter changes to ensure optimal engine performance and longevity.',
-    image: 'https://images.pexels.com/photos/13065690/pexels-photo-13065690.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+    image: 'https://media.istockphoto.com/id/1319354325/photo/refueling-and-pouring-oil-quality-into-the-engine-motor-car-transmission-and-maintenance-gear.jpg?s=612x612&w=0&k=20&c=Q9sCpWkbJP4B5mrX_gFznI8QJGOCcGtVmqkvCN20z68='
   },
   {
     id: 'crs2',
@@ -31,7 +31,7 @@ const carRepairServices = [
     id: 'crs5',
     title: 'Radiator & Cooling System Service',
     description: 'Coolant flush, radiator repair, and cooling system pressure test.',
-    image: 'https://images.pexels.com/photos/6720532/pexels-photo-6720532.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+    image: 'https://i.postimg.cc/PqDnKkjF/hhf.jpg'
   },
   {
     id: 'crs6',
@@ -43,7 +43,7 @@ const carRepairServices = [
     id: 'crs7',
     title: 'Wheel Alignment & Balancing',
     description: 'Precision wheel alignment and tire balancing for better fuel efficiency.',
-    image: 'https://images.pexels.com/photos/3807799/pexels-photo-3807799.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+    image: 'https://i.postimg.cc/PqVwr8x0/gg.jpg'
   },
   {
     id: 'crs8',
@@ -67,7 +67,7 @@ const carRepairServices = [
     id: 'crs11',
     title: 'Fuel System Cleaning',
     description: 'Cleaning fuel injectors and throttle body for improved fuel efficiency.',
-    image: 'https://images.pexels.com/photos/11890958/pexels-photo-11890958.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+    image: 'https://i.postimg.cc/xdB14Gqj/xx.jpg'
   },
   {
     id: 'crs12',
@@ -83,7 +83,7 @@ const mechElectricalServices = [
     id: 'me1',
     title: 'Battery and Alternator Testing',
     description: 'Check battery health, voltage output, and alternator performance to prevent starting issues.',
-    image: 'https://media.istockphoto.com/id/1477647139/photo/mechanic-checking-car-battery.jpg?s=612x612&w=0&k=20&c=OCvuZZMsfbTlcx7o7P9IG4QKDcBywzzZNMIRMEChNsk='
+    image: 'https://media.istockphoto.com/id/597221852/photo/generator-diagnostic-eguipment.jpg?s=612x612&w=0&k=20&c=3Y4lgPIMf5VVpOF4fnZSiOBKRH5MJa5J2OmJmalA1Jc='
   },
   {
     id: 'me2',
@@ -95,13 +95,13 @@ const mechElectricalServices = [
     id: 'me3',
     title: 'Sensor and Fuse Replacement',
     description: 'Diagnose and replace malfunctioning sensors and blown fuses across all systems.',
-    image: 'https://media.istockphoto.com/id/1352125116/photo/car-service-worker-replacing-automobile-fuse-in-engine.jpg?s=612x612&w=0&k=20&c=0hkLmAkI_y063jdTCLlMjBrQ9SSkz1NNC2Zh2PfLgSU='
+    image: 'https://media.istockphoto.com/id/1485453373/photo/auto-repairman-checks-the-fuse-in-electrical-system-of-car.jpg?s=612x612&w=0&k=20&c=un69ME1dij7CcZn9kyli3MR_dVXRXSZfliK_46cNE6I='
   },
   {
     id: 'me4',
     title: 'Engine Fault Diagnosis',
     description: 'Computerized diagnostics to identify engine issues quickly and accurately.',
-    image: 'https://media.istockphoto.com/id/1441159572/photo/african-female-professional-car-mechanic-repair-service-and-checking-car-engine-by.jpg?s=612x612&w=0&k=20&c=imtIYSuKU0hFimjSxSGjt9oFegAv4k1DVYfIkJdGDe0='
+    image: 'https://i.postimg.cc/zvv5DVy2/bbb.jpg'
   },
   {
     id: 'me5',
@@ -113,7 +113,7 @@ const mechElectricalServices = [
     id: 'me6',
     title: 'Wiring & Electrical Fault Repair',
     description: 'Troubleshooting shorts, open circuits, and damaged wiring harnesses.',
-    image: 'https://media.istockphoto.com/id/1367507596/photo/electrician-master-repairs-cables-in-modern-car.jpg?s=612x612&w=0&k=20&c=WdsmJ7cqF8bVvqy90R_hOzUGForJc-ZaNDoAJ-Y6fSw='
+    image: 'https://images.pexels.com/photos/6110229/pexels-photo-6110229.jpeg?auto=compress&cs=tinysrgb&w=600'
   },
   {
     id: 'me7',
@@ -125,7 +125,7 @@ const mechElectricalServices = [
     id: 'me8',
     title: 'Power Window & Lock Repair',
     description: 'Fix electrical faults in window regulators and central locking systems.',
-    image: 'https://media.istockphoto.com/id/1569692854/photo/auto-mechanic-remove-car-window-controls-panel-car-maintenance-service.jpg?s=612x612&w=0&k=20&c=3SqWBcsjk-PUDrb1xmd_56cDmz3-nEn9JSgT5hQsc8I='
+    image: 'https://media.istockphoto.com/id/2154613190/photo/window-master-switch-control-panel-isolated-on-white-background-switch-on-off-car-button.jpg?s=612x612&w=0&k=20&c=sNg108LflOtDuzaHqHEB2ivlWYrQnXVgzqIo6Pti0eI='
   },
   {
     id: 'me9',
@@ -149,7 +149,7 @@ const mechElectricalServices = [
     id: 'me12',
     title: 'Charging System Inspection',
     description: 'Complete inspection of alternator, battery terminals, and voltage regulator.',
-    image: 'https://media.istockphoto.com/id/2176577170/photo/senior-woman-is-jumping-charger-cable-to-agm-battery-on-car.jpg?s=612x612&w=0&k=20&c=U0uju0Pc0sJsX04bbyNUbz5GmCBOTuDmOOl634NUsDs='
+    image: 'https://images.pexels.com/photos/12658309/pexels-photo-12658309.jpeg?auto=compress&cs=tinysrgb&w=600'
   }
 ];
 
@@ -177,43 +177,43 @@ const paintBodyServices = [
     id: 'pb4',
     title: 'Panel Beating',
     description: 'Restore damaged panels to their original shape using precision tools.',
-    image: 'https://images.pexels.com/photos/9827738/pexels-photo-9827738.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+    image: 'https://i.postimg.cc/j209m2zJ/mm.jpg'
   },
   {
     id: 'pb5',
     title: 'Paint Touch-Up',
     description: 'Small area paint correction and touch-up using color-matched paints.',
-    image: 'https://images.pexels.com/photos/5233261/pexels-photo-5233261.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+    image: 'https://i.postimg.cc/bvZBvkgt/vv.jpg'
   },
   {
     id: 'pb6',
     title: 'Rust Removal & Treatment',
     description: 'Elimination of rust spots and application of anti-rust coating.',
-    image: 'https://media.istockphoto.com/id/1174661121/photo/old-blue-car-with-a-rusty-wing-and-a-gray-wheel.jpg?s=612x612&w=0&k=20&c=ygrfiY4bltr2G5bpBfnk2XfbVbZhG5z6r-fkN5uRBT4='
+    image: 'https://i.postimg.cc/PJQ674XB/bbv.jpg'
   },
   {
     id: 'pb7',
     title: 'Car Polishing & Buffing',
     description: 'Restore paint shine and remove surface swirls with machine polishing.',
-    image: 'https://media.istockphoto.com/id/1060499948/photo/car-polish-wax-worker-hands-applying-protective-tape-before-polishing-buffing-and-polishing.jpg?s=612x612&w=0&k=20&c=SQJYF3HgmFi9N9NwB-gp_Q4UNIiKtP1h_VY2G79oG18='
+    image: 'https://i.postimg.cc/BvPm3sZ5/ll.jpg'
   },
   {
     id: 'pb8',
     title: 'Paintless Dent Removal (PDR)',
     description: 'Remove minor dents without affecting factory paint using PDR tools.',
-    image: 'https://media.istockphoto.com/id/2024631054/photo/process-of-paintless-dent-repair-on-car-body-the-mechanic-at-the-auto-shop-with-tools-to.jpg?s=612x612&w=0&k=20&c=DXLRexfsOLfN33qqt5Qoy4sGVqmCWCwmqJksmyMkeZM='
+    image: 'https://i.postimg.cc/2SVwdmWp/yy.jpg'
   },
   {
     id: 'pb9',
     title: 'Clear Coat Application',
     description: 'Protect your paint job with a durable and glossy clear coat layer.',
-    image: 'https://media.istockphoto.com/id/1268954445/photo/mechanic-installs-car-paint-protection-film.jpg?s=612x612&w=0&k=20&c=vzOb4Rlb5KXv8NpYB7LOZyaJBO3F354XqULN1QKaBcI='
+    image: 'https://i.postimg.cc/TYPqGGCy/cc.jpg'
   },
   {
     id: 'pb10',
     title: 'Headlight Restoration',
     description: 'Buff and polish cloudy headlights to restore brightness and clarity.',
-    image: 'https://media.istockphoto.com/id/2151879559/photo/car-headlight-polishing.jpg?s=612x612&w=0&k=20&c=cAheknaTXgcyv-24Hyh9aUO6kSrYBm7rl-e7xhEk-B8='
+    image: 'https://i.postimg.cc/sD1Sqmg7/gf.jpg'
   },
   {
     id: 'pb11',
@@ -278,13 +278,13 @@ const diagnosticServices = [
     id: 'vd6',
     title: 'OBD-II Code Scan',
     description: 'On-board diagnostics scan for trouble codes with professional analysis.',
-    image: 'https://media.istockphoto.com/id/2203733486/photo/obd-or-obd-ii-scanner-in-use-by-technician-automotive-diagnostic-tool-in-use-for-scanning.jpg?s=612x612&w=0&k=20&c=4vwIZAGsHRC1pCWRySwZ55G5_EPAXSrN3u_BzFtDb0c='
+    image: 'https://media.istockphoto.com/id/1169030169/vector/suv-check-engine-light-abs-airbag-engine-oil-obdii-scanner-tool-being-used-on-an-open-engine.jpg?s=612x612&w=0&k=20&c=LBQwjrIxm1795p2wpwqch99MAIVtmppmUA0FvvnnVkg='
   },
   {
     id: 'vd7',
     title: 'Fuel System Diagnostics',
     description: 'Evaluate fuel pressure, injector performance, and fuel economy issues.',
-    image: 'https://media.istockphoto.com/id/2188163252/photo/car-battery-maintenance-with-digital-overlay.jpg?s=612x612&w=0&k=20&c=JxQdtW9kEMMnRJ01c5HgZXw4-mUsjb0ih7-SgnWmFx8='
+    image: 'https://media.istockphoto.com/id/2171225591/photo/engine-components-and-wiring-in-a-vehicle-being-serviced-at-a-garage.jpg?s=612x612&w=0&k=20&c=ouXq9iFTa2F2joRUC6PQhOl5tA2i9q3n_PoPVcxhxMw='
   },
   {
     id: 'vd8',
@@ -308,7 +308,7 @@ const diagnosticServices = [
     id: 'vd11',
     title: 'Sensor & Module Diagnostics',
     description: 'Full diagnostic of electronic control modules and vehicle sensors.',
-    image: 'https://media.istockphoto.com/id/1330016219/photo/auto-electrician.jpg?s=612x612&w=0&k=20&c=gKDsGUN3ieQVskpuLJoKsk0LdOhaC7z4mrSMnWXlRhY='
+    image: 'https://media.istockphoto.com/id/1058523950/photo/car-engine-close-up.jpg?s=612x612&w=0&k=20&c=84Ky-vYXzY21-h8IDu3XsdibEQmS7V2aI4tCWbLNXkw='
   },
   {
     id: 'vd12',
@@ -320,13 +320,13 @@ const diagnosticServices = [
     id: 'vd13',
     title: 'Climate Control System Check',
     description: 'Diagnose HVAC system errors and ensure consistent cabin temperature.',
-    image: 'https://media.istockphoto.com/id/1901547765/photo/car-air-conditioning-repair-technician-man-checks-car-air-conditioning-system-refrigerant.jpg?s=612x612&w=0&k=20&c=RgMevlWS3ULPGa9fr75cXiva8urEmBg2jm3cM24-M1M='
+    image: 'https://i.postimg.cc/659wpbv4/zz.jpg'
   },
   {
     id: 'vd14',
     title: 'Pre-Purchase Diagnostic Inspection',
     description: 'Get a full digital diagnostic report before buying a used vehicle.',
-    image: 'https://media.istockphoto.com/id/1310795165/photo/auto-mechanic-using-car-diagnostic-tool.jpg?s=612x612&w=0&k=20&c=SKHWqGA2sGnbcj6gBM7vfa5rAVBTA9e-US1w8q_6Px4='
+    image: 'https://i.postimg.cc/mZpVPtc3/yyjj.jpg'
   }
 ];
 
@@ -354,7 +354,7 @@ const accidentRepairServices = [
     id: 'ar4',
     title: 'Windshield Replacement',
     description: 'Complete windshield replacement with high-quality glass.',
-    image: 'https://media.istockphoto.com/id/1432352474/photo/in-the-aftermath-of-an-accident-near-my-home-automobile-service-special-workers-replaced-the.jpg?s=612x612&w=0&k=20&c=bPPO7Tf0wCOXClhfRaMqDTN6hfZ2Odch-Ava4tXREUE='
+    image: 'https://i.postimg.cc/7LNnw682/shi.jpg'
   },
   {
     id: 'ar5',
@@ -378,7 +378,7 @@ const accidentRepairServices = [
     id: 'ar8',
     title: 'Panel Beating',
     description: 'Professional reshaping and aligning of body panels.',
-    image: 'https://media.istockphoto.com/id/537887872/photo/auto-body-repair-series-fixing-car-body.jpg?s=612x612&w=0&k=20&c=Em_OSY4NLebT12DmuW862cAESGtVnGcPssY6bqnHnzk='
+    image: 'https://i.postimg.cc/63vRT5Fc/dd.jpg'
   },
   {
     id: 'ar9',
@@ -408,7 +408,7 @@ const accidentRepairServices = [
     id: 'ar13',
     title: 'Wheel Alignment Check',
     description: 'Ensure accurate wheel alignment post-collision.',
-    image: 'https://media.istockphoto.com/id/1469093559/photo/at-a-repair-shop-a-car-mechanic-tightens-the-suspension-of-an-elevated-vehicle-with-a-spanner.jpg?s=612x612&w=0&k=20&c=xBh7ie0svqSy9DxvVPFo44uHSn5as1NA5ulPxUSwwDQ='
+    image: 'https://i.postimg.cc/zDkv7gwW/tt.jpg'
   },
   {
     id: 'ar14',

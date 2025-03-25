@@ -14,7 +14,7 @@ const services = [
     id: 2,
     title: 'Mechanical & Electrical Repairs',
     description: 'Expert mechanical and electrical fault diagnosis and repair.',
-    image: 'https://images.pexels.com/photos/5572265/pexels-photo-5572265.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1', // Replace as needed
+    image: 'https://images.pexels.com/photos/159293/car-engine-motor-clean-customized-159293.jpeg?auto=compress&cs=tinysrgb&w=600', // Replace as needed
     price: false
   },
   {
