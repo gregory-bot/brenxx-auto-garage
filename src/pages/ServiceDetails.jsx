@@ -572,13 +572,13 @@ const tireServices = [
     id: 'ts7',
     title: 'Tire Inspection',
     description: 'Comprehensive tire inspection for safety and wear issues.',
-    image: 'https://media.istockphoto.com/id/1394550566/photo/a-auto-mechanic-inflates-a-tire-with-an-air-tire-inflating-gun.jpg?s=612x612&w=0&k=20&c=LsApAdx8uRrcFW3QRDGzgJRo1K0QO5DSRuQ5uTAXMYg='
+    image: 'https://i.postimg.cc/0yHvkhh5/tire.jpg'
   },
   {
     id: 'ts8',
     title: 'Tire Pressure Check',
     description: 'Ensure correct tire pressure for optimal performance and safety.',
-    image: 'https://media.istockphoto.com/id/1335957246/photo/close-up-of-mechanics-hand-checking-the-air-pressure-of-a-tyre-in-auto-repair-service.jpg?s=612x612&w=0&k=20&c=h5H32CSUZw6-XkaGX3MzVcnK37UEuZDDRI1MZBtzNMA='
+    image: 'https://i.postimg.cc/zXX4y0Cy/pp.jpg'
   },
   {
     id: 'ts9',
@@ -642,13 +642,13 @@ const vehicleDetailingAndTuningServices = [
     id: 'vd2',
     title: 'Engine Detailing',
     description: 'Deep cleaning and dressing of engine bay with safe products.',
-    image: 'https://media.istockphoto.com/id/2178053789/photo/blue-collar-worker-work-at-car-service-workshop.jpg?s=612x612&w=0&k=20&c=cnxoSBc7aYQKE-Zefq_8qbsdt6X7JIAkTvj1lhKg__4='
+    image: 'https://i.postimg.cc/tJfdCqdt/engine.jpg'
   },
   {
     id: 'vd3',
     title: 'Interior Deep Clean',
     description: 'Vacuuming, dusting, and shampooing of seats and carpets.',
-    image: 'https://media.istockphoto.com/id/853745938/photo/worker-cleaning-seat-inside-the-car.jpg?s=612x612&w=0&k=20&c=2oLDzQZKMYKbg8VeHaZx1-m_9TyP8DNI0qL2YMnVvkU='
+    image: 'https://i.postimg.cc/9f8YNY4n/int.jpg'
   },
   {
     id: 'vd4',
