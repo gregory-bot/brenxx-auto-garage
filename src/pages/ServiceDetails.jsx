@@ -13,7 +13,7 @@ const carRepairServices = [
     id: 'crs2',
     title: 'Brake Inspection & Repair',
     description: 'Complete brake service including pads, rotors, and brake fluid check.',
-    image: 'https://images.pexels.com/photos/6870299/pexels-photo-6870299.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+    image: 'https://i.postimg.cc/BnsFJJh2/hh.jpg'
   },
   {
     id: 'crs3',
