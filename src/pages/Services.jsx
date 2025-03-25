@@ -89,24 +89,25 @@ function Services() {
           </div>
         </div>
         
-        {/* Marquee Section */}
-        <div className="mt-12 overflow-hidden">
+        {/* Marquee Section - Fixed */}
+        <div className="mt-12 overflow-hidden relative">
           <div className="animate-marquee whitespace-nowrap">
-            <span className="text-3xl text-blue-600 mx-4">
-              Welcome to Brenxx Auto garage ✨
-            </span>
-            <span className="text-3xl text-blue-600 mx-4">
-            🚗 Your trusted Auto care partner - Brenxx Garage 🛠️
-            </span>
-            {/* Repeat to make the marquee smoother */}
-            <span className="text-3xl text-blue-600 mx-4">
-            keeping you on the road – One Fix at a Time✨
-            </span>
+            {/* Repeat each message multiple times for smooth looping */}
+            {[...Array(4)].map((_, i) => (
+              <React.Fragment key={`welcome-${i}`}>
+                <span className="text-2xl text-blue-600 mx-4">
+                  Welcome to Brenxx Auto Garage ✨
+                </span>
+                <span className="text-2xl text-blue-600 mx-4">
+                  keeping you on the road ✨
+                </span>
+              </React.Fragment>
+            ))}
           </div>
         </div>
       </div>
       
-      {/* Add this to your global CSS or Tailwind config */}
+      {/* Updated CSS for smoother animation */}
       <style jsx>{`
         @keyframes marquee {
           0% { transform: translateX(0); }
@@ -114,7 +115,8 @@ function Services() {
         }
         .animate-marquee {
           display: inline-block;
-          animation: marquee 15s linear infinite;
+          animation: marquee 20s linear infinite;
+          padding-right: 100%; /* Creates space for smooth looping */
         }
       `}</style>
     </section>
