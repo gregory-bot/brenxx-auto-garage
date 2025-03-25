@@ -88,9 +88,37 @@ function Services() {
             ))}
           </div>
         </div>
+        
+        {/* Marquee Section */}
+        <div className="mt-12 overflow-hidden">
+          <div className="animate-marquee whitespace-nowrap">
+            <span className="text-3xl text-blue-600 mx-4">
+              Welcome to Brenxx Auto garage ✨
+            </span>
+            <span className="text-3xl text-blue-600 mx-4">
+            🚗 Your trusted Auto care partner - Brenxx Garage 🛠️
+            </span>
+            {/* Repeat to make the marquee smoother */}
+            <span className="text-3xl text-blue-600 mx-4">
+            keeping you on the road – One Fix at a Time✨
+            </span>
+          </div>
+        </div>
       </div>
+      
+      {/* Add this to your global CSS or Tailwind config */}
+      <style jsx>{`
+        @keyframes marquee {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
+        }
+        .animate-marquee {
+          display: inline-block;
+          animation: marquee 15s linear infinite;
+        }
+      `}</style>
     </section>
   );
 }
 
-export default Services; 
+export default Services;
