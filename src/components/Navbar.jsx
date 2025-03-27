@@ -49,9 +49,10 @@ function Navbar() {
           <div className="hidden md:flex items-center space-x-8">
             <Link to="/" className="nav-link" style={{ fontFamily: 'Courier New, monospace' }}>Home</Link>
             <Link to="/services" className="nav-link" style={{ fontFamily: 'Courier New, monospace' }}>Services</Link>
+            <Link to="/gallery" className="nav-link" style={{ fontFamily: 'Courier New, monospace' }}>Gallery</Link>
             <Link to="/aboutus" className="nav-link" style={{ fontFamily: 'Courier New, monospace' }}>AboutUs</Link>
             <Link to="/contact" className="nav-link" style={{ fontFamily: 'Courier New, monospace' }}>Contact</Link>
-            <Link to="/offers" className="nav-link" style={{ fontFamily: 'Courier New, monospace' }}>Offers</Link> {/* Added Offers link */}
+            <Link to="/offers" className="nav-link" style={{ fontFamily: 'Courier New, monospace' }}>Offers</Link>
             <Link to="/cart" className="relative">
               <FiShoppingCart className="h-6 w-6" />
               {cartItems.length > 0 && (
@@ -107,6 +108,12 @@ function Navbar() {
               Services
             </button>
             <button 
+              onClick={() => handleNavigation('/gallery')} 
+              className="nav-link"
+            >
+              Gallery
+            </button>
+            <button 
               onClick={() => handleNavigation('/aboutus')} 
               className="nav-link"
             >
@@ -123,7 +130,7 @@ function Navbar() {
               className="nav-link"
             >
               Offers
-            </button> 
+            </button>
           </div>
         </div>
       )}

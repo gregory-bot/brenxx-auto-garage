@@ -24,18 +24,18 @@ const ContactSection = () => {
             <div className="w-full md:w-1/3">
               <h3 className="text-xl font-semibold mb-2">Brenxx Auto Services</h3>
               <p>Your trusted partner for vehicle repair and maintenance.</p>
-              <p>📞 <strong>Phone:</strong> +254 799686363</p>
+              <p>📞 <strong>Phone:</strong> +254799686363</p>
               <p>📧 <strong>Email:</strong> brenxxautogarage@gmail.com</p>
               <p className="mt-4 flex items-center">
                 <FaMapMarkerAlt className="mr-2 text-red-500" /> {/* Red map marker icon */}
                 <strong>Location:</strong>{' '}
                 <a
-                  href="https://www.google.com/maps?q=2nd+Avenue,+Garden+Estate,+Nairobi"
+                  href="https://maps.app.goo.gl/C2Nck5qf7G3N3dAE7"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-blue-400 hover:text-blue-300 underline"
                 >
-                  2nd Avenue, Garden Estate, Nairobi
+                  Brenxx Auto, Nairobi
                 </a>
               </p>
             </div>
@@ -44,7 +44,7 @@ const ContactSection = () => {
             <div className="w-full md:w-1/3">
               <div className="rounded-xl overflow-hidden shadow-lg h-[200px]">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3988.9020684342845!2d36.86024187496549!3d-1.2279390987603518!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMcKwMTMnNDAuNiJTIDM2wrA1MSc0Ni4xIkU!5e0!3m2!1sen!2ske!4v1742709344650!5m2!1sen!2ske"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.9023723913806!2d36.85803936820727!3d-1.2277353960212578!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f1713d27fd3c9%3A0x6f7b49f497186e3f!2sBrenxx%20Auto!5e0!3m2!1sen!2ske!4v1743074969462!5m2!1sen!2ske"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}

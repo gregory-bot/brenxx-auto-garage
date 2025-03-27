@@ -125,7 +125,7 @@ const mechElectricalServices = [
     id: 'me8',
     title: 'Power Window & Lock Repair',
     description: 'Fix electrical faults in window regulators and central locking systems.',
-    image: 'https://media.istockphoto.com/id/2154613190/photo/window-master-switch-control-panel-isolated-on-white-background-switch-on-off-car-button.jpg?s=612x612&w=0&k=20&c=sNg108LflOtDuzaHqHEB2ivlWYrQnXVgzqIo6Pti0eI='
+    image: 'https://i.postimg.cc/Mp1d38Dn/window.jpg'
   },
   {
     id: 'me9',

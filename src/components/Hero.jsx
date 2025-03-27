@@ -3,7 +3,7 @@ import Typewriter from "typewriter-effect";
 import SearchBar from "./SearchBar"; // Import SearchBar component
 
 const videos = [
-  "https://videos.pexels.com/video-files/8987066/8987066-uhd_2560_1440_30fps.mp4",
+  "https://www.pexels.com/download/video/18101976/",
   "https://videos.pexels.com/video-files/6872474/6872474-uhd_1440_2560_25fps.mp4",
 
 ];
