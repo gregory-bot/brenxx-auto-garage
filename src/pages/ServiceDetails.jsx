@@ -654,7 +654,7 @@ const vehicleDetailingAndTuningServices = [
     id: 'vd4',
     title: 'Leather Seat Conditioning',
     description: 'Clean and condition leather or synthetic seats for durability and shine.',
-    image: 'https://images.pexels.com/photos/18198185/pexels-photo-18198185/free-photo-of-black-leather-car-seat.jpeg?auto=compress&cs=tinysrgb&w=600'
+    image: 'https://i.postimg.cc/28JgnVBf/jiji.jpg'
   },
   {
     id: 'vd5',
@@ -714,7 +714,7 @@ const vehicleDetailingAndTuningServices = [
     id: 'vd14',
     title: 'Paint Correction & Buffing',
     description: 'Removes swirl marks and brings back showroom shine.',
-    image: 'https://media.istockphoto.com/id/1174973760/photo/auto-detailing-car.jpg?s=612x612&w=0&k=20&c=5YovpqlLv3i7DgCpzoFpOE6mV53rFUo3pw0ooFtmlcg='
+    image: 'https://i.postimg.cc/HxpNTMFb/ssd.jpg'
   },
   {
     id: 'vd15',
@@ -726,7 +726,7 @@ const vehicleDetailingAndTuningServices = [
     id: 'vd16',
     title: 'Complete Comfort & Performance Package',
     description: 'Includes detailing, seat conditioning, ambient lighting & ECU tune.',
-    image: 'https://media.istockphoto.com/id/1466769217/photo/tourists-in-safari-off-road-vehicle-exploring-national-park-in-kenya-east-africa.jpg?s=612x612&w=0&k=20&c=lrs_3TtUiaWMQ8jQEtau7bfMxFw6gnnxzH1mzw1lUB0='
+    image: 'https://i.postimg.cc/cCtBW41Q/lux.jpg'
   }
 ];
 

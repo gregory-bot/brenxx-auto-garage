@@ -56,7 +56,7 @@ const services = [
     id: 8,
     title: 'Vehicle Detailing',
     description: 'Professional car detailing and valeting services.',
-    image: 'https://media.istockphoto.com/id/1157179147/photo/checking-oil-in-car-engine.jpg?s=612x612&w=0&k=20&c=UlpxPn7pkghIG3FC7ldhwtFIBwEf6eJOfiUTM_nn8JI=', // Replace as needed
+    image: 'https://i.postimg.cc/cCtBW41Q/lux.jpg', // Replace as needed
     price: false
   },
   {
@@ -70,7 +70,7 @@ const services = [
     id: 10,
     title: 'Battery Check & Replacement',
     description: 'Testing, jump-starting, and replacement of car batteries.',
-    image: 'https://media.istockphoto.com/id/1331847613/photo/technician-replaced-car-old-battery.jpg?s=612x612&w=0&k=20&c=2cPeptv8w2iGsuqzzuE_02f8WRC_cCTtPcs4Xu6n_ao=',
+    image: 'https://images.pexels.com/photos/4374843/pexels-photo-4374843.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
     price: false
   },
 ];

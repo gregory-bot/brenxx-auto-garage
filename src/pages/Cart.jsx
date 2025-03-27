@@ -12,7 +12,7 @@ function Cart() {
       .join('\n')}`;
 
     const encodedMessage = encodeURIComponent(message);
-    window.open(`https://wa.me/254 799686363?text=${encodedMessage}`, '_blank');
+    window.open(`https://wa.me/254799686363?text=${encodedMessage}`, '_blank');
   };
 
   const handleEmailOrder = () => {
