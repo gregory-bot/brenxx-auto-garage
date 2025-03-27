@@ -21,10 +21,10 @@ function OffersSection() {
   ];
 
   const handleSeeAllClick = () => {
-    setIsFading(true); // Trigger fade-out effect
+    setIsFading(true);
     setTimeout(() => {
-      navigate('/offers'); // Navigate to the offers page after the fade-out
-    }, 300); // Match the duration of the CSS transition
+      navigate('/offers');
+    }, 300);
   };
 
   return (
@@ -33,16 +33,16 @@ function OffersSection() {
         isFading ? 'opacity-0' : 'opacity-100'
       }`}
     >
-<h2
-  className="text-3xl font-bold bg-blue-200 mb-4"
-  style={{
-    fontFamily: 'Courier New, monospace',
-    borderRadius: '12px', // Rounded corners
-    padding: '1rem'        // Optional: adds spacing inside the box
-  }}
->
-  Keeping you on the road – special discounts available🙂
-</h2>
+      <h2
+        className="text-3xl font-bold bg-blue-200 mb-4"
+        style={{
+          fontFamily: 'Courier New, monospace',
+          borderRadius: '12px',
+          padding: '1rem'
+        }}
+      >
+        Keeping you on the road – Brenxx Auto Services
+      </h2>
 
       <div className="grid grid-cols-1 gap-4">
         {offers.map((offer, index) => (
@@ -63,7 +63,7 @@ function OffersSection() {
                     alt={`Offer ${index + 1} Image ${idx + 1}`}
                     className="h-full object-cover"
                   />
-                  <div className="absolute top-2 left-2 bg-red-600 text-white text-xs font-bold rounded-full px-2 py-1">
+                  <div className="absolute top-0 left-0 bg-red-600 text-white text-xs font-bold rounded-full px-2 py-1">
                     50% OFF
                   </div>
                 </div>
@@ -72,14 +72,22 @@ function OffersSection() {
           </div>
         ))}
       </div>
-      <div className="flex justify-end mt-4">
-        <button
-          onClick={handleSeeAllClick}
-          className="bg-blue-500 hover:bg-blue-700 text-white px-4 py-2 rounded-md transition-colors duration-200"
-        >
-          see all
-        </button>
-      </div>
+      <div className="flex justify-between items-center mt-4">
+  {/* Logo on the left */}
+  <img 
+    src="https://i.postimg.cc/gJCNMjt8/brenxlogo.jpg" 
+    alt="BRENXX Logo" 
+    className="h-8 w-auto" 
+  />
+  
+  {/* Button on the right */}
+  <button
+    onClick={handleSeeAllClick}
+    className="bg-blue-500 hover:bg-blue-700 text-white px-4 py-2 rounded-md transition-colors duration-200"
+  >
+    see all
+  </button>
+</div>
     </div>
   );
 }

@@ -161,16 +161,17 @@ const Gallery = () => {
   }
 
   return (
-    <div className="py-16 px-4 sm:px-6 lg:px-8 bg-blue-50 min-h-screen">
+    <div className="py-32 px-4 sm:px-6 lg:px-8 bg-blue-50 min-h-screen">
       <div className="max-w-6xl mx-auto">
         <div className="flex justify-between items-center mb-8">
-          <Link 
-            to="/" 
-            className="flex items-center text-blue-600 hover:text-blue-800 text-lg"
-          >
-            <FiArrowLeft className="mr-2" />Home
-          </Link>
-          <h2 className="text-3xl text-blue-800 font-mono">Gallery</h2>
+        <Link 
+      to="/" 
+      className="flex items-center border border-blue-300 hover:border-blue-600 text-blue-600 hover:text-blue-800 px-4 py-2 rounded-full transition-all duration-300 shadow-sm hover:shadow-md"
+    >
+      <FiArrowLeft className="mr-2" />
+      Home
+    </Link>
+          <h2 className="text-3xl text-blue-800">gallery</h2>
           <div className="w-8"></div>
         </div>
 

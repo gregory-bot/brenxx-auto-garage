@@ -953,7 +953,7 @@ function ServiceDetails() {
   return (
     <div className="min-h-screen bg-gray-50 pt-20 pb-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h1 className="text-3xl font-bold mb-8">Available Products</h1>
+        <h1 className="text-4xl mb-8">Available Services</h1>
         <img
           src="https://i.postimg.cc/gJCNMjt8/brenxlogo.jpg"
           alt="Promotional Banner"

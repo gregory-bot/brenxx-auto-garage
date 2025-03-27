@@ -14,6 +14,12 @@ const GalleryPreview = () => {
     <section className="py-16 px-4 sm:px-6 lg:px-8 bg-blue-50">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
+          {/* Added logo image above the heading */}
+          <img 
+            src="https://i.postimg.cc/gJCNMjt8/brenxlogo.jpg" 
+            alt="BRENXX-AUTO logo" 
+            className="h-16 w-auto mx-auto mb-4"
+          />
           <h2 className="text-4xl text-blue-800 mb-4">gallery</h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             Take a look at our work and satisfied customers

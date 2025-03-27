@@ -29,9 +29,9 @@ function OffersPage() {
     },
     {
       id: 'offer4',
-      title: 'Winter Tire Change Package',
-      description: 'Prepare for winter with our tire change and alignment service.',
-      image: 'https://images.pexels.com/photos/3551614/pexels-photo-3551614.jpeg?auto=compress&cs=tinysrgb&w=600',
+      title: 'Car Facelift package',
+      description: 'Prepare for facelift with our tire change and alignment service.',
+      image: 'https://media.istockphoto.com/id/946261062/photo/bottom-view-of-wheel-and-shock-absorber-of-vehicle.jpg?s=612x612&w=0&k=20&c=w-1POmKRJGzBLYRRDmyUPUcW0-2fGRuIDuLmyHsEP8U=',
     },
     {
       id: 'offer5',

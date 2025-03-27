@@ -2,6 +2,11 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
 function ServiceCard({ service }) {
+  const handleClick = () => {
+    // Scroll to top when the link is clicked
+    window.scrollTo(0, 0);
+  };
+
   return (
     <motion.div
       whileHover={{ scale: 1.05 }}
@@ -19,7 +24,9 @@ function ServiceCard({ service }) {
         <p className="text-blue-600 text-sm mb-4">{service.description}</p>
         <Link
           to={`/services/${service.id}`}
-          className="inline-block bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition-colors duration-200 text-sm" style={{ fontFamily: 'Courier New, monospace' }}
+          onClick={handleClick}
+          className="inline-block bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition-colors duration-200 text-sm" 
+          style={{ fontFamily: 'Courier New, monospace' }}
         >
           check out more
         </Link>
