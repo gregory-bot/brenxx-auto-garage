@@ -120,13 +120,13 @@ const ContactSection = () => {
 
           {/* Social Media Links */}
           <div className="flex justify-center mt-10 space-x-6">
-            <a href="https://www.facebook.com/share/1A4HdDfqRn/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="text-gray-400 hover:text-blue-500 transition">
+            <a href="https://www.facebook.com/share/1A4HdDfqRn/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="text-blue-400 hover:text-blue-500 transition">
               <FaFacebook size={24} />
             </a>
-            <a href="https://www.instagram.com/brenxx_autogarage?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="text-gray-400 hover:text-pink-500 transition">
+            <a href="https://www.instagram.com/brenxx_autogarage?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="text-pink-500 hover:text-pink-500 transition">
               <FaInstagram size={24} />
             </a>
-            <a href="https://www.tiktok.com/@brenxxauto?_t=ZM-8uoCabEiamd&_r=1" target="_blank" rel="noopener noreferrer" aria-label="TikTok" className="text-gray-400 hover:text-white transition">
+            <a href="https://www.tiktok.com/@brenxxauto?_t=ZM-8uoCabEiamd&_r=1" target="_blank" rel="noopener noreferrer" aria-label="TikTok" className="text-purple-600 hover:text-white transition">
               <FaTiktok size={24} />
             </a>
           </div>
