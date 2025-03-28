@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { FiMenu, FiX, FiShoppingCart, FiCalendar } from 'react-icons/fi';
+import { FiMenu, FiX, FiTag,  FiHome, FiInfo, FiMail, FiImage, FiTool, FiShoppingCart, FiCalendar } from 'react-icons/fi';
 import { useCart } from '../context/CartContext';
 
 function Navbar() {
@@ -53,13 +53,7 @@ function Navbar() {
             <Link to="/aboutus" className="nav-link" style={{ fontFamily: 'Courier New, monospace' }}>AboutUs</Link>
             <Link to="/contact" className="nav-link" style={{ fontFamily: 'Courier New, monospace' }}>Contact</Link>
             <Link to="/offers" className="nav-link" style={{ fontFamily: 'Courier New, monospace' }}>Offers</Link>
-            <Link 
-              to="/book-appointment" 
-              className="flex items-center nav-link bg-blue-600 text-white px-3 py-1 rounded-md hover:bg-blue-700 transition-colors"
-              style={{ fontFamily: 'Courier New, monospace' }}
-            >
-              <FiCalendar className="mr-1" /> Book Now
-            </Link>
+            <Link to="/book-appointment" className="nav-link" style={{ fontFamily: 'Courier New, monospace' }}>Book Now</Link>
             <Link to="/cart" className="relative">
               <FiShoppingCart className="h-6 w-6" />
               {cartItems.length > 0 && (
@@ -95,57 +89,68 @@ function Navbar() {
 
       {/* Mobile Navigation - Left Side */}
       {isMobile && (
-        <div
-          className={`fixed top-0 left-0 h-full w-64 bg-blue-200 transform transition-transform duration-300 ease-in-out ${
-            isOpen ? 'translate-x-0' : '-translate-x-full'
-          } z-50 mobile-menu`}
-          style={{ width: '230px' }}
-        >
-          <div className="flex flex-col items-start p-6 space-y-6">
-            <button 
-              onClick={() => handleNavigation('/')} 
-              className="nav-link"
-            >
-              Home
-            </button>
-            <button 
-              onClick={() => handleNavigation('/services')} 
-              className="nav-link"
-            >
-              Services
-            </button>
-            <button 
-              onClick={() => handleNavigation('/gallery')} 
-              className="nav-link"
-            >
-              Gallery
-            </button>
-            <button 
-              onClick={() => handleNavigation('/aboutus')} 
-              className="nav-link"
-            >
-              AboutUs
-            </button>
-            <button 
-              onClick={() => handleNavigation('/contact')} 
-              className="nav-link"
-            >
-              Contact
-            </button>
-            <button 
-              onClick={() => handleNavigation('/offers')} 
-              className="nav-link"
-            >
-              Offers
-            </button>
-            <button 
-              onClick={() => handleNavigation('/book-appointment')} 
-              className="flex items-center nav-link bg-blue-600 text-white px-3 py-1 rounded-md hover:bg-blue-700 transition-colors"
-            >
-              <FiCalendar className="mr-1" /> Book Now
-            </button>
-          </div>
-        </div>
+  <div
+  className={`fixed top-0 left-0 h-full w-64 bg-blue-200 transform transition-transform duration-300 ease-in-out ${
+    isOpen ? 'translate-x-0' : '-translate-x-full'
+  } z-50 mobile-menu`}
+  style={{ width: '230px' }}
+>
+  <div className="flex flex-col items-start p-6 space-y-4">
+    <button 
+      onClick={() => handleNavigation('/')} 
+      className="flex items-center nav-link bg-white text-white px-3 py-2 rounded-md hover:bg-blue-700 transition-colors w-32"
+    >
+      <FiHome className="mr-2" /> Home
+    </button>
+    <button 
+      onClick={() => handleNavigation('/services')} 
+      className="flex items-center nav-link bg-white text-white px-3 py-2 rounded-md hover:bg-blue-700 transition-colors w-32"
+    >
+      <FiTool className="mr-2" /> Services
+    </button>
+    <button 
+      onClick={() => handleNavigation('/gallery')} 
+      className="flex items-center nav-link bg-white text-white px-3 py-2 rounded-md hover:bg-blue-700 transition-colors w-32"
+    >
+      <FiImage className="mr-2" /> Gallery
+    </button>
+    <button 
+      onClick={() => handleNavigation('/aboutus')} 
+      className="flex items-center nav-link bg-white text-white px-3 py-2 rounded-md hover:bg-blue-700 transition-colors w-32"
+    >
+      <FiInfo className="mr-2" /> About Us
+    </button>
+    <button 
+      onClick={() => handleNavigation('/contact')} 
+      className="flex items-center nav-link bg-white text-white px-3 py-2 rounded-md hover:bg-blue-700 transition-colors w-32"
+    >
+      <FiMail className="mr-2" /> Contact
+    </button>
+    <button 
+      onClick={() => handleNavigation('/offers')} 
+      className="flex items-center nav-link bg-white text-white px-3 py-2 rounded-md hover:bg-blue-700 transition-colors w-32"
+    >
+      <FiTag className="mr-2" /> Offers
+    </button>
+    <button 
+      onClick={() => handleNavigation('/cart')} 
+      className="flex items-center nav-link bg-white text-white px-3 py-2 rounded-md hover:bg-blue-700 transition-colors w-32 relative"
+    >
+      <FiShoppingCart className="mr-2" /> Cart
+      {cartItems.length > 0 && (
+        <span className="absolute right-3 bg-red-500 text-white rounded-full h-5 w-5 flex items-center justify-center text-xs">
+          {cartItems.length}
+        </span>
+      )}
+    </button>
+    <button 
+      onClick={() => handleNavigation('/book-appointment')} 
+      className="flex items-center nav-link bg-white text-white px-3 py-2 rounded-md hover:bg-blue-700 transition-colors w-32"
+    >
+      <FiCalendar className="mr-2" /> Book Now
+    </button>
+  </div>
+</div>
       )}
     </nav>
   );
