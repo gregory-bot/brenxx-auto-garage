@@ -26,11 +26,11 @@ const BookingSection = () => {
           <div className="absolute inset-0 flex flex-col justify-end items-center pb-2">
             <div className="bg-black bg-opacity-60 rounded-lg p-4 text-center">
               <p className="text-xl text-white mb-4">
-                Book your appointment with our expert technicians today
+                Book your appointment with Brenxx Auto technicians today
               </p>
               <button
                 onClick={handleBookNowClick}
-                className="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-full text-lg transition duration-300 transform hover:scale-105"
+                className="bg-blue-600 hover:bg-green-700 text-white py-3 px-8 rounded-full text-lg transition duration-300 transform hover:scale-105"
               >
                 Book a Service
               </button>

@@ -1,22 +1,75 @@
-import React from 'react';
-import { FaMapMarkerAlt } from 'react-icons/fa'; // Import the map marker icon
+import React, { useState, useEffect } from 'react';
+import { FaMapMarkerAlt, FaArrowUp } from 'react-icons/fa';
 import {
   FaFacebook,
   FaInstagram,
   FaTwitter,
   FaLinkedin,
-  FaTiktok
+  FaTiktok,
+  FaHome,
+  FaTools,
+  FaImages,
+  FaInfoCircle,
+  FaEnvelope,
+  FaCalendarAlt
 } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const ContactSection = () => {
+  const [showScrollButton, setShowScrollButton] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 6000) {
+        setShowScrollButton(true);
+      } else {
+        setShowScrollButton(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const scrollToTop = () => {
+    const duration = 3000; // 1 second (adjust as needed)
+    const start = window.pageYOffset;
+    const startTime = performance.now();
+  
+    const animateScroll = (currentTime) => {
+      const elapsedTime = currentTime - startTime;
+      const progress = Math.min(elapsedTime / duration, 1);
+      window.scrollTo(0, start * (1 - easeInOutQuad(progress)));
+      if (progress < 1) {
+        requestAnimationFrame(animateScroll);
+      }
+    };
+  
+    // Easing function for smooth acceleration/deceleration
+    const easeInOutQuad = (t) => {
+      return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+    };
+  
+    requestAnimationFrame(animateScroll);
+  };
+
   return (
     <>
-      {/* Scroll Target Div Above Footer */}
       <div id="contact" className="scroll-mt-24"></div>
 
       <footer className="bg-gray-800 text-white py-16" style={{ fontFamily: 'Courier New, monospace' }}>
+        {/* Scroll to Top Button */}
+        {showScrollButton && (
+          <button
+            onClick={scrollToTop}
+            className="fixed bottom-6 left-6 bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-full shadow-lg transition-all duration-300 z-50"
+            aria-label="Scroll to top"
+          >
+            <FaArrowUp size={15} />
+          </button>
+        )}
+
         <div className="container mx-auto px-4">
-          {/* Section Header */}
           <h2 className="text-3xl font-bold text-center mb-10">Contact Us</h2>
 
           <div className="flex flex-wrap justify-between gap-8">
@@ -27,7 +80,7 @@ const ContactSection = () => {
               <p>📞 <strong>Phone:</strong> +254799686363</p>
               <p>📧 <strong>Email:</strong> brenxxautogarage@gmail.com</p>
               <p className="mt-4 flex items-center">
-                <FaMapMarkerAlt className="mr-2 text-red-500" /> {/* Red map marker icon */}
+                <FaMapMarkerAlt className="mr-2 text-red-500" />
                 <strong>Location:</strong>{' '}
                 <a
                   href="https://maps.app.goo.gl/C2Nck5qf7G3N3dAE7"
@@ -67,33 +120,40 @@ const ContactSection = () => {
 
           {/* Social Media Links */}
           <div className="flex justify-center mt-10 space-x-6">
-            <a
-              href="https://www.facebook.com/share/1A4HdDfqRn/"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Facebook"
-              className="text-gray-400 hover:text-blue-500 transition"
-            >
+            <a href="https://www.facebook.com/share/1A4HdDfqRn/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="text-gray-400 hover:text-blue-500 transition">
               <FaFacebook size={24} />
             </a>
-            <a
-              href="https://www.instagram.com/brenxx_autogarage?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Instagram"
-              className="text-gray-400 hover:text-pink-500 transition"
-            >
+            <a href="https://www.instagram.com/brenxx_autogarage?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="text-gray-400 hover:text-pink-500 transition">
               <FaInstagram size={24} />
             </a>
-            <a
-              href="https://www.tiktok.com/@brenxxauto?_t=ZM-8uoCabEiamd&_r=1"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="TikTok"
-              className="text-gray-400 hover:text-white transition"
-            >
+            <a href="https://www.tiktok.com/@brenxxauto?_t=ZM-8uoCabEiamd&_r=1" target="_blank" rel="noopener noreferrer" aria-label="TikTok" className="text-gray-400 hover:text-white transition">
               <FaTiktok size={24} />
             </a>
+          </div>
+
+          {/* Quick Links Section */}
+          <div className="mt-8 text-center">
+            <h3 className="text-xl font-semibold mb-4">Quick Links</h3>
+            <div className="flex flex-wrap justify-center gap-4">
+              <Link to="/" className="flex items-center text-gray-300 hover:text-white transition px-3 py-1">
+                <FaHome className="mr-2" /> Home
+              </Link>
+              <Link to="/services" className="flex items-center text-gray-300 hover:text-white transition px-3 py-1">
+                <FaTools className="mr-2" /> Services
+              </Link>
+              <Link to="/gallery" className="flex items-center text-gray-300 hover:text-white transition px-3 py-1">
+                <FaImages className="mr-2" /> Gallery
+              </Link>
+              <Link to="/aboutus" className="flex items-center text-gray-300 hover:text-white transition px-3 py-1">
+                <FaInfoCircle className="mr-2" /> About Us
+              </Link>
+              <Link to="/contact" className="flex items-center text-gray-300 hover:text-white transition px-3 py-1">
+                <FaEnvelope className="mr-2" /> Contact
+              </Link>
+              <Link to="/book-appointment" className="flex items-center text-gray-300 hover:text-white transition px-3 py-1">
+                <FaCalendarAlt className="mr-2" /> Book Now
+              </Link>
+            </div>
           </div>
 
           {/* Contact Form */}
