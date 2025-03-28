@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { FiMenu, FiX, FiShoppingCart } from 'react-icons/fi';
+import { FiMenu, FiX, FiShoppingCart, FiCalendar } from 'react-icons/fi';
 import { useCart } from '../context/CartContext';
 
 function Navbar() {
@@ -53,6 +53,13 @@ function Navbar() {
             <Link to="/aboutus" className="nav-link" style={{ fontFamily: 'Courier New, monospace' }}>AboutUs</Link>
             <Link to="/contact" className="nav-link" style={{ fontFamily: 'Courier New, monospace' }}>Contact</Link>
             <Link to="/offers" className="nav-link" style={{ fontFamily: 'Courier New, monospace' }}>Offers</Link>
+            <Link 
+              to="/book-appointment" 
+              className="flex items-center nav-link bg-blue-600 text-white px-3 py-1 rounded-md hover:bg-blue-700 transition-colors"
+              style={{ fontFamily: 'Courier New, monospace' }}
+            >
+              <FiCalendar className="mr-1" /> Book Now
+            </Link>
             <Link to="/cart" className="relative">
               <FiShoppingCart className="h-6 w-6" />
               {cartItems.length > 0 && (
@@ -130,6 +137,12 @@ function Navbar() {
               className="nav-link"
             >
               Offers
+            </button>
+            <button 
+              onClick={() => handleNavigation('/book-appointment')} 
+              className="flex items-center nav-link bg-blue-600 text-white px-3 py-1 rounded-md hover:bg-blue-700 transition-colors"
+            >
+              <FiCalendar className="mr-1" /> Book Now
             </button>
           </div>
         </div>

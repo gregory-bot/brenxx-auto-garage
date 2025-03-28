@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import Services from './pages/Services';
+import BookingPage from './pages/BookingPage';
 import GalleryPage from './pages/GalleryPage';
 import Contact from './pages/Contact';
 import Cart from './pages/Cart';
@@ -23,6 +24,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/services" element={<Services />} />
+            <Route path="/book-appointment" element={<BookingPage />} /> {/* Add this line */}
             <Route path="/gallery" element={<GalleryPage />} />
             <Route path="/aboutus" element={<AboutUs />} />
             <Route path="/contact" element={<Contact />} />
