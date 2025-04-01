@@ -10,6 +10,7 @@ import ServiceDetails from './pages/ServiceDetails';
 import { CartProvider } from './context/CartContext';
 import AboutUs from './components/AboutUs';
 import OffersPage from './pages/OffersPage';
+import FAQPage from './pages/FAQPage';
 import ChatWidget from './components/ChatWidget';
 import { useState } from 'react';
 
@@ -26,6 +27,7 @@ function App() {
             <Route path="/services" element={<Services />} />
             <Route path="/book-appointment" element={<BookingPage />} /> {/* Add this line */}
             <Route path="/gallery" element={<GalleryPage />} />
+            <Route path="/faq" element={<FAQPage />} />
             <Route path="/aboutus" element={<AboutUs />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/cart" element={<Cart />} />

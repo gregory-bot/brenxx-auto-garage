@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { FiMenu, FiX, FiTag,  FiHome, FiInfo, FiMail, FiImage, FiTool, FiShoppingCart, FiCalendar } from 'react-icons/fi';
+import { FiMenu, FiX, FiTag,  FiHome, FiInfo, FiMail, FiImage, FiTool, FiShoppingCart, FiHelpCircle, FiCalendar } from 'react-icons/fi';
 import { useCart } from '../context/CartContext';
 
 function Navbar() {
@@ -53,6 +53,9 @@ function Navbar() {
             <Link to="/aboutus" className="nav-link" style={{ fontFamily: 'Courier New, monospace' }}>AboutUs</Link>
             <Link to="/contact" className="nav-link" style={{ fontFamily: 'Courier New, monospace' }}>Contact</Link>
             <Link to="/offers" className="nav-link" style={{ fontFamily: 'Courier New, monospace' }}>Offers</Link>
+            <Link to="/faq" className="nav-link" style={{ fontFamily: 'Courier New, monospace' }}>
+  FAQ
+</Link>
             <Link to="/book-appointment" className="nav-link" style={{ fontFamily: 'Courier New, monospace' }}>Book Now</Link>
             <Link to="/cart" className="relative">
               <FiShoppingCart className="h-6 w-6" />
@@ -143,6 +146,12 @@ function Navbar() {
         </span>
       )}
     </button>
+    <button 
+  onClick={() => handleNavigation('/faq')} 
+  className="flex items-center nav-link bg-white text-white px-3 py-2 rounded-md hover:bg-blue-700 transition-colors w-32"
+>
+  <FiHelpCircle className="mr-2" /> FAQ
+</button>
     <button 
       onClick={() => handleNavigation('/book-appointment')} 
       className="flex items-center nav-link bg-white text-white px-3 py-2 rounded-md hover:bg-blue-700 transition-colors w-32"
