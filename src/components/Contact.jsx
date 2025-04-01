@@ -11,6 +11,7 @@ import {
   FaEnvelope,
   FaCalendarAlt
 } from 'react-icons/fa';
+import { FiHelpCircle } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
 
 const ContactSection = () => {
@@ -195,6 +196,9 @@ const ContactSection = () => {
               <Link to="/aboutus" className="flex items-center text-gray-300 hover:text-white transition px-3 py-1">
                 <FaInfoCircle className="mr-2" /> About Us
               </Link>
+              <Link to="/faq" className="flex items-center text-gray-300 hover:text-white transition px-3 py-1">
+                <FiHelpCircle className="mr-2" /> FAQ
+              </Link>
               <Link to="/contact" className="flex items-center text-gray-300 hover:text-white transition px-3 py-1">
                 <FaEnvelope className="mr-2" /> Contact
               </Link>
@@ -279,10 +283,14 @@ const ContactSection = () => {
             </form>
           </div>
 
-          {/* Copyright */}
-          <div className="mt-10 text-center text-sm text-gray-400">
-            <p>&copy; {new Date().getFullYear()} Brenxx Auto Services. All rights reserved.</p>
-          </div>
+{/* Copyright Box */}
+<div className="mt-10 flex justify-center">
+  <div className="bg-gray-800 border-2 border-blue-400 rounded-lg px-6 py-4 shadow-lg">
+    <p className="text-center text-xl text-blue-400 font-sans">
+      &copy; {new Date().getFullYear()} Brenxx Auto Services. All rights reserved.
+    </p>
+  </div>
+</div>
         </div>
       </footer>
     </>
