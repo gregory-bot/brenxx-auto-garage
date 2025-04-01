@@ -3,10 +3,11 @@ import { motion } from "framer-motion";
 
 const images = [
   "https://i.postimg.cc/vTvTdRpY/tt.jpg",
-  "https://i.postimg.cc/zXszk9g9/carousel.jpg",
+  "https://i.postimg.cc/02C2fmtz/xx.jpg",
   "https://i.postimg.cc/jjfHL0rv/IMG-20250227-WA0032-1.jpg",
   "https://i.postimg.cc/mgVbZNXw/towing.jpg",
-  "https://i.postimg.cc/xCLwRvxK/diagnostics.jpg"
+  "https://i.postimg.cc/xCLwRvxK/diagnostics.jpg",
+  "https://i.postimg.cc/jdGQHDjn/yyjj.jpg"
 ];
 
 function AboutUs() {

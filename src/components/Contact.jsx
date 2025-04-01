@@ -72,7 +72,7 @@ const ContactSection = () => {
     setSubmitStatus(null);
   
     try {
-      const response = await fetch('https://script.google.com/macros/s/AKfycbwyFm_WRNHAkN2A-vJGF2Ef0EopXWi1Rxt1XE47AuwQ4HZj609PAgF39Qq91tXCdQcx/exec', {
+      const response = await fetch('https://script.google.com/macros/s/AKfycbyBhTW6hBSvu4BFQS7RNoHPWuGLpMoA6J7RCI4fQ3iWgycohCr54mSqpmD7NSZu95D3/exec', {
         method: 'POST',
         mode: 'no-cors', // Add this for development
         headers: {
@@ -109,8 +109,16 @@ const ContactSection = () => {
           </button>
         )}
 
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-10">Contact Us</h2>
+<div className="container mx-auto px-2">
+        {/* Updated Contact Us heading with logo */}
+        <div className="flex items-center justify-center mb-10">
+          <img 
+            src="https://i.postimg.cc/gJCNMjt8/brenxlogo.jpg" 
+            alt="Brenxx Auto Logo" 
+            className="h-10 w-auto mr-2" 
+          />
+          <h2 className="text-3xl text-blue-200">Contact Us</h2>
+        </div>
 
           <div className="flex flex-wrap justify-between gap-8">
             {/* Contact Info */}
