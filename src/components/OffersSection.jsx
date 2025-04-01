@@ -16,6 +16,9 @@ function OffersSection() {
         'https://i.postimg.cc/7hZDPxyC/paint.jpg',
         'https://i.postimg.cc/ryxVnW0Z/paint.jpg',
         'https://i.postimg.cc/zXszk9g9/carousel.jpg',
+        'https://i.postimg.cc/02C2fmtz/xx.jpg',
+        'https://i.postimg.cc/ZqWb4QJN/bbh.jpg',
+        'https://i.postimg.cc/sXS3ZZQD/batt.jpg',
       ],
     },
   ];

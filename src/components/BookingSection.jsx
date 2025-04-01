@@ -17,7 +17,7 @@ const BookingSection = () => {
         <div className="relative rounded-xl overflow-hidden h-96">
           {/* Background Image */}
           <img 
-            src="https://i.postimg.cc/dDMQSBN2/hjh.jpg"
+            src="https://i.postimg.cc/02C2fmtz/xx.jpg"
             alt="Professional Auto Service"
             className="w-full h-full object-cover"
           />

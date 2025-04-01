@@ -7,7 +7,7 @@ const services = [
     id: 1,
     title: 'Car Repair & Service',
     description: 'Comprehensive car repair and routine servicing for all vehicle models.',
-    image: 'https://images.pexels.com/photos/4480505/pexels-photo-4480505.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1', // Replace with a garage-related image
+    image: 'https://i.postimg.cc/02C2fmtz/xx.jpg', // Replace with a garage-related image
     price: false
   },
   {
