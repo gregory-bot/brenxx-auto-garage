@@ -4,11 +4,11 @@ import { ChevronDown, ChevronUp } from 'lucide-react';
 const faqData = [
   {
     question: "What services do you offer?",
-    answer: "We offer a comprehensive range of auto services including oil changes, brake repairs, engine diagnostics, tire services, transmission repairs, and general maintenance. Our certified technicians are equipped to handle both domestic and foreign vehicles."
+    answer: "At Brenxx Auto garage we offer Car Repair & Service, Mechanical & Electrical Repairs, Vehicle Diagnostics, oil changes, brake repairs, engine diagnostics, tire services, transmission repairs, and general maintenance."
   },
   {
     question: "What are your business hours?",
-    answer: "We are open Monday through Friday from 8:00 AM to 6:00 PM, and Saturdays from 9:00 AM to 3:00 PM. We are closed on Sundays and major holidays."
+    answer: "We are open Monday through Friday from 8:00 AM to 6:00 PM, and Saturdays from 9:00 AM to 4:00 PM."
   },
   {
     question: "Do you offer warranties on your services?",
@@ -16,7 +16,7 @@ const faqData = [
   },
   {
     question: "How do I schedule an appointment?",
-    answer: "You can schedule an appointment through our online booking system, by calling our service center, or by visiting us in person. We recommend booking in advance to ensure we can accommodate your preferred time slot."
+    answer: "You can schedule an appointment through our Website  booking system, you book a session service or through whatsapp in our website or by visiting us in person. We recommend booking in advance to ensure we can accommodate your preferred time slot."
   },
   {
     question: "What forms of payment do you accept?",
@@ -24,7 +24,7 @@ const faqData = [
   },
   {
     question: "Do you offer emergency services?",
-    answer: "Yes, we provide emergency services during business hours. For after-hours emergencies, we have partnerships with local towing services and can arrange for your vehicle to be brought to our facility."
+    answer: "Yes, we provide emergency services and Towing services during business hours. For after-hours emergencies, we have partnerships with local towing services and can arrange for your vehicle to be brought to Brenxx Auto garage."
   }
 ];
 
@@ -49,7 +49,7 @@ const FAQ = () => {
           {faqData.map((faq, index) => (
             <div
               key={index}
-              className="bg-white rounded-lg shadow-md overflow-hidden"
+              className="bg-blue-100 rounded-lg shadow-md overflow-hidden"
             >
               <button
                 onClick={() => toggleItem(index)}

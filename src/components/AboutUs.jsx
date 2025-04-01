@@ -27,7 +27,7 @@ function AboutUs() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Heading Above the Image Carousel */}
         <h2 className="text-3xl text-blue-600 font-bold mb-6 text-center" style={{ fontFamily: 'Courier New, monospace' }}>
-          About Brenxx auto services
+          About Brenxx
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
