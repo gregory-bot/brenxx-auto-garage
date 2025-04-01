@@ -163,7 +163,6 @@ const ContactSection = () => {
               <h3 className="text-xl font-semibold mb-2">🕒 Opening Hours</h3>
               <p>Mon - Fri: 8:00 AM - 6:00 PM</p>
               <p>Saturday: 9:00 AM - 4:00 PM</p>
-              <p>Sunday: Closed</p>
             </div>
           </div>
 
@@ -210,7 +209,7 @@ const ContactSection = () => {
 
           {/* Contact Form */}
           <div className="mt-12">
-            <h3 className="text-xl font-bold mb-6 text-center">Send Us a Message</h3>
+            <h3 className="text-xl font-bold text-blue-400 mb-6 text-center">Send Us a Message</h3>
             <form onSubmit={handleSubmit} className="max-w-lg mx-auto space-y-4">
               <input
                 type="text"
