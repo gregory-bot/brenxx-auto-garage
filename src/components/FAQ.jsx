@@ -7,6 +7,10 @@ const faqData = [
     answer: "At Brenxx Auto garage we offer Car Repair & Service, Mechanical & Electrical Repairs, Vehicle Diagnostics, oil changes, brake repairs, engine diagnostics, tire services, transmission repairs, and general maintenance."
   },
   {
+    question: "How do you add a service to cart?",
+    answer: "To add an item to cart, you need to select the service type ,then select the vehicle type ,add a rating then add to cart."
+  },
+  {
     question: "What are your business hours?",
     answer: "We are open Monday through Friday from 8:00 AM to 6:00 PM, and Saturdays from 9:00 AM to 4:00 PM."
   },
