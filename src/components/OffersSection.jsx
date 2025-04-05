@@ -37,9 +37,9 @@ function OffersSection() {
       }`}
     >
       <h2
-        className="text-3xl font-bold bg-blue-200 mb-4"
+        className="text-3xl bg-blue-100 mb-4"
         style={{
-          fontFamily: 'Courier New, monospace',
+          fontFamily: 'sans-serif',
           borderRadius: '12px',
           padding: '1rem'
         }}

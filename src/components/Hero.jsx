@@ -62,13 +62,13 @@ function Hero() {
         </div>
 
         {/* Typewriter Effect */}
-        <div className="text-2xl md:text-6xl mb-12 text-center" style={{ fontFamily: 'Courier New, monospace' }}>
+        <div className="text-2xl md:text-6xl mb-12 text-center">
           <Typewriter
             options={{
               strings: [
-                "expert Auto Repair & Maintenance",
-                "keeping you on the road – One Fix at a Time",
-                "where Quality Repairs Meet Exceptional Service",
+                "Expert Auto Repair & Maintenance",
+                "Keeping you on the road – One Fix at a Time",
+                "Where Quality Repairs Meet Exceptional Service",
               ],
               autoStart: true,
               loop: true,
@@ -81,7 +81,7 @@ function Hero() {
         {/* CTA Button */}
         <button
           onClick={scrollToServices}
-          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105"
+          className="mt-4 px-6 py-3 bg-blue-600 text-white font-semibold rounded-full shadow-md hover:bg-blue-700 transition duration-300"
         >
           View Our Services
         </button>

@@ -41,26 +41,26 @@ function Navbar() {
           <div className="flex items-center">
             <img src="https://i.postimg.cc/gJCNMjt8/brenxlogo.jpg" alt="brenxx-auto-services" className="h-8 w-20 mr-2" />
             <Link to="/" className="text-xl">
-              <span className="text-blue-700">BRENXX-AUTO</span>
+              <span className="text-black">BRENXX-AUTO</span>
             </Link>
           </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            <Link to="/" className="nav-link" style={{ fontFamily: 'Courier New, monospace' }}>Home</Link>
-            <Link to="/services" className="nav-link" style={{ fontFamily: 'Courier New, monospace' }}>Services</Link>
-            <Link to="/gallery" className="nav-link" style={{ fontFamily: 'Courier New, monospace' }}>Gallery</Link>
-            <Link to="/aboutus" className="nav-link" style={{ fontFamily: 'Courier New, monospace' }}>AboutUs</Link>
-            <Link to="/contact" className="nav-link" style={{ fontFamily: 'Courier New, monospace' }}>Contact</Link>
-            <Link to="/offers" className="nav-link" style={{ fontFamily: 'Courier New, monospace' }}>Offers</Link>
-            <Link to="/faq" className="nav-link" style={{ fontFamily: 'Courier New, monospace' }}>
+            <Link to="/" className="nav-link" style={{ fontFamily: 'sans serif' }}>Home</Link>
+            <Link to="/services" className="nav-link" style={{ fontFamily: 'sans serif' }}>Services</Link>
+            <Link to="/gallery" className="nav-link" style={{ fontFamily: 'sans serif' }}>Gallery</Link>
+            <Link to="/aboutus" className="nav-link" style={{ fontFamily: 'sans serif' }}>AboutUs</Link>
+            <Link to="/contact" className="nav-link" style={{ fontFamily: 'sans serif' }}>Contact</Link>
+            <Link to="/offers" className="nav-link" style={{ fontFamily: 'sans serif' }}>Offers</Link>
+            <Link to="/faq" className="nav-link" style={{ fontFamily: 'sans serif' }}>
   FAQ
 </Link>
-            <Link to="/book-appointment" className="nav-link" style={{ fontFamily: 'Courier New, monospace' }}>Book Now</Link>
+            <Link to="/book-appointment" className="nav-link" style={{ fontFamily: 'sans serif' }}>Book Now</Link>
             <Link to="/cart" className="relative">
               <FiShoppingCart className="h-6 w-6" />
               {cartItems.length > 0 && (
-                <span className="absolute -top-2 -right-2 bg-red-500 text-white rounded-full h-5 w-5 flex items-center justify-center text-xl">
+                <span className="absolute -top-2 -right-2 bg-red-500 text-white rounded-full h-5 w-5 flex items-center justify-center text-4xl">
                   {cartItems.length}
                 </span>
               )}
@@ -82,7 +82,7 @@ function Navbar() {
             </button>
             <button 
               onClick={() => setIsOpen(!isOpen)} 
-              className="p-2 bg-blue-400 rounded-full w-10 h-10 flex items-center justify-center"
+              className="p-2 bg-black text-white rounded-full w-10 h-10 flex items-center justify-center"
             >
               {isOpen ? <FiX className="h-6 w-6" /> : <FiMenu className="h-6 w-6" />}
             </button>
@@ -93,7 +93,7 @@ function Navbar() {
       {/* Mobile Navigation - Left Side */}
       {isMobile && (
   <div
-  className={`fixed top-0 left-0 h-full w-64 bg-blue-200 transform transition-transform duration-300 ease-in-out ${
+  className={`fixed top-0 left-0 h-full w-64 bg-blue-100 transform transition-transform duration-300 ease-in-out ${
     isOpen ? 'translate-x-0' : '-translate-x-full'
   } z-50 mobile-menu`}
   style={{ width: '230px' }}
