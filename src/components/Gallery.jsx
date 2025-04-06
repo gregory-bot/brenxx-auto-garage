@@ -151,7 +151,107 @@ const Gallery = () => {
       url: 'https://i.postimg.cc/SNVy2j3r/corr.jpg',
       title: 'Paint Correction',
       serviceType: 'Cosmetic'
-    }
+    },
+    {
+      id: 25,
+      url: 'https://i.postimg.cc/0NPQLFrp/int.jpg',
+      title: 'Interior Deep Cleaning',
+      serviceType: 'Detailing'
+    },
+    {
+      id: 26,
+      url: 'https://i.postimg.cc/VNKY2Nx8/alloy.jpg',
+      title: 'Alloy Wheel Repair',
+      serviceType: 'Cosmetic'
+    },
+    {
+      id: 27,
+      url: 'https://i.postimg.cc/28x8nT0y/ECU.jpg',
+      title: 'ECU Tuning',
+      serviceType: 'Performance'
+    },
+    {
+      id: 28,
+      url: 'https://i.postimg.cc/qMvWZLkz/engine44.jpg',
+      title: 'Engine Diagnostics',
+      serviceType: 'Diagnostic'
+    },
+    {
+      id: 29,
+      url: 'https://i.postimg.cc/WbdXkfN6/tinting.jpg',
+      title: 'Glass Tinting',
+      serviceType: 'Protection'
+    },
+    {
+      id: 30,
+      url: 'https://i.postimg.cc/tCGzmdFF/tow4.jpg',
+      title: 'Roadside Assistance',
+      serviceType: 'Emergency'
+    },
+    {
+      id: 31,
+      url: 'https://i.postimg.cc/TwXwXP0N/ceramic.jpg',
+      title: 'Ceramic Coating',
+      serviceType: 'Detailing',
+      premium: true
+    },
+    {
+      id: 32,
+      url: 'https://i.postimg.cc/DyYww65X/paint.jpg',
+      title: 'Paint Protection Film',
+      serviceType: 'Protection',
+      premium: true
+    },
+    {
+      id: 33,
+      url: 'https://i.postimg.cc/W3pBrL1b/roof.jpg',
+      title: 'Convertible Top Repair',
+      serviceType: 'Restoration'
+    },
+    {
+      id: 34,
+      url: 'https://i.postimg.cc/FKpqhWVt/wheelall.jpg',
+      title: 'Laser Wheel Alignment',
+      serviceType: 'Suspension'
+    },
+    {
+      id: 35,
+      url: 'https://i.postimg.cc/c4qN9zDT/bbh.jpg',
+      title: 'AdBlue System Service',
+      serviceType: 'Mechanical'
+    },
+    {
+      id: 36,
+      url: 'https://i.postimg.cc/QCQYnftn/zz.jpg',
+      title: 'Start-Stop System Repair',
+      serviceType: 'Electrical'
+    },
+    {
+      id: 37,
+      url: 'https://i.postimg.cc/rsMNzMVQ/nnv.jpg',
+      title: 'EV Battery Check',
+      serviceType: 'Electrical',
+      premium: true
+    },
+    {
+      id: 38,
+      url: 'https://i.postimg.cc/D0SyrbwZ/tyu.jpg',
+      title: 'Advanced ECU Remapping',
+      serviceType: 'Performance',
+      premium: true
+    },
+    {
+      id: 39,
+      url: 'https://i.postimg.cc/y8H3HvNy/loli.jpg',
+      title: 'Leather Restoration',
+      serviceType: 'Restoration'
+    },
+    {
+      id: 40,
+      url: 'https://media.istockphoto.com/id/2176130640/photo/close-up-view-of-car-undercarriage-in-a-repair-workshop.jpg?s=612x612&w=0&k=20&c=fWgc5wrPTx57ASr5QWXddhIejlrcg_VJBL-m6ii7bTg=',
+      title: 'Undercarriage Cleaning',
+      serviceType: 'Detailing'
+    }    
   ]);
 
   // Group images into pairs for horizontal display
