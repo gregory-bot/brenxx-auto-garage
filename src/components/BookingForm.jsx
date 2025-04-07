@@ -59,7 +59,7 @@ Contact Number: ${phoneNumber}`;
     const whatsappNumber = '+254799686363';
     
     // Open WhatsApp with the pre-filled message
-    window.open(`https://wa.me/254748163492?text=${encodedMessage}`, '_blank');
+    window.open(`https://wa.me/254799686363?text=${encodedMessage}`, '_blank');
     
     // Optional: call the onSubmit prop if needed
     if (onSubmit) {
@@ -130,7 +130,7 @@ Contact Number: ${phoneNumber}`;
         <div className="mt-1 space-y-2">
           <input
             type="text"
-            placeholder="Make (e.g., Toyota)"
+            placeholder="Make (e.g., Subaru)"
             value={vehicleDetails.make}
             onChange={(e) => setVehicleDetails({...vehicleDetails, make: e.target.value})}
             className="block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
@@ -138,7 +138,7 @@ Contact Number: ${phoneNumber}`;
           />
           <input
             type="text"
-            placeholder="Model (e.g., Camry)"
+            placeholder="Model (e.g., Forester Sti)"
             value={vehicleDetails.model}
             onChange={(e) => setVehicleDetails({...vehicleDetails, model: e.target.value})}
             className="block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"

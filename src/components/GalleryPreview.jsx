@@ -18,9 +18,9 @@ const GalleryPreview = () => {
           <img 
             src="https://i.postimg.cc/gJCNMjt8/brenxlogo.jpg" 
             alt="BRENXX-AUTO logo" 
-            className="h-16 w-auto mx-auto mb-4"
+            className="h-10 w-auto mx-auto mb-4"
           />
-          <h2 className="text-4xl text-blue-800 mb-4">gallery</h2>
+          <h2 className="text-3xl text-black mb-4">Gallery</h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             Take a look at our work and satisfied customers
           </p>
@@ -41,7 +41,7 @@ const GalleryPreview = () => {
         <div className="text-center">
           <Link 
             to="/gallery" 
-            className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+            className="inline-flex items-center px-2 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
           >
             view our gallery
             <FiArrowRight className="ml-2" />

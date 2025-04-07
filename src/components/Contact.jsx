@@ -99,7 +99,7 @@ const ContactSection = () => {
     <>
       <div id="contact" className="scroll-mt-24"></div>
 
-      <footer className="bg-gray-800 text-white py-16" style={{ fontFamily: 'Courier New, monospace' }}>
+      <footer className="bg-gray-800 text-white py-16">
         {showScrollButton && (
           <button
             onClick={scrollToTop}

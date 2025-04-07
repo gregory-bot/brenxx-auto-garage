@@ -38,7 +38,7 @@ const services = [
     id: 6,
     title: 'Maintenance Services',
     description: 'Oil changes, brake checks, and full vehicle maintenance.',
-    image: 'https://images.pexels.com/photos/4489721/pexels-photo-4489721.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    image: 'https://i.postimg.cc/2y0Pd9L4/fgh.jpg',
   },
   {
     id: 7,
@@ -71,7 +71,7 @@ function Services() {
     <section id="services-section" className="py-16 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <OffersSection />
-        <h2 className="text-2xl font-bold text-center text-gray-900 mb-6">Our Services</h2>
+        <h2 className="text-3xl text-center text-black mb-6">Our Services</h2>
         <p className="mt-2 text-lg text-center text-gray-600 mb-8">
           Comprehensive motor vehicle repair and maintenance garage
         </p>
@@ -113,11 +113,11 @@ function Services() {
           <div className="animate-marquee whitespace-nowrap">
             {[...Array(4)].map((_, i) => (
               <React.Fragment key={`welcome-${i}`}>
-                <span className="text-2xl text-blue-600 mx-4">
+                <span className="text-2xl text-black mx-4">
                   Welcome to Brenxx Auto Garage ✨
                 </span>
-                <span className="text-2xl text-blue-600 mx-4">
-                  keeping you on the road ✨
+                <span className="text-2xl text-black mx-4">
+                  Keeping you on the road ✨
                 </span>
               </React.Fragment>
             ))}

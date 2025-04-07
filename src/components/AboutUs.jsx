@@ -27,13 +27,13 @@ function AboutUs() {
     <section className="py-16 bg-yellow-50"> {/* Changed background to black */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Heading Above the Image Carousel */}
-        <h2 className="text-3xl text-blue-600 font-bold mb-6 text-center">
+        <h2 className="text-3xl text-black mb-6 text-center">
           About Brenxx
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           {/* Smooth Image Carousel */}
-          <div className="relative w-full h-[250px] overflow-hidden rounded-lg shadow-lg">
+          <div className="relative w-full h-[300px] overflow-hidden rounded-lg shadow-lg">
             {images.map((img, imgIndex) => (
               <motion.img
                 key={imgIndex}
@@ -58,11 +58,6 @@ function AboutUs() {
               <p className="text-black mb-6">
                 From motor vehicle diagnostics, mechanical repairs, maintenance service, accident repairs plus professional spray painting, Brenxx Auto got you covered.
                 </p>
-                <p className="text-black mb-6">
-                  We are located in Nairobi County along the 2nd Avenue – Garden estate, with
-              state of the art security system (including CCTV Surveillance) that ensures our
-              clients' vehicles are safe and secure while they are at Brenxx Auto.
-            </p>
           </div>
         </div>
       </div>

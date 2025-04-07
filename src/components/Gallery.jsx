@@ -271,7 +271,7 @@ const Gallery = () => {
       <FiArrowLeft className="mr-2" />
       Home
     </Link>
-          <h2 className="text-3xl text-blue-800">gallery</h2>
+          <h2 className="text-3xl text-black">gallery</h2>
           <div className="w-8"></div>
         </div>
 

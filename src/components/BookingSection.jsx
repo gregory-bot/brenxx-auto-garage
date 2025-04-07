@@ -12,7 +12,7 @@ const BookingSection = () => {
     <section id="booking" className="py-4 bg-gray-50">
       <div className="container mx-auto px-4">
         {/* "Book" heading before the image */}
-        <h2 className="text-4xl text-center mb-6 text-blue-700">Book</h2>
+        <h2 className="text-3xl text-center mb-6 text-black">Book</h2>
         
         <div className="relative rounded-xl overflow-hidden h-96">
           {/* Background Image */}
@@ -30,7 +30,7 @@ const BookingSection = () => {
               </p>
               <button
                 onClick={handleBookNowClick}
-                className="bg-blue-600 hover:bg-green-700 text-white py-3 px-8 rounded-full text-lg transition duration-300 transform hover:scale-105"
+                className="bg-blue-600 hover:bg-green-700 text-white py-2 px-2 rounded-full text-sm transition duration-300 transform hover:scale-105"
               >
                 Book Service
               </button>
