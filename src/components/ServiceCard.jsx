@@ -11,6 +11,7 @@ function ServiceCard({ service }) {
     <motion.div
       whileHover={{ scale: 1.05 }}
       className="bg-blue-50 rounded-lg shadow-lg overflow-hidden w-full"
+      
     >
       <div className="relative overflow-hidden" style={{ paddingBottom: '56.25%' }}>
         <img
@@ -20,14 +21,13 @@ function ServiceCard({ service }) {
         />
       </div>
       <div className="p-4">
-        <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
-        <p className="text-gray-900 text-sm mb-4">{service.description}</p>
+        <h3 className="text-md font-semibold text-gray-900">{service.title}</h3>
+        <p className="mt-1 text-sm text-gray-600 line-clamp-2">{service.description}</p>
         <Link
           to={`/services/${service.id}`}
           onClick={handleClick}
-          className="inline-block bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition-colors duration-200 text-sm"
-        >
-          Explore more
+        className="mt-2 text-xs px-2 py-1 bg-blue-50 text-blue-600 hover:bg-blue-100 rounded-md transition-colors">
+         more
         </Link>
       </div>
     </motion.div>

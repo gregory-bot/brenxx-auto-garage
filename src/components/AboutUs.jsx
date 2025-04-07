@@ -27,18 +27,18 @@ function AboutUs() {
     <section className="py-16 bg-yellow-50"> {/* Changed background to black */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Heading Above the Image Carousel */}
-        <h2 className="text-3xl text-blue-600 font-bold mb-6 text-center" style={{ fontFamily: 'Courier New, monospace' }}>
+        <h2 className="text-3xl text-blue-600 font-bold mb-6 text-center">
           About Brenxx
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           {/* Smooth Image Carousel */}
-          <div className="relative w-full h-[400px] overflow-hidden rounded-lg shadow-lg">
+          <div className="relative w-full h-[250px] overflow-hidden rounded-lg shadow-lg">
             {images.map((img, imgIndex) => (
               <motion.img
                 key={imgIndex}
                 src={img}
-                alt="Walkwise shoe store"
+                alt="brenxx auto"
                 className="absolute inset-0 w-full h-full object-cover rounded-lg"
                 style={{ position: "absolute", top: 0, left: 0 }}
                 initial={{ opacity: imgIndex === index ? 1 : 0 }}
