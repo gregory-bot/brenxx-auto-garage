@@ -33,7 +33,7 @@ function AboutUs() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           {/* Smooth Image Carousel */}
-          <div className="relative w-full h-[300px] overflow-hidden rounded-lg shadow-lg">
+          <div className="relative w-full h-[400px] overflow-hidden rounded-lg shadow-lg">
             {images.map((img, imgIndex) => (
               <motion.img
                 key={imgIndex}
