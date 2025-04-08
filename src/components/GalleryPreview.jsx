@@ -18,7 +18,7 @@ const GalleryPreview = () => {
           <img 
             src="https://i.postimg.cc/gJCNMjt8/brenxlogo.jpg" 
             alt="BRENXX-AUTO logo" 
-            className="h-10 w-auto mx-auto mb-4"
+            className="h-6 w-auto mx-auto mb-4"
           />
           <h2 className="text-3xl text-black mb-4">Gallery</h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">

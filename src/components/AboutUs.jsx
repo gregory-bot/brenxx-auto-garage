@@ -58,6 +58,11 @@ function AboutUs() {
               <p className="text-black mb-6">
                 From motor vehicle diagnostics, mechanical repairs, maintenance service, accident repairs plus professional spray painting, Brenxx Auto got you covered.
                 </p>
+              <p className="text-black mb-6">
+              Located in Nairobi County along the 2nd Avenue – Garden estate, with
+              state of the art security system (including CCTV Surveillance) that ensures our
+              clients' vehicles are safe and secure while they are at Brenxx Auto.
+                </p>
           </div>
         </div>
       </div>

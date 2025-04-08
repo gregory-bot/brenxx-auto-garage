@@ -79,12 +79,14 @@ function Hero() {
         </div>
 
         {/* CTA Button */}
+        <div className="absolute bottom-20 flex justify-center w-full z-20">
         <button
           onClick={scrollToServices}
-          className="mt-4 px-6 py-3 bg-blue-600 text-white font-semibold rounded-full shadow-md hover:bg-blue-700 transition duration-300"
+    className="bg-blue-600 text-white px-6 py-3 rounded-full hover:bg-black-700 transition duration-300 animate-pulse"
         >
-          View Our Services
+          Explore More
         </button>
+        </div>
       </div>
     </div>
   );

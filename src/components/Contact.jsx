@@ -284,7 +284,7 @@ const ContactSection = () => {
           </div>
 
           {/* Copyright */}
-          <div className="mt-10 text-center text-gray-400 text-sm">
+          <div className="mt-10 text-center text-blue-100 text-xl">
             <p>© {new Date().getFullYear()} Brenxx Auto Services. All rights reserved.</p>
             <p className="mt-1">Map data ©2025 | Terms</p>
           </div>
