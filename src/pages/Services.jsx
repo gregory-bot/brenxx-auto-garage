@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import OffersSection from '../components/OffersSection';
+import OffersSection from '../components/OffersSection'; // Imported OffersSection
 import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
+
 const services = [
   {
     id: 1,
@@ -134,8 +135,10 @@ function Services() {
   return (
     <section id="services-section" className="py-8 bg-blue-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Offers Section placeholder */}
-        <h2 className="text-3xl font-bold text-center text-red-600 mb-2">Our Services</h2>
+        {/* Offers Section */}
+        <OffersSection />
+
+        <h2 className="text-3xl font-bold text-center text-black mb-2">Our Services</h2>
         <p className="mt-2 text-lg text-center text-gray-600 mb-2">
           Comprehensive motor vehicle repair and maintenance garage
         </p>
@@ -170,7 +173,7 @@ function Services() {
               "url('https://images.pexels.com/photos/31558528/pexels-photo-31558528/free-photo-of-classic-sedan-parked-in-urban-setting.jpeg?auto=compress&cs=tinysrgb&w=600')",
           }}
         >
-          <h3 className="text-3xl font-bold text-center text-red-800 mb-6">Our Top Brands</h3>
+          <h3 className="text-3xl font-bold text-center text-black mb-6">Our Top Brands</h3>
 
           <div className="relative max-w-4xl mx-auto">
             {/* Desktop Arrows */}

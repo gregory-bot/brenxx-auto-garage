@@ -93,7 +93,7 @@ function Navbar() {
               className="h-10 w-24 mr-2"
             />
             <Link to="/" className="text-2xl">
-              <span className="text-red-600 font-bold">BRENXX AUTO</span>
+              <span className="text-black font-bold">BRENXX AUTO</span>
             </Link>
           </div>
 

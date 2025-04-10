@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { FiArrowLeft } from 'react-icons/fi';
+import { FiArrowLeft, FiX, FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
 
 const Gallery = () => {
@@ -255,47 +255,137 @@ const Gallery = () => {
   ]);
 
   // Group images into pairs for horizontal display
-  const imagePairs = [];
-  for (let i = 0; i < images.length; i += 2) {
-    imagePairs.push(images.slice(i, i + 2));
-  }
+  const [selectedImage, setSelectedImage] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleImageClick = (image) => {
+    setSelectedImage(image);
+    setIsModalOpen(true);
+  };
+
+  const handleNextImage = () => {
+    if (!selectedImage) return;
+    const currentIndex = images.findIndex((img) => img.id === selectedImage.id);
+    const nextIndex = (currentIndex + 1) % images.length;
+    setSelectedImage(images[nextIndex]);
+  };
+
+  const handlePrevImage = () => {
+    if (!selectedImage) return;
+    const currentIndex = images.findIndex((img) => img.id === selectedImage.id);
+    const prevIndex = (currentIndex - 1 + images.length) % images.length;
+    setSelectedImage(images[prevIndex]);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+    setTimeout(() => {
+      setSelectedImage(null);
+    }, 300); // Match this with the fade-out duration
+  };
 
   return (
     <div className="py-32 px-4 sm:px-6 lg:px-8 bg-blue-50 min-h-screen">
       <div className="max-w-6xl mx-auto">
         <div className="flex justify-between items-center mb-8">
-        <Link 
-      to="/" 
-      className="flex items-center border border-blue-300 hover:border-blue-600 text-blue-600 hover:text-blue-800 px-4 py-2 rounded-full transition-all duration-300 shadow-sm hover:shadow-md"
-    >
-      <FiArrowLeft className="mr-2" />
-      Home
-    </Link>
-          <h2 className="text-3xl text-black">gallery</h2>
+          <Link
+            to="/"
+            className="flex items-center border border-blue-300 hover:border-blue-600 text-blue-600 hover:text-blue-800 px-4 py-2 rounded-full transition-all duration-300 shadow-sm hover:shadow-md"
+          >
+            <FiArrowLeft className="mr-2" />
+            Home
+          </Link>
+          <h2 className="text-3xl text-black">Gallery</h2>
           <div className="w-8"></div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {imagePairs.map((pair, index) => (
-            <div key={index} className="flex flex-row gap-4">
-              {pair.map((image) => (
-                <div key={image.id} className="flex-1 bg-white rounded-lg overflow-hidden shadow-sm">
-                  <div className="relative pb-[75%]"> {/* Aspect ratio container */}
-                    <img 
-                      src={image.url} 
-                      alt={image.title} 
-                      className="absolute top-0 left-0 w-full h-full object-contain p-2"
-                    />
-                  </div>
-                  <div className="p-3">
-                    <h3 className="text-md font-semibold text-gray-800 text-center">{image.title}</h3>
-                  </div>
-                </div>
-              ))}
+        {/* Responsive Grid */}
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
+          {images.map((image) => (
+            <div
+              key={image.id}
+              className="bg-white rounded-lg overflow-hidden shadow-sm transform transition-transform duration-300 hover:scale-105 cursor-pointer"
+              onClick={() => handleImageClick(image)}
+            >
+              <div className="relative pb-[75%]">
+                <img
+                  src={image.url}
+                  alt={image.title}
+                  className="absolute top-0 left-0 w-full h-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+              <div className="p-3">
+                <h3 className="text-md font-semibold text-gray-800 text-center">{image.title}</h3>
+              </div>
             </div>
           ))}
         </div>
       </div>
+
+      {/* Modal for Image Viewer */}
+      {(selectedImage || isModalOpen) && (
+        <div 
+          className={`fixed inset-0 bg-black flex items-center justify-center z-50 p-4 transition-opacity duration-300 ${isModalOpen ? 'bg-opacity-75 opacity-100' : 'bg-opacity-0 opacity-0'}`}
+          onClick={handleCloseModal}
+        >
+          <div 
+            className={`relative bg-white rounded-lg max-w-4xl w-full max-h-[90vh] flex flex-col transition-all duration-300 transform ${isModalOpen ? 'scale-100 opacity-100' : 'scale-95 opacity-0'}`}
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Close Button */}
+            <button
+              className="absolute -top-10 right-0 text-white text-2xl bg-black bg-opacity-50 p-2 rounded-full hover:bg-opacity-75 transition z-10"
+              onClick={handleCloseModal}
+              aria-label="Close Modal"
+            >
+              <FiX />
+            </button>
+
+            {/* Image Container */}
+            <div className="relative flex-grow overflow-hidden">
+              <img
+                src={selectedImage?.url}
+                alt={selectedImage?.title}
+                className="w-full h-full object-contain max-h-[70vh] md:max-h-[60vh]"
+              />
+
+              {/* Navigation Buttons */}
+              <button
+                className="absolute left-2 top-1/2 -translate-y-1/2 text-white text-3xl p-2 bg-black bg-opacity-50 rounded-full hover:bg-opacity-75"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  handlePrevImage();
+                }}
+                aria-label="Previous Image"
+              >
+                <FiChevronLeft />
+              </button>
+              <button
+                className="absolute right-2 top-1/2 -translate-y-1/2 text-white text-3xl p-2 bg-black bg-opacity-50 rounded-full hover:bg-opacity-75"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  handleNextImage();
+                }}
+                aria-label="Next Image"
+              >
+                <FiChevronRight />
+              </button>
+            </div>
+
+            {/* Description */}
+            <div className="p-4 bg-white border-t border-gray-200">
+              <h3 className="text-lg font-semibold text-gray-800">{selectedImage?.title}</h3>
+              <p className="text-gray-600 mt-1">{selectedImage?.serviceType}</p>
+              {selectedImage?.premium && (
+                <span className="inline-block bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded mt-2">
+                  Premium Service
+                </span>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

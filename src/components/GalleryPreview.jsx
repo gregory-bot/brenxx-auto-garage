@@ -20,7 +20,7 @@ const GalleryPreview = () => {
             alt="BRENXX-AUTO logo" 
             className="h-6 w-auto mx-auto mb-4"
           />
-          <h2 className="text-4xl font-bold text-red-600 mb-4">Gallery</h2>
+          <h2 className="text-4xl font-bold text-black mb-4">Gallery</h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             Take a look at our work and satisfied customers
           </p>

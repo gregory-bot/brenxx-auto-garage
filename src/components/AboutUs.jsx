@@ -27,7 +27,7 @@ function AboutUs() {
     <section className="py-16 bg-yellow-50"> {/* Changed background to black */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Heading Above the Image Carousel */}
-        <h2 className="text-4xl font-bold text-red-600 mb-6 text-center">
+        <h2 className="text-4xl font-bold text-black mb-6 text-center">
           About Brenxx
         </h2>
 

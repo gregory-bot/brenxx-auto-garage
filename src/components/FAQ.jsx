@@ -7,10 +7,6 @@ const faqData = [
     answer: "At Brenxx Auto garage we offer Car Repair & Service, Mechanical & Electrical Repairs, Vehicle Diagnostics, oil changes, brake repairs, engine diagnostics, tire services, transmission repairs, and general maintenance."
   },
   {
-    question: "How do you add a service to cart?",
-    answer: "To add an item to cart, you need to select the service type ,then select the vehicle type ,add a rating then add to cart."
-  },
-  {
     question: "What are your business hours?",
     answer: "We are open Monday through Friday from 8:00 AM to 6:00 PM, and Saturdays from 9:00 AM to 4:00 PM."
   },
@@ -46,7 +42,7 @@ const FAQ = () => {
   return (
     <section className="py-10 bg-gray-50">
       <div className="max-w-3xl mx-auto px-4">
-        <h2 className="text-4xl text-center font-bold mb-12 text-red-600">
+        <h2 className="text-4xl text-center font-bold mb-12 text-black">
           Frequently Asked Questions
         </h2>
         <div className="space-y-4">

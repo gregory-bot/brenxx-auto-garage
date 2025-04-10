@@ -118,15 +118,15 @@ const ContactSection = () => {
         <div className="container mx-auto px-4">
           {/* Brand Header */}
           <div className="text-center mb-8">
-            <h2 className="text-4xl font-bold text-red-600 mb-2">Brenxx Auto</h2>
-            <p className="text-black">Your trusted vehicle service partner</p>
+            <h2 className="text-4xl font-bold text-blue-600 mb-2">Brenxx Auto</h2>
+            <p className="text-white">Your trusted vehicle service partner</p>
           </div>
 
           <div className="flex flex-col lg:flex-row gap-8">
             {/* Left Column - Contact Info */}
             <div className="lg:w-1/3">
               <div className="bg-gray-700 p-6 rounded-lg">
-                <h3 className="text-xl font-bold mb-4 text-red-600">Contact Information</h3>
+                <h3 className="text-xl font-bold mb-4 text-blue-600">Contact Information</h3>
                 <div className="space-y-4">
                   <p>
                     <span className="font-medium">Phone:</span> +254 799 686363
@@ -180,7 +180,7 @@ const ContactSection = () => {
             {/* Middle Column - Quick Links */}
             <div className="lg:w-1/3">
               <div className="bg-gray-700 p-6 rounded-lg h-full">
-                <h3 className="text-xl font-bold mb-4 text-red-600">Quick Links</h3>
+                <h3 className="text-xl font-bold mb-4 text-blue-600">Quick Links</h3>
                 <div className="grid grid-cols-2 gap-4">
                   <Link to="/" className="flex items-center text-gray-300 hover:text-white transition">
                     <FaHome className="mr-2" /> Home
@@ -208,7 +208,7 @@ const ContactSection = () => {
                 {/* Social Media Links */}
                 <div className="mt-8">
                   <h4 className="text-lg font-semibold mb-3 text-blue-400">Follow Us</h4>
-                  <div className="flex space-x-4">
+                  <div className="flex space-x-10">
                     <a href="https://www.facebook.com/share/1A4HdDfqRn/" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-300">
                       <FaFacebook size={20} />
                     </a>
@@ -222,73 +222,7 @@ const ContactSection = () => {
                 </div>
               </div>
             </div>
-
-            {/* Right Column - Contact Form */}
-            <div className="lg:w-1/3">
-              <div className="bg-gray-700 p-6 rounded-lg">
-                <h3 className="text-xl font-bold mb-4 text-red-600">Send Us a Message</h3>
-                <form onSubmit={handleSubmit} className="space-y-4">
-                  <input
-                    type="text"
-                    name="name"
-                    placeholder="Your Name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    className="w-full px-4 py-2 rounded bg-gray-600 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    required
-                  />
-                  <input
-                    type="email"
-                    name="email"
-                    placeholder="Your Email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    className="w-full px-4 py-2 rounded bg-gray-600 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    required
-                  />
-                  <textarea
-                    name="message"
-                    placeholder="Your Message"
-                    rows="4"
-                    value={formData.message}
-                    onChange={handleChange}
-                    className="w-full px-4 py-2 rounded bg-gray-600 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    required
-                  ></textarea>
-                  
-                  {submitStatus && (
-                    <div className={`p-3 rounded flex items-center ${
-                      submitStatus === 'success' 
-                        ? 'bg-green-800 text-green-100' 
-                        : 'bg-red-800 text-red-100'
-                    }`}>
-                      {submitStatus === 'success' ? (
-                        <>
-                          <FaCheck className="mr-2" />
-                          Message sent successfully!
-                        </>
-                      ) : (
-                        <>
-                          <FaTimes className="mr-2" />
-                          Failed to send message. Please try again.
-                        </>
-                      )}
-                    </div>
-                  )}
-                  
-                  <button
-                    type="submit"
-                    disabled={isSubmitting}
-                    className={`w-full py-2 px-4 bg-blue-600 hover:bg-blue-700 text-white rounded transition ${
-                      isSubmitting ? 'opacity-70 cursor-not-allowed' : ''
-                    }`}
-                  >
-                    {isSubmitting ? 'Sending...' : 'Send Message'}
-                  </button>
-                </form>
               </div>
-            </div>
-          </div>
 
           {/* Copyright */}
           <div className="mt-10 text-center text-blue-100 text-xl">
