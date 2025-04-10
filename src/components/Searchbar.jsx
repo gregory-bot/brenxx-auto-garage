@@ -88,7 +88,7 @@ const SearchBar = ({ onSearch }) => {
         
         {/* Search Button with Spinner */}
         <button
-          className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-blue-600 hover:bg-blue-500 text-white rounded-full p-3 transition duration-300 shadow-md"
+          className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-red-600 hover:bg-blue-500 text-white rounded-full p-3 transition duration-300 shadow-md"
           disabled={loading}
         >
           {loading ? (

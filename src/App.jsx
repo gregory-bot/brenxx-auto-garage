@@ -8,7 +8,7 @@ import Contact from './pages/Contact';
 import Cart from './pages/Cart';
 import ServiceDetails from './pages/ServiceDetails';
 import { CartProvider } from './context/CartContext';
-import AboutUs from './components/AboutUs';
+import AboutUs from './pages/AboutUs';
 import OffersPage from './pages/OffersPage';
 import FAQPage from './pages/FAQPage';
 import ChatWidget from './components/ChatWidget';
@@ -25,7 +25,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/services" element={<Services />} />
-            <Route path="/book-appointment" element={<BookingPage />} /> {/* Add this line */}
+            <Route path="/book-appointment" element={<BookingPage />} />
             <Route path="/gallery" element={<GalleryPage />} />
             <Route path="/faq" element={<FAQPage />} />
             <Route path="/aboutus" element={<AboutUs />} />

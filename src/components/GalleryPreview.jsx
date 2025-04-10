@@ -5,7 +5,7 @@ const GalleryPreview = () => {
   const previewImages = [
     {
       id: 1,
-      url: 'https://i.postimg.cc/nhhNDgkN/gall.jpg',
+      url: 'https://i.postimg.cc/xj7smJdJ/yuyu.jpg',
       alt: 'our services'
     }
   ];
@@ -20,7 +20,7 @@ const GalleryPreview = () => {
             alt="BRENXX-AUTO logo" 
             className="h-6 w-auto mx-auto mb-4"
           />
-          <h2 className="text-3xl text-black mb-4">Gallery</h2>
+          <h2 className="text-4xl font-bold text-red-600 mb-4">Gallery</h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             Take a look at our work and satisfied customers
           </p>
@@ -41,7 +41,7 @@ const GalleryPreview = () => {
         <div className="text-center">
           <Link 
             to="/gallery" 
-            className="inline-flex items-center px-2 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+            className="inline-flex items-center px-2 py-2 bg-red-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
           >
             view our gallery
             <FiArrowRight className="ml-2" />

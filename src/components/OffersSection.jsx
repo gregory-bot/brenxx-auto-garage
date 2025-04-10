@@ -27,6 +27,7 @@ function OffersSection() {
     setIsFading(true);
     setTimeout(() => {
       navigate('/offers');
+      window.scrollTo({ top: 0, behavior: 'smooth' }); // Scroll to the top of the page
     }, 300);
   };
 
@@ -37,11 +38,11 @@ function OffersSection() {
       }`}
     >
       <h2
-        className="text-2xl bg-blue-100 mb-4"
+        className="text-4xl bg-blue-100 mb-4"
         style={{
           fontFamily: 'sans-serif',
           borderRadius: '12px',
-          padding: '1rem'
+          padding: '1rem',
         }}
       >
         Keeping you on the road – Brenxx Auto Services
@@ -50,7 +51,7 @@ function OffersSection() {
       <div className="grid grid-cols-1 gap-4">
         {offers.map((offer, index) => (
           <div key={index} className="mb-4 relative">
-            <h3 className="text-xl text-blue-600 font-semibold mb-2">{offer.title}</h3>
+            <h3 className="text-xl text-black font-semibold mb-2">{offer.title}</h3>
             <Carousel
               showThumbs={false}
               autoPlay
@@ -66,9 +67,6 @@ function OffersSection() {
                     alt={`Offer ${index + 1} Image ${idx + 1}`}
                     className="h-full object-cover"
                   />
-                  <div className="absolute top-0 left-0 bg-red-600 text-white text-xs font-bold rounded-full px-2 py-1">
-                    50% OFF
-                  </div>
                 </div>
               ))}
             </Carousel>
@@ -76,21 +74,21 @@ function OffersSection() {
         ))}
       </div>
       <div className="flex justify-between items-center mt-4">
-  {/* Logo on the left */}
-  <img 
-    src="https://i.postimg.cc/gJCNMjt8/brenxlogo.jpg" 
-    alt="BRENXX Logo" 
-    className="h-8 w-auto" 
-  />
-  
-  {/* Button on the right */}
-  <button
-    onClick={handleSeeAllClick}
-    className="bg-blue-500 hover:bg-blue-700 text-white px-4 py-2 rounded-md transition-colors duration-200"
-  >
-    see all
-  </button>
-</div>
+        {/* Logo on the left */}
+        <img
+          src="https://i.postimg.cc/gJCNMjt8/brenxlogo.jpg"
+          alt="BRENXX Logo"
+          className="h-8 w-auto"
+        />
+
+        {/* Button on the right */}
+        <button
+          onClick={handleSeeAllClick}
+          className="bg-red-500 hover:bg-blue-700 text-white px-4 py-2 rounded-md transition-colors duration-200"
+        >
+          see all
+        </button>
+      </div>
     </div>
   );
 }

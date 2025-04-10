@@ -24,7 +24,7 @@ const ContactSection = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null);
 
-  // Scroll handling (keep your existing code)
+  // Scroll handling
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 6000) {
@@ -97,7 +97,14 @@ const ContactSection = () => {
     <>
       <div id="contact" className="scroll-mt-24"></div>
 
-      <footer className="bg-gray-800 text-white py-12">
+      <footer
+        className="bg-gray-800 text-white py-12"
+        style={{
+          backgroundImage: "url('https://images.pexels.com/photos/31558503/pexels-photo-31558503/free-photo-of-vintage-car-steering-wheel-in-soft-light.jpeg?auto=compress&cs=tinysrgb&w=600')", // Replace with your image URL
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }}
+      >
         {showScrollButton && (
           <button
             onClick={scrollToTop}
@@ -111,15 +118,15 @@ const ContactSection = () => {
         <div className="container mx-auto px-4">
           {/* Brand Header */}
           <div className="text-center mb-8">
-            <h2 className="text-3xl text-blue-400 mb-2">Brenxx Auto</h2>
-            <p className="text-gray-300">Your trusted vehicle service partner</p>
+            <h2 className="text-4xl font-bold text-red-600 mb-2">Brenxx Auto</h2>
+            <p className="text-black">Your trusted vehicle service partner</p>
           </div>
 
           <div className="flex flex-col lg:flex-row gap-8">
             {/* Left Column - Contact Info */}
             <div className="lg:w-1/3">
               <div className="bg-gray-700 p-6 rounded-lg">
-                <h3 className="text-xl font-semibold mb-4 text-blue-400">Contact Information</h3>
+                <h3 className="text-xl font-bold mb-4 text-red-600">Contact Information</h3>
                 <div className="space-y-4">
                   <p>
                     <span className="font-medium">Phone:</span> +254 799 686363
@@ -173,7 +180,7 @@ const ContactSection = () => {
             {/* Middle Column - Quick Links */}
             <div className="lg:w-1/3">
               <div className="bg-gray-700 p-6 rounded-lg h-full">
-                <h3 className="text-xl font-semibold mb-4 text-blue-400">Quick Links</h3>
+                <h3 className="text-xl font-bold mb-4 text-red-600">Quick Links</h3>
                 <div className="grid grid-cols-2 gap-4">
                   <Link to="/" className="flex items-center text-gray-300 hover:text-white transition">
                     <FaHome className="mr-2" /> Home
@@ -219,7 +226,7 @@ const ContactSection = () => {
             {/* Right Column - Contact Form */}
             <div className="lg:w-1/3">
               <div className="bg-gray-700 p-6 rounded-lg">
-                <h3 className="text-xl font-semibold mb-4 text-blue-400">Send Us a Message</h3>
+                <h3 className="text-xl font-bold mb-4 text-red-600">Send Us a Message</h3>
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <input
                     type="text"

@@ -22,6 +22,7 @@
     "react-rating-stars-component": "^2.2.0",
     "react-responsive-carousel": "^3.2.23",
     "react-router-dom": "^6.30.0",
+    "swiper": "^11.2.6",
     "typewriter-effect": "^2.21.0"
   },
   "devDependencies": {

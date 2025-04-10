@@ -1,7 +1,5 @@
-import { useState } from 'react';
-import { useParams } from 'react-router-dom';
-import { useCart } from '../context/CartContext';
-import ReactStars from 'react-rating-stars-component';
+import { useEffect, useState } from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
 const carRepairServices = [
   {
     id: 'crs1',
@@ -919,7 +917,7 @@ const batteryServices = [
 ];
 function ServiceDetails() {
   const { id } = useParams();
-  const { addToCart } = useCart();
+  const navigate = useNavigate(); // Initialize navigate
 
   // Function to get the service items based on the service ID
   const getServiceItems = (serviceId) => {
@@ -940,14 +938,9 @@ function ServiceDetails() {
 
   const serviceItems = getServiceItems(id);
 
-  const handleAddToCart = (item, selectedServiceType, selectedVehicleType, rating) => {
-    const itemWithDetails = {
-      ...item,
-      serviceType: selectedServiceType,
-      vehicleType: selectedVehicleType,
-      rating: rating,
-    };
-    addToCart(itemWithDetails);
+  const handleBookService = (serviceId) => {
+    navigate(`/book-appointment?service=${serviceId}`); 
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (
@@ -961,92 +954,29 @@ function ServiceDetails() {
         />
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-          {serviceItems.map((item) => {
-            const [selectedServiceType, setSelectedServiceType] = useState('');
-            const [selectedVehicleType, setSelectedVehicleType] = useState('');
-            const [rating, setRating] = useState(0);
-
-            const ratingChanged = (newRating) => {
-              setRating(newRating);
-            };
-
-            return (
-              <div key={item.id} className="bg-white rounded-lg shadow-lg overflow-hidden max-w-xs">
-                <div className="relative overflow-hidden" style={{ paddingBottom: '56.25%' }}>
-                  <img
-                    src={item.image}
-                    alt={item.title}
-                    className="absolute top-0 left-0 w-full h-full object-contain transform transition-transform duration-500 hover:scale-110"
-                  />
-                </div>
-                <div className="p-3">
-                  <h3 className="text-lg font-semibold mb-1">{item.title}</h3>
-                  <p className="text-gray-600 text-sm mb-3">{item.description}</p>
-
-                  {/* Service Type Selection */}
-                  <div className="mb-2">
-                    <label htmlFor={`serviceType-${item.id}`} className="block text-sm font-medium text-gray-700">
-                      Service Type
-                    </label>
-                    <select
-                      id={`serviceType-${item.id}`}
-                      value={selectedServiceType}
-                      onChange={(e) => setSelectedServiceType(e.target.value)}
-                      className="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm rounded-md"
-                    >
-                      <option value="">Select service type</option>
-                      <option value="Basic">Basic</option>
-                      <option value="Premium">Premium</option>
-                      <option value="Full Package">Full Package</option>
-                    </select>
-                  </div>
-
-                  {/* Vehicle Type Selection */}
-                  <div className="mb-2">
-                    <label htmlFor={`vehicleType-${item.id}`} className="block text-sm font-medium text-gray-700">
-                      Vehicle Type
-                    </label>
-                    <select
-                      id={`vehicleType-${item.id}`}
-                      value={selectedVehicleType}
-                      onChange={(e) => setSelectedVehicleType(e.target.value)}
-                      className="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm rounded-md"
-                    >
-                      <option value="">Select vehicle type</option>
-                      <option value="Sedan">Sedan</option>
-                      <option value="SUV">SUV</option>
-                      <option value="Truck">Truck</option>
-                      <option value="Motorcycle">Motorcycle</option>
-                    </select>
-                  </div>
-
-                  {/* Rating Section */}
-                  <div className="mb-2">
-                    <label className="block text-sm font-medium text-gray-700">
-                      Rate
-                    </label>
-                    <ReactStars
-                      count={5}
-                      onChange={ratingChanged}
-                      size={24}
-                      activeColor="#ff0000"
-                    />
-                  </div>
-
-                  {/* Add to Cart Button */}
-                  <div className="flex justify-end">
-                    <button
-                      onClick={() => handleAddToCart(item, selectedServiceType, selectedVehicleType, rating)}
-                      className="bg-blue-500 hover:bg-green-600 text-white px-3 py-1 rounded text-sm"
-                      disabled={!selectedServiceType || !selectedVehicleType}
-                    >
-                      Add to Cart
-                    </button>
-                  </div>
+          {serviceItems.map((item) => (
+            <div key={item.id} className="bg-white rounded-lg shadow-lg overflow-hidden max-w-xs">
+              <div className="relative overflow-hidden" style={{ paddingBottom: '56.25%' }}>
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className="absolute top-0 left-0 w-full h-full object-contain transform transition-transform duration-500 hover:scale-110"
+                />
+              </div>
+              <div className="p-3">
+                <h3 className="text-lg font-semibold mb-1">{item.title}</h3>
+                <p className="text-gray-600 text-sm mb-3">{item.description}</p>
+                <div className="flex justify-end">
+                  <button
+                    onClick={() => handleBookService(item.id)} // Pass the service ID
+                    className="bg-red-500 hover:bg-green-600 text-white px-3 py-1 rounded text-sm transition-colors duration-300"
+                  >
+                    Book Service
+                  </button>
                 </div>
               </div>
-            );
-          })}
+            </div>
+          ))}
         </div>
       </div>
     </div>

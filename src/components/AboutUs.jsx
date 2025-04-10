@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
 const images = [
-  "https://i.postimg.cc/vTvTdRpY/tt.jpg",
+  "https://i.postimg.cc/vZ7Pm70N/brand.jpg",
   "https://i.postimg.cc/02C2fmtz/xx.jpg",
   "https://i.postimg.cc/jjfHL0rv/IMG-20250227-WA0032-1.jpg",
   "https://i.postimg.cc/mgVbZNXw/towing.jpg",
@@ -27,7 +27,7 @@ function AboutUs() {
     <section className="py-16 bg-yellow-50"> {/* Changed background to black */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Heading Above the Image Carousel */}
-        <h2 className="text-3xl text-black mb-6 text-center">
+        <h2 className="text-4xl font-bold text-red-600 mb-6 text-center">
           About Brenxx
         </h2>
 

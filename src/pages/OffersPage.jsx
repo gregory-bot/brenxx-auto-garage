@@ -1,12 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import ReactStars from 'react-rating-stars-component';
-import { useCart } from '../context/CartContext';
 
 function OffersPage() {
-  const { addToCart } = useCart();
   const navigate = useNavigate();
-  const [isFading, setIsFading] = useState(false);
+  const [isFading, setIsFading] = useState(true);
 
   const offers = [
     {
@@ -29,7 +26,7 @@ function OffersPage() {
     },
     {
       id: 'offer4',
-      title: 'Car Facelift package',
+      title: 'Car Facelift Package',
       description: 'Prepare for facelift with our tire change and alignment service.',
       image: 'https://media.istockphoto.com/id/946261062/photo/bottom-view-of-wheel-and-shock-absorber-of-vehicle.jpg?s=612x612&w=0&k=20&c=w-1POmKRJGzBLYRRDmyUPUcW0-2fGRuIDuLmyHsEP8U=',
     },
@@ -119,15 +116,6 @@ function OffersPage() {
     },
   ];
 
-  const handleAddToCart = (item, selectedServiceType, selectedVehicleType, rating) => {
-    const itemWithDetails = {
-      ...item,
-      serviceType: selectedServiceType,
-      vehicleType: selectedVehicleType,
-      rating: rating,
-    };
-    addToCart(itemWithDetails);
-  };
 
   const handleBackHomeClick = () => {
     setIsFading(true);
@@ -136,8 +124,24 @@ function OffersPage() {
     }, 500);
   };
 
+  const handleBookService = (offerId) => {
+    navigate(`/book-appointment?offer=${offerId}`);
+    window.scrollTo({ top: 0, behavior: 'smooth' }); // Scroll to the top of the page
+  };
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setIsFading(false);
+    }, 300); // Smooth fade-in effect
+    return () => clearTimeout(timeout);
+  }, []);
+
   return (
-    <div className={`min-h-screen bg-gray-50 pt-20 pb-10 transition-opacity duration-500 ${isFading ? 'opacity-0' : 'opacity-100'}`}>
+    <div
+      className={`min-h-screen bg-gray-50 pt-20 pb-10 transition-opacity duration-500 ${
+        isFading ? 'opacity-0' : 'opacity-100'
+      }`}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-end mb-4">
           <button
@@ -148,91 +152,33 @@ function OffersPage() {
           </button>
         </div>
         <h1 className="text-3xl font-bold mb-8">Special Deals</h1>
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-          {offers.map((offer) => {
-            const [selectedServiceType, setSelectedServiceType] = useState('');
-            const [selectedVehicleType, setSelectedVehicleType] = useState('');
-            const [rating, setRating] = useState(0);
-
-            const ratingChanged = (newRating) => {
-              setRating(newRating);
-            };
-
-            return (
-              <div key={offer.id} className="bg-white rounded-lg shadow-lg overflow-hidden max-w-xs">
-                <div className="relative overflow-hidden" style={{ paddingBottom: '56.25%' }}>
-                  <img src={offer.image} alt={offer.title} className="absolute top-0 left-0 w-full h-full object-contain" />
-                  <div className="absolute top-0 left-2 bg-blue-600 text-white text-xs font-bold rounded-full px-2 py-1">
-                    50% OFF
-                  </div>
-                </div>
-                <div className="p-3">
-                  <h3 className="text-lg font-semibold mb-1 text-black-600">{offer.title}</h3>
-                  <p className="text-gray-600 text-sm mb-3">{offer.description}</p>
-
-                  {/* Service Type Selection */}
-                  <div className="mb-2">
-                    <label htmlFor={`serviceType-${offer.id}`} className="block text-sm font-medium text-gray-700">
-                      Service Type
-                    </label>
-                    <select
-                      id={`serviceType-${offer.id}`}
-                      value={selectedServiceType}
-                      onChange={(e) => setSelectedServiceType(e.target.value)}
-                      className="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm rounded-md"
-                    >
-                      <option value="">Select service type</option>
-                      <option value="Basic">Basic</option>
-                      <option value="Premium">Premium</option>
-                      <option value="Full Package">Full Package</option>
-                    </select>
-                  </div>
-
-                  {/* Vehicle Type Selection */}
-                  <div className="mb-2">
-                    <label htmlFor={`vehicleType-${offer.id}`} className="block text-sm font-medium text-gray-700">
-                      Vehicle Type
-                    </label>
-                    <select
-                      id={`vehicleType-${offer.id}`}
-                      value={selectedVehicleType}
-                      onChange={(e) => setSelectedVehicleType(e.target.value)}
-                      className="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm rounded-md"
-                    >
-                      <option value="">Select vehicle type</option>
-                      <option value="Sedan">Sedan</option>
-                      <option value="SUV">SUV</option>
-                      <option value="Truck">Truck</option>
-                      <option value="Motorcycle">Motorcycle</option>
-                    </select>
-                  </div>
-
-                  {/* Rating Section */}
-                  <div className="mb-2">
-                    <label className="block text-sm font-medium text-gray-700">
-                      Rate
-                    </label>
-                    <ReactStars
-                      count={5}
-                      onChange={ratingChanged}
-                      size={24}
-                      activeColor="#ff0000"
-                    />
-                  </div>
-
-                  <div className="flex justify-end">
-                    <button
-                      onClick={() => handleAddToCart(offer, selectedServiceType, selectedVehicleType, rating)}
-                      className="bg-blue-500 hover:bg-green-600 text-white px-3 py-1 rounded text-sm"
-                      disabled={!selectedServiceType || !selectedVehicleType}
-                    >
-                      Add to Cart
-                    </button>
-                  </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          {offers.map((offer) => (
+            <div
+              key={offer.id}
+              className="bg-white rounded-lg shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105"
+            >
+              <div className="relative overflow-hidden" style={{ paddingBottom: '70%' }}>
+                <img
+                  src={offer.image}
+                  alt={offer.title}
+                  className="absolute top-0 left-0 w-full h-full object-cover"
+                />
+              </div>
+              <div className="p-4">
+                <h3 className="text-lg font-semibold mb-2 text-gray-800">{offer.title}</h3>
+                <p className="text-gray-600 text-sm mb-4">{offer.description}</p>
+                <div className="flex justify-end">
+                  <button
+                    onClick={() => handleBookService(offer.id)}
+                    className="bg-blue-500 hover:bg-green-600 text-white px-4 py-2 rounded-md text-sm transition-colors duration-300"
+                  >
+                    Book Service
+                  </button>
                 </div>
               </div>
-            );
-          })}
+            </div>
+          ))}
         </div>
       </div>
     </div>
