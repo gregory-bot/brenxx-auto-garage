@@ -155,19 +155,8 @@ function Navbar() {
           {/* Mobile Menu Button */}
           <div className="md:hidden flex items-center space-x-4">
             <button
-              onClick={() => handleNavigation('/cart')}
-              className="relative p-2"
-            >
-              <FiShoppingCart className="h-6 w-6" />
-              {cartItems.length > 0 && (
-                <span className="absolute -top-2 -right-2 bg-red-500 text-white rounded-full h-5 w-5 flex items-center justify-center text-xs">
-                  {cartItems.length}
-                </span>
-              )}
-            </button>
-            <button
               onClick={() => setIsOpen(!isOpen)}
-              className="p-2 bg-black text-white rounded-full w-10 h-10 flex items-center justify-center"
+              className="p-2 bg-red-600 text-white rounded-full w-10 h-10 flex items-center justify-center"
             >
               {isOpen ? <FiX className="h-6 w-6" /> : <FiMenu className="h-6 w-6" />}
             </button>
@@ -179,7 +168,7 @@ function Navbar() {
       {isMobile && (
         <div
           ref={mobileMenuRef}
-          className={`fixed top-0 left-0 h-full w-64 bg-blue-100 transform transition-transform duration-300 ease-in-out overflow-y-auto ${
+          className={`fixed top-0 left-0 h-full w-64 bg-yellow-100 transform transition-transform duration-300 ease-in-out overflow-y-auto ${
             isOpen ? 'translate-x-0' : '-translate-x-full'
           } z-50`}
         >

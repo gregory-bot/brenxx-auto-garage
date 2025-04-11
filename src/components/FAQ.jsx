@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 import { ChevronDown, ChevronUp } from 'lucide-react';
 
+const backgroundImage = 'https://i.postimg.cc/mk6hprsp/juju.jpg';
+const leftImage = 'https://i.postimg.cc/CL8XXwQ2/ggt.jpg';
+const rightImage = 'https://i.postimg.cc/8c4D6Ngw/ceramic.jpg';
+
 const faqData = [
   {
     question: "What services do you offer?",
@@ -16,7 +20,7 @@ const faqData = [
   },
   {
     question: "How do I schedule an appointment?",
-    answer: "You can schedule an appointment through our Website  booking system, you book a session service or through whatsapp in our website or by visiting us in person. We recommend booking in advance to ensure we can accommodate your preferred time slot."
+    answer: "You can schedule an appointment through our Website booking system, WhatsApp link on the website, or by visiting us in person. We recommend booking in advance to ensure we can accommodate your preferred time slot."
   },
   {
     question: "What forms of payment do you accept?",
@@ -24,7 +28,7 @@ const faqData = [
   },
   {
     question: "Do you offer emergency services?",
-    answer: "Yes, we provide emergency services and Towing services during business hours. For after-hours emergencies, we have partnerships with local towing services and can arrange for your vehicle to be brought to Brenxx Auto garage."
+    answer: "Yes, we provide emergency services and towing during business hours. For after-hours emergencies, we partner with local towing services to get your vehicle to our garage safely."
   }
 ];
 
@@ -32,16 +36,38 @@ const FAQ = () => {
   const [openItems, setOpenItems] = useState([]);
 
   const toggleItem = (index) => {
-    setOpenItems(prev => 
-      prev.includes(index) 
+    setOpenItems(prev =>
+      prev.includes(index)
         ? prev.filter(item => item !== index)
         : [...prev, index]
     );
   };
 
   return (
-    <section className="py-10 bg-gray-50">
-      <div className="max-w-3xl mx-auto px-4">
+    <section
+      className="relative py-20 bg-fit bg-center"
+      style={{
+        backgroundImage: `url(${backgroundImage})`,
+        backgroundAttachment: 'fixed',
+      }}
+    >
+      {/* Dark overlay */}
+      <div className="absolute inset-0 bg-opacity-50 z-0" />
+
+      {/* Decorative side images */}
+      <img
+        src={leftImage}
+        alt="Garage Left"
+        className="hidden lg:block absolute left-0 top-1/2 transform -translate-y-1/2 w-40 z-10 rounded-xl shadow-lg"
+      />
+      <img
+        src={rightImage}
+        alt="Garage Right"
+        className="hidden lg:block absolute right-0 top-1/2 transform -translate-y-1/2 w-40 z-10 rounded-xl shadow-lg"
+      />
+
+      {/* FAQ content */}
+      <div className="relative max-w-3xl mx-auto px-4 z-20">
         <h2 className="text-4xl text-center font-bold mb-12 text-black">
           Frequently Asked Questions
         </h2>
@@ -53,7 +79,7 @@ const FAQ = () => {
             >
               <button
                 onClick={() => toggleItem(index)}
-                className="w-full px-6 py-4 flex justify-between items-center text-left hover:bg-gray-50 transition-colors"
+                className="w-full px-6 py-4 flex justify-between items-center text-left hover:bg-blue-200 transition-colors"
               >
                 <span className="font-semibold text-gray-800">{faq.question}</span>
                 {openItems.includes(index) ? (
@@ -63,13 +89,13 @@ const FAQ = () => {
                 )}
               </button>
               <div
-                className={`px-6 transition-all duration-200 ease-in-out ${
+                className={`px-6 transition-all duration-300 ease-in-out ${
                   openItems.includes(index)
                     ? 'max-h-48 py-4 opacity-100'
                     : 'max-h-0 py-0 opacity-0'
                 }`}
               >
-                <p className="text-gray-600">{faq.answer}</p>
+                <p className="text-gray-700">{faq.answer}</p>
               </div>
             </div>
           ))}

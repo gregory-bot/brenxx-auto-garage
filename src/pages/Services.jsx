@@ -147,7 +147,7 @@ function Services() {
           {services.map((service) => (
             <div key={service.id} className="bg-white rounded-lg shadow-md hover:scale-105 transition-transform">
               <img src={service.image} alt={service.title} className="w-full h-32 object-cover" />
-              <div className="p-4 flex flex-col justify-between h-48">
+              <div className="p-4 flex flex-col justify-between h-46">
                 <div>
                   <h3 className="text-md font-semibold text-gray-900">{service.title}</h3>
                   <p className="mt-1 text-sm text-gray-600 line-clamp-3">{service.description}</p>
@@ -167,10 +167,10 @@ function Services() {
 
         {/* Top Brands Carousel */}
         <div
-          className="mt-16 bg-cover bg-center bg-no-repeat py-12 px-4 sm:px-6 lg:px-8"
+          className="mt-16 bg-cover bg-center bg-no-repeat py-8 px-4 sm:px-6 lg:px-8"
           style={{
             backgroundImage:
-              "url('https://images.pexels.com/photos/31558528/pexels-photo-31558528/free-photo-of-classic-sedan-parked-in-urban-setting.jpeg?auto=compress&cs=tinysrgb&w=600')",
+              "url('https://media.istockphoto.com/id/2162618334/photo/parking-lot-is-full-of-cars.jpg?s=612x612&w=0&k=20&c=xxZOahuZpeZpgs3CRGNKjIINQmO_4FWXuFQdQ_9ZoHE=')",
           }}
         >
           <h3 className="text-3xl font-bold text-center text-black mb-6">Our Top Brands</h3>
@@ -179,13 +179,13 @@ function Services() {
             {/* Desktop Arrows */}
             <button
               onClick={handlePrev}
-              className="hidden sm:flex absolute left-0 top-1/2 -translate-y-1/2  bg-yellow-100 p-2 rounded-full z-10 shadow hover:bg-gray-100"
+              className="hidden sm:flex absolute left-0 top-1/2 -translate-y-1/2 bg-yellow-100 p-2 rounded-full z-10 shadow hover:bg-gray-100"
             >
               <FiChevronLeft className="w-6 h-6 text-black" />
             </button>
             <button
               onClick={handleNext}
-              className="hidden sm:flex absolute right-0 top-1/2 -translate-y-1/2  bg-yellow-100 p-2 rounded-full z-10 shadow hover:bg-gray-100"
+              className="hidden sm:flex absolute right-0 top-1/2 -translate-y-1/2 bg-yellow-100 p-2 rounded-full z-10 shadow hover:bg-gray-100"
             >
               <FiChevronRight className="w-6 h-6 text-black" />
             </button>
@@ -202,7 +202,7 @@ function Services() {
             </div>
 
             {/* Mobile Arrows */}
-            <div className="sm:hidden flex justify-center gap-4 mt-4">
+            <div className="sm:hidden flex justify-between items-center mt-4">
               <button onClick={handlePrev} className="bg-white p-3 rounded-full shadow hover:bg-gray-100">
                 <FiChevronLeft className="w-5 h-5 text-gray-700" />
               </button>
