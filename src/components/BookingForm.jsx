@@ -170,7 +170,7 @@ Contact Number: ${phoneNumber}`;
       </div>
 
       <div>
-        <label className="block text-sm font-medium text-blue-700">WhatsApp Number</label>
+        <label className="block text-sm font-medium text-blue-700">Your WhatsApp Number</label>
         <input
           type="tel"
           value={phoneNumber}

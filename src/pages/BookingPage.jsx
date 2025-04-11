@@ -29,7 +29,7 @@ Notes: ${bookingData.vehicleDetails.additionalNotes}`;
   return (
     <div className="min-h-screen bg-gray-50 py-16">
       <div className="max-w-4xl mx-auto px-4">
-        <h1 className="text-4xl text-blue-600 text-center mb-8">Book Your Appointment</h1>
+        <h1 className="text-4xl text-black font-bold text-center mb-8">Book Your Appointment</h1>
         <div className="bg-white p-6 rounded-lg shadow-md">
           <BookingForm onSubmit={handleSubmit} />
         </div>

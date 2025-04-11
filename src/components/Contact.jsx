@@ -9,22 +9,15 @@ import {
   FaImages,
   FaInfoCircle,
   FaEnvelope,
-  FaCalendarAlt
+  FaCalendarAlt,
+  FaWhatsapp,
 } from 'react-icons/fa';
 import { FiHelpCircle } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
 
 const ContactSection = () => {
   const [showScrollButton, setShowScrollButton] = useState(false);
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
-  });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState(null);
 
-  // Scroll handling
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 6000) {
@@ -42,7 +35,7 @@ const ContactSection = () => {
     const duration = 3000;
     const start = window.pageYOffset;
     const startTime = performance.now();
-  
+
     const animateScroll = (currentTime) => {
       const elapsedTime = currentTime - startTime;
       const progress = Math.min(elapsedTime / duration, 1);
@@ -51,46 +44,12 @@ const ContactSection = () => {
         requestAnimationFrame(animateScroll);
       }
     };
-  
+
     const easeInOutQuad = (t) => {
       return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
     };
-  
+
     requestAnimationFrame(animateScroll);
-  };
-
-  // Form handling
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    setSubmitStatus(null);
-  
-    try {
-      const response = await fetch('https://script.google.com/macros/s/AKfycbyBhTW6hBSvu4BFQS7RNoHPWuGLpMoA6J7RCI4fQ3iWgycohCr54mSqpmD7NSZu95D3/exec', {
-        method: 'POST',
-        mode: 'no-cors',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
-  
-      setSubmitStatus('success');
-      setFormData({ name: '', email: '', message: '' });
-    } catch (error) {
-      setSubmitStatus('error');
-      console.error('Error:', error);
-    } finally {
-      setIsSubmitting(false);
-      setTimeout(() => setSubmitStatus(null), 5000);
-    }
   };
 
   return (
@@ -100,7 +59,7 @@ const ContactSection = () => {
       <footer
         className="bg-gray-800 text-white py-12"
         style={{
-          backgroundImage: "url('https://images.pexels.com/photos/31558503/pexels-photo-31558503/free-photo-of-vintage-car-steering-wheel-in-soft-light.jpeg?auto=compress&cs=tinysrgb&w=600')", // Replace with your image URL
+          backgroundImage: "url('https://images.pexels.com/photos/31558503/pexels-photo-31558503/free-photo-of-vintage-car-steering-wheel-in-soft-light.jpeg?auto=compress&cs=tinysrgb&w=600')",
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }}
@@ -140,9 +99,9 @@ const ContactSection = () => {
                       <p className="font-medium">Location:</p>
                       <p>Garden Estate, Limasi Villas</p>
                       <p>Castle Gardens, Nairobi</p>
-                      <a 
-                        href="https://maps.app.goo.gl/C2Nck5qf7G3N3dAE7" 
-                        target="_blank" 
+                      <a
+                        href="https://maps.app.goo.gl/C2Nck5qf7G3N3dAE7"
+                        target="_blank"
                         rel="noopener noreferrer"
                         className="text-blue-400 hover:underline inline-block mt-2"
                       >
@@ -219,10 +178,21 @@ const ContactSection = () => {
                       <FaTiktok size={20} />
                     </a>
                   </div>
+                                  {/* WhatsApp Button */}
+                <div className="mt-8">
+                  <a
+                    href="https://wa.me/254799686363"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-lg shadow-md transition"
+                  >
+                    <FaWhatsapp className="mr-2" size={20} /> Chat with us on WhatsApp
+                  </a>
+                </div>
                 </div>
               </div>
             </div>
-              </div>
+          </div>
 
           {/* Copyright */}
           <div className="mt-10 text-center text-blue-100 text-xl">

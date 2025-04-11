@@ -5,7 +5,7 @@ const GalleryPreview = () => {
   const previewImages = [
     {
       id: 1,
-      url: 'https://i.postimg.cc/xj7smJdJ/yuyu.jpg',
+      url: 'https://i.postimg.cc/bwkYCyLm/hjh.jpg',
       alt: 'our services'
     }
   ];
@@ -18,7 +18,7 @@ const GalleryPreview = () => {
           <img 
             src="https://i.postimg.cc/gJCNMjt8/brenxlogo.jpg" 
             alt="BRENXX-AUTO logo" 
-            className="h-6 w-auto mx-auto mb-4"
+            className="h-8 w-auto mx-auto mb-4"
           />
           <h2 className="text-4xl font-bold text-black mb-4">Gallery</h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
