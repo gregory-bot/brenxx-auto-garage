@@ -83,7 +83,7 @@ function Navbar() {
   };
 
   return (
-    <nav className="bg-yellow-100 fixed w-full z-50">
+    <nav className="bg-blue-100 fixed w-full z-50">
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center">
@@ -112,13 +112,13 @@ function Navbar() {
             >
               SERVICES <FiChevronDown className="ml-1" />
               {showDropdown && (
-                <div className="absolute top-full left-0 bg-yellow-100 shadow-lg rounded-lg mt-2 w-64 z-50">
+                <div className="absolute top-full left-0 bg-blue-100 shadow-lg rounded-lg mt-2 w-64 z-50">
                   <ul className="text-black">
                     {services.map((service) => (
                       <li
                         key={service.id}
                         onClick={() => handleNavigation(`/services/${service.id}`)}
-                        className="px-4 py-2 hover:bg-blue-100 cursor-pointer"
+                        className="px-4 py-2 hover:bg-yellow-100 cursor-pointer"
                       >
                         {service.name}
                       </li>
@@ -175,7 +175,7 @@ function Navbar() {
           <div className="flex flex-col items-start p-6 space-y-4">
             <button
               onClick={() => handleNavigation('/')}
-              className="flex items-center nav-link bg-white text-black px-3 py-2 rounded-md hover:bg-blue-700 transition-colors w-full"
+              className="flex items-center nav-link bg-white text-black px-3 py-2 rounded-md hover:bg-yellow-100 transition-colors w-full"
             >
               <FiHome className="mr-2" /> Home
             </button>
