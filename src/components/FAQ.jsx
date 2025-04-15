@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import { ChevronDown, ChevronUp } from 'lucide-react';
 
 const backgroundImage = 'https://i.postimg.cc/mk6hprsp/juju.jpg';
-const leftImage = 'https://i.postimg.cc/CL8XXwQ2/ggt.jpg';
-const rightImage = 'https://i.postimg.cc/8c4D6Ngw/ceramic.jpg';
 
 const faqData = [
   {
@@ -53,18 +51,6 @@ const FAQ = () => {
     >
       {/* Dark overlay */}
       <div className="absolute inset-0 bg-opacity-50 z-0" />
-
-      {/* Decorative side images */}
-      <img
-        src={leftImage}
-        alt="Garage Left"
-        className="hidden lg:block absolute left-0 top-1/2 transform -translate-y-1/2 w-40 z-10 rounded-xl shadow-lg"
-      />
-      <img
-        src={rightImage}
-        alt="Garage Right"
-        className="hidden lg:block absolute right-0 top-1/2 transform -translate-y-1/2 w-40 z-10 rounded-xl shadow-lg"
-      />
 
       {/* FAQ content */}
       <div className="relative max-w-3xl mx-auto px-4 z-20">
