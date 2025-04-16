@@ -17,9 +17,9 @@ const BookingSection = () => {
         <div className="relative rounded-xl overflow-hidden h-96">
           {/* Background Image */}
           <img 
-            src="https://i.postimg.cc/02C2fmtz/xx.jpg"
+            src="https://i.postimg.cc/MKfQtgJm/opo.jpg"
             alt="Professional Auto Service"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover rounded-xl transition-transform duration-500 transform hover:scale-105"
           />
           
           {/* Overlay Content with button at middle bottom */}

@@ -77,8 +77,12 @@ const ContactSection = () => {
         <div className="container mx-auto px-4">
           {/* Brand Header */}
           <div className="text-center mb-8">
-            <h2 className="text-4xl font-bold text-blue-600 mb-2">Brenxx Auto</h2>
-            <p className="text-white">Your trusted vehicle service partner</p>
+            <div className="flex items-center justify-center gap-4">
+            <div className="h-px w-80 bg-red-600"></div>
+              <h2 className="text-4xl font-bold text-blue-600">Brenxx Auto</h2>
+              <div className="h-px w-80 bg-red-600"></div>
+            </div>
+            <p className="text-white mt-2">Your trusted vehicle service partner</p>
           </div>
 
           <div className="flex flex-col lg:flex-row gap-8">
@@ -178,17 +182,18 @@ const ContactSection = () => {
                       <FaTiktok size={20} />
                     </a>
                   </div>
-                                  {/* WhatsApp Button */}
-                <div className="mt-8">
-                  <a
-                    href="https://wa.me/254799686363"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center justify-center bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-lg shadow-md transition"
-                  >
-                    <FaWhatsapp className="mr-2" size={20} /> Chat with us on WhatsApp
-                  </a>
-                </div>
+
+                  {/* WhatsApp Button */}
+                  <div className="mt-8">
+                    <a
+                      href="https://wa.me/254799686363"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-center bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-lg shadow-md transition"
+                    >
+                      <FaWhatsapp className="mr-2" size={20} /> Chat with us on WhatsApp
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>

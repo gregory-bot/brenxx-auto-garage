@@ -190,10 +190,10 @@ function Services() {
               <FiChevronRight className="w-6 h-6 text-black" />
             </button>
 
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 justify-center">
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-1 justify-center">
               {getVisibleBrands().map((brand) => (
                 <div key={brand.id} className="flex flex-col items-center transition hover:scale-110">
-                  <div className="w-20 h-20 sm:w-28 sm:h-28 p-2 sm:p-4 bg-white rounded-lg shadow">
+                  <div className="w-16 h-16 sm:w-28 sm:h-28 p-2 sm:p-4 bg-white rounded-lg shadow">
                     <img src={brand.logo} alt={brand.name} className="max-h-full max-w-full object-contain" />
                   </div>
                   <p className="mt-2 text-sm sm:text-lg font-bold text-white">{brand.name}</p>
@@ -218,7 +218,7 @@ function Services() {
                   key={index}
                   onClick={() => goToSlide(index)}
                   className={`w-3 h-3 rounded-full ${
-                    currentIndex / visibleBrands === index ? 'bg-red-600 w-6' : 'bg-gray-300'
+                    currentIndex / visibleBrands === index ? 'bg-black w-2' : 'bg-gray-300'
                   } transition-all`}
                 />
               ))}

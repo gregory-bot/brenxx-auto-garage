@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import { ChevronDown, ChevronUp } from 'lucide-react';
 
-const backgroundImage = 'https://i.postimg.cc/mk6hprsp/juju.jpg';
-
 const faqData = [
   {
     question: "What services do you offer?",
@@ -34,26 +32,16 @@ const FAQ = () => {
   const [openItems, setOpenItems] = useState([]);
 
   const toggleItem = (index) => {
-    setOpenItems(prev =>
+    setOpenItems((prev) =>
       prev.includes(index)
-        ? prev.filter(item => item !== index)
+        ? prev.filter((item) => item !== index)
         : [...prev, index]
     );
   };
 
   return (
-    <section
-      className="relative py-20 bg-fit bg-center"
-      style={{
-        backgroundImage: `url(${backgroundImage})`,
-        backgroundAttachment: 'fixed',
-      }}
-    >
-      {/* Dark overlay */}
-      <div className="absolute inset-0 bg-opacity-50 z-0" />
-
-      {/* FAQ content */}
-      <div className="relative max-w-3xl mx-auto px-4 z-20">
+    <section className="py-20 bg-gray-50">
+      <div className="max-w-3xl mx-auto px-4">
         <h2 className="text-4xl text-center font-bold mb-12 text-black">
           Frequently Asked Questions
         </h2>

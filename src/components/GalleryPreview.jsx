@@ -48,6 +48,7 @@ const GalleryPreview = () => {
           </Link>
         </div>
       </div>
+
     </section>
   );
 };

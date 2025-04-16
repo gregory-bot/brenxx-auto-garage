@@ -90,10 +90,10 @@ function Navbar() {
             <img
               src="https://i.postimg.cc/gJCNMjt8/brenxlogo.jpg"
               alt="brenxx-auto-services"
-              className="h-10 w-24 mr-2"
+              className="h-12 w-26 mr-2"
             />
             <Link to="/" className="text-2xl">
-              <span className="text-black font-bold">BRENXX AUTO</span>
+              <span className="text-red-600 font-bold">BRENXX AUTO</span>
             </Link>
           </div>
 
@@ -156,7 +156,7 @@ function Navbar() {
           <div className="md:hidden flex items-center space-x-4">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="p-2 bg-red-600 text-white rounded-full w-10 h-10 flex items-center justify-center"
+              className="p-2 bg-black text-white rounded-full w-10 h-10 flex items-center justify-center"
             >
               {isOpen ? <FiX className="h-6 w-6" /> : <FiMenu className="h-6 w-6" />}
             </button>
