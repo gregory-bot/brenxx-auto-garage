@@ -83,7 +83,7 @@ function Navbar() {
   };
 
   return (
-    <nav className="bg-blue-100 fixed w-full z-50">
+    <nav className="bg-black fixed w-full z-50">
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center">
@@ -93,16 +93,16 @@ function Navbar() {
               className="h-12 w-26 mr-2"
             />
             <Link to="/" className="text-2xl">
-              <span className="text-red-600 font-bold">BRENXX AUTO</span>
+              <span className="text-white font-bold">BRENXX AUTO</span>
             </Link>
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex text-red-600 font-bold items-center space-x-8">
-            <Link to="/" className="nav-link">
+          <div className="hidden md:flex text-white font-bold items-center space-x-8">
+            <Link to="/" className="nav-link text-white hover:text-blue-600 transition-colors duration-200">
               HOME
             </Link>
-            <Link to="/aboutus" className="nav-link">
+            <Link to="/aboutus" className="nav-link hover:text-blue-600 transition-colors duration-200">
               ABOUT US
             </Link>
             <div
@@ -127,19 +127,19 @@ function Navbar() {
                 </div>
               )}
             </div>
-            <Link to="/offers" className="nav-link">
+            <Link to="/offers" className="nav-link hover:text-blue-600 transition-colors duration-200">
               OFFERS
             </Link>
-            <Link to="/gallery" className="nav-link">
+            <Link to="/gallery" className="nav-link hover:text-blue-600 transition-colors duration-200">
               GALLERY
             </Link>
-            <Link to="/contact" className="nav-link">
+            <Link to="/contact" className="nav-link hover:text-blue-600 transition-colors duration-200">
               CONTACT
             </Link>
-            <Link to="/faq" className="nav-link">
+            <Link to="/faq" className="nav-link hover:text-blue-600 transition-colors duration-200">
               FAQ
             </Link>
-            <Link to="/book-appointment" className="nav-link">
+            <Link to="/book-appointment" className="nav-link hover:text-blue-600 transition-colors duration-200">
               BOOK NOW
             </Link>
             <Link to="/cart" className="relative">
@@ -156,7 +156,7 @@ function Navbar() {
           <div className="md:hidden flex items-center space-x-4">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="p-2 bg-black text-white rounded-full w-10 h-10 flex items-center justify-center"
+              className="p-2 bg-red-600 text-white rounded-full w-10 h-10 flex items-center justify-center"
             >
               {isOpen ? <FiX className="h-6 w-6" /> : <FiMenu className="h-6 w-6" />}
             </button>
