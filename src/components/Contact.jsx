@@ -20,7 +20,8 @@ const ContactSection = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 6000) {
+      // Show the button when the user scrolls down 300px or more
+      if (window.scrollY > 4000) {
         setShowScrollButton(true);
       } else {
         setShowScrollButton(false);
@@ -68,7 +69,7 @@ const ContactSection = () => {
         {/* Phone Call FAB Button */}
         <a
           href="tel:+254799686363"
-          className="fixed bottom-20 left-6 bg-green-500 hover:bg-green-600 text-white p-3 rounded-full shadow-lg transition-all duration-300 z-50 flex items-center justify-center"
+          className="fixed bottom-6 left-2 bg-green-500 hover:bg-green-600 text-white p-3 rounded-full shadow-lg transition-all duration-300 z-50 flex items-center justify-center"
           aria-label="Call Us"
         >
           <FaPhone size={20} />
@@ -78,7 +79,7 @@ const ContactSection = () => {
         {showScrollButton && (
           <button
             onClick={scrollToTop}
-            className="fixed bottom-6 left-6 bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-full shadow-lg transition-all duration-300 z-50"
+            className="fixed bottom-20 left-6 bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-full shadow-lg transition-all duration-300 z-50"
             aria-label="Scroll to top"
           >
             <FaArrowUp size={15} />
