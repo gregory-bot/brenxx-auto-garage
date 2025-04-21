@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { FaMapMarkerAlt, FaArrowUp, FaCheck, FaTimes } from 'react-icons/fa';
+import { FaMapMarkerAlt, FaArrowUp, FaPhone } from 'react-icons/fa';
 import {
   FaFacebook,
   FaInstagram,
@@ -59,11 +59,22 @@ const ContactSection = () => {
       <footer
         className="bg-gray-800 text-white py-12"
         style={{
-          backgroundImage: "url('https://images.pexels.com/photos/31558503/pexels-photo-31558503/free-photo-of-vintage-car-steering-wheel-in-soft-light.jpeg?auto=compress&cs=tinysrgb&w=600')",
+          backgroundImage: "url('https://images.pexels.com/photos/1534604/pexels-photo-1534604.jpeg?auto=compress&cs=tinysrgb&w=600')",
           backgroundSize: 'cover',
           backgroundPosition: 'center',
+          backgroundAttachment: 'fixed',
         }}
       >
+        {/* Phone Call FAB Button */}
+        <a
+          href="tel:+254799686363"
+          className="fixed bottom-20 left-6 bg-green-500 hover:bg-green-600 text-white p-3 rounded-full shadow-lg transition-all duration-300 z-50 flex items-center justify-center"
+          aria-label="Call Us"
+        >
+          <FaPhone size={20} />
+        </a>
+
+        {/* Back to Top Button */}
         {showScrollButton && (
           <button
             onClick={scrollToTop}
@@ -78,11 +89,11 @@ const ContactSection = () => {
           {/* Brand Header */}
           <div className="text-center mb-8">
             <div className="flex items-center justify-center gap-4">
-            <div className="h-px w-80 bg-red-600"></div>
-              <h2 className="text-4xl font-bold text-blue-600">Brenxx Auto</h2>
+              <div className="h-px w-80 bg-red-600"></div>
+              <h2 className="text-4xl font-bold text-black">Brenxx Auto</h2>
               <div className="h-px w-80 bg-red-600"></div>
             </div>
-            <p className="text-white mt-2">Your trusted vehicle service partner</p>
+            <p className="text-black mt-2">Your trusted vehicle service partner</p>
           </div>
 
           <div className="flex flex-col lg:flex-row gap-8">

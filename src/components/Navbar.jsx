@@ -83,14 +83,14 @@ function Navbar() {
   };
 
   return (
-    <nav className="bg-black fixed w-full z-50">
+    <nav className="bg-gray-800 fixed w-full z-50">
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center">
             <img
               src="https://i.postimg.cc/gJCNMjt8/brenxlogo.jpg"
               alt="brenxx-auto-services"
-              className="h-12 w-26 mr-2"
+              className="h-10 w-20 sm:h-12 sm:w-24 lg:h-16 lg:w-36 mr-2" 
             />
             <Link to="/" className="text-2xl">
               <span className="text-white font-bold">BRENXX AUTO</span>

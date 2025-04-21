@@ -99,6 +99,15 @@ function Services() {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
+  // Automatically change slides every 6 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      handleNext();
+    }, 6000); // Change slide every 6 seconds
+
+    return () => clearInterval(interval); // Cleanup on unmount
+  }, [currentIndex, visibleBrands]);
+
   const handlePrev = () => {
     if (isTransitioning) return;
     setIsTransitioning(true);
@@ -155,7 +164,7 @@ function Services() {
                 <div className="mt-2 self-end">
                   <Link
                     to={`/services/${service.id}`}
-                    className="text-sm px-3 py-1 bg-red-600 text-white hover:bg-blue-700 rounded-md"
+                    className="text-sm px-3 py-1 bg-red-600 text-white hover:bg-gray-700 rounded-md"
                   >
                     More
                   </Link>
@@ -167,10 +176,10 @@ function Services() {
 
         {/* Top Brands Carousel */}
         <div
-          className="mt-16 bg-cover bg-center bg-no-repeat py-8 px-4 sm:px-6 lg:px-8"
+          className="mt-16 bg-cover bg-center bg-no-repeat py-4 px-2 sm:px-6 lg:px-8"
           style={{
             backgroundImage:
-              "url('https://media.istockphoto.com/id/2162618334/photo/parking-lot-is-full-of-cars.jpg?s=612x612&w=0&k=20&c=xxZOahuZpeZpgs3CRGNKjIINQmO_4FWXuFQdQ_9ZoHE=')",
+              "url('https://images.pexels.com/photos/1534604/pexels-photo-1534604.jpeg?auto=compress&cs=tinysrgb&w=600')",
           }}
         >
           <h3 className="text-3xl font-bold text-center text-black mb-6">Our Top Brands</h3>
@@ -199,16 +208,6 @@ function Services() {
                   <p className="mt-2 text-sm sm:text-lg font-bold text-white">{brand.name}</p>
                 </div>
               ))}
-            </div>
-
-            {/* Mobile Arrows */}
-            <div className="sm:hidden flex justify-between items-center mt-4">
-              <button onClick={handlePrev} className="bg-white p-3 rounded-full shadow hover:bg-gray-100">
-                <FiChevronLeft className="w-5 h-5 text-gray-700" />
-              </button>
-              <button onClick={handleNext} className="bg-white p-3 rounded-full shadow hover:bg-gray-100">
-                <FiChevronRight className="w-5 h-5 text-gray-700" />
-              </button>
             </div>
 
             {/* Pagination Dots */}

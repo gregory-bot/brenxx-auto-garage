@@ -3,7 +3,7 @@ import Typewriter from "typewriter-effect";
 import SearchBar from "./SearchBar";
 
 const backgroundImages = [
-  "https://i.postimg.cc/MG3zzpK0/yybn.jpg",
+  "https://images.pexels.com/photos/16180417/pexels-photo-16180417/free-photo-of-luxury-black-jaguar-car.jpeg?auto=compress&cs=tinysrgb&w=600",
   "https://images.pexels.com/photos/4480505/pexels-photo-4480505.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
 ];
 
@@ -15,7 +15,7 @@ function Hero() {
       setCurrentImageIndex((prevIndex) =>
         (prevIndex + 1) % backgroundImages.length
       );
-    }, 8000); // Change image every 8 seconds
+    }, 8000);
 
     return () => clearInterval(interval);
   }, []);
@@ -32,9 +32,9 @@ function Hero() {
       {backgroundImages.map((image, index) => (
         <div
           key={index}
-          className={`absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-1000 ${
-            index === currentImageIndex ? "opacity-100 z-0" : "opacity-0"
-          }`}          
+          className={`absolute inset-0 bg-cover bg-center bg-no-repeat transition-transform duration-1000 ${
+            index === currentImageIndex ? "zoom-in" : "zoom-out"
+          }`}
           style={{ backgroundImage: `url(${image})` }}
         ></div>
       ))}
@@ -68,7 +68,7 @@ function Hero() {
         <div className="absolute bottom-8 flex justify-center w-full z-20">
           <button
             onClick={scrollToServices}
-            className="bg-red-600 font-bold text-xl text-white px-6 py-3 rounded-full hover:bg-blue-700 transition duration-300"
+            className="bg-red-600 font-bold text-xl text-white px-6 py-3 rounded-full hover:bg-gray-700 transition duration-300"
           >
             Explore More
           </button>

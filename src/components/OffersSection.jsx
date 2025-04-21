@@ -38,7 +38,7 @@ function OffersSection() {
       }`}
     >
       <h2
-        className="text-4xl bg-blue-100 mb-4"
+        className="text-2xl bg-blue-100 mb-4"
         style={{
           fontFamily: 'sans-serif',
           borderRadius: '12px',
@@ -84,7 +84,7 @@ function OffersSection() {
         {/* Button on the right */}
         <button
           onClick={handleSeeAllClick}
-          className="bg-red-500 hover:bg-blue-700 text-white px-4 py-2 rounded-md transition-colors duration-200"
+          className="bg-red-500 hover:bg-gray-700 text-white px-4 py-2 rounded-md transition-colors duration-200"
         >
           see all
         </button>

@@ -146,13 +146,13 @@ function OffersPage() {
         <div className="flex justify-end mb-4">
           <button
             onClick={handleBackHomeClick}
-            className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md transition-colors duration-200"
+            className="bg-red-500 hover:bg-gray-700 text-white px-4 py-2 rounded-md transition-colors duration-200"
           >
             BACK HOME
           </button>
         </div>
         <h1 className="text-3xl font-bold mb-8">Special Deals</h1>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {offers.map((offer) => (
             <div
               key={offer.id}
@@ -171,7 +171,7 @@ function OffersPage() {
                 <div className="flex justify-end">
                   <button
                     onClick={() => handleBookService(offer.id)}
-                    className="bg-blue-500 hover:bg-green-600 text-white px-4 py-2 rounded-md text-sm transition-colors duration-300"
+                    className="bg-red-500 hover:bg-gray-700 text-white px-2 py-2 rounded-md text-sm transition-colors duration-300"
                   >
                     Book Service
                   </button>

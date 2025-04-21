@@ -41,7 +41,7 @@ const GalleryPreview = () => {
         <div className="text-center">
           <Link 
             to="/gallery" 
-            className="inline-flex items-center px-2 py-2 bg-red-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+            className="inline-flex items-center px-2 py-2 bg-red-600 text-white rounded-lg hover:bg-gray-700 transition-colors"
           >
             view our gallery
             <FiArrowRight className="ml-2" />

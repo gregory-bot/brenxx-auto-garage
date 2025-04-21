@@ -30,7 +30,7 @@ const BookingSection = () => {
               </p>
               <button
                 onClick={handleBookNowClick}
-                className="bg-red-600 hover:bg-green-700 text-white py-2 px-2 rounded-full text-sm transition duration-300 transform hover:scale-105"
+                className="bg-red-600 hover:bg-gray-700 text-white py-2 px-4 rounded-full text-sm transition duration-300 transform hover:scale-105"
               >
                 Book Service
               </button>
