@@ -66,81 +66,7 @@ const services = [
   },
 ];
 
-const brands = [
-  { id: 1, name: 'Toyota', logo: 'https://automotivedoctor.co.ke/wp-content/uploads/elementor/thumbs/Top-brands-by-Automotive-Doctor-Motor-Garage-011-qece129h732jcdxdlsk3awootjmruym4yd7gpu1rs8.png' },
-  { id: 2, name: 'Nissan', logo: 'https://automotivedoctor.co.ke/wp-content/uploads/elementor/thumbs/Top-brands-by-Automotive-Doctor-Motor-Garage-09-1-qece1aq0wle48vl38e7qfcju60h2s8jpzj2u1bp888.png' },
-  { id: 3, name: 'Honda', logo: 'https://automotivedoctor.co.ke/wp-content/uploads/elementor/thumbs/Top-brands-by-Automotive-Doctor-Motor-Garage-06-1-qece17wic3a9a1p6ouzupv9gduuz558iz54dlhteqw.png' },
-  { id: 4, name: 'Mazda', logo: 'https://automotivedoctor.co.ke/wp-content/uploads/elementor/thumbs/Top-brands-by-Automotive-Doctor-Motor-Garage-07-1-qece18ucixbjlnntjdehad0wz8qccuc9b9rv2rs0ko.png' },
-  { id: 5, name: 'Subaru', logo: 'https://automotivedoctor.co.ke/wp-content/uploads/elementor/thumbs/Top-brands-by-Automotive-Doctor-Motor-Garage-02-1-qece1455kr53zlunatdcfw7m0bdiactlmmifodyzfs.png' },
-  { id: 6, name: 'Volkswagen', logo: 'https://automotivedoctor.co.ke/wp-content/uploads/elementor/thumbs/Top-brands-by-Automotive-Doctor-Motor-Garage-03-1-qece152zrl6eb7ta5brz0dz2lp8vi1xbyr5x5nxl9k.png' },
-  { id: 7, name: 'Mercedes', logo: 'https://automotivedoctor.co.ke/wp-content/uploads/elementor/thumbs/Top-brands-by-Automotive-Doctor-Motor-Garage-08-1-qece19s6prctx9mgdvt3uusdkmlpkjfznefck1qmeg.png' },
-  { id: 8, name: 'BMW', logo: 'https://automotivedoctor.co.ke/wp-content/uploads/elementor/thumbs/Top-brands-by-Automotive-Doctor-Motor-Garage-05-1-qece16yo598yyfqjucl85dhzsgzlxg4sn0gw47usx4.png' },
-  { id: 9, name: 'Audi', logo: 'https://automotivedoctor.co.ke/wp-content/uploads/elementor/thumbs/Top-brands-by-Automotive-Doctor-Motor-Garage-04-1-qece160tyf7omtrwzu6lkvqj7348pr12avtemxw73c.png' },
-  { id: 10, name: 'Lexus', logo: 'https://automotivedoctor.co.ke/wp-content/uploads/elementor/thumbs/Top-brands-by-Automotive-Doctor-Motor-Garage-01-1-qece137bdx3tnzw0gaypveg5exi52npvahuy740dm0.png' },
-  { id: 11, name: 'Land-Rover', logo: 'https://automotivedoctor.co.ke/wp-content/uploads/elementor/thumbs/Top-brands-by-Automotive-Doctor-Motor-Garage-010-qece1bnv3ffekhjq2wmczubarecfzxngbnqbilnu20.png' },
-];
-
 function Services() {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [visibleBrands, setVisibleBrands] = useState(4);
-  const [isTransitioning, setIsTransitioning] = useState(false);
-
-  const totalSlides = Math.ceil(brands.length / visibleBrands);
-
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth < 640) setVisibleBrands(2);
-      else if (window.innerWidth < 768) setVisibleBrands(3);
-      else setVisibleBrands(4);
-    };
-
-    handleResize(); // Initial
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
-
-  // Automatically change slides every 6 seconds
-  useEffect(() => {
-    const interval = setInterval(() => {
-      handleNext();
-    }, 6000); // Change slide every 6 seconds
-
-    return () => clearInterval(interval); // Cleanup on unmount
-  }, [currentIndex, visibleBrands]);
-
-  const handlePrev = () => {
-    if (isTransitioning) return;
-    setIsTransitioning(true);
-    setCurrentIndex((prev) =>
-      prev === 0 ? brands.length - visibleBrands : prev - visibleBrands
-    );
-    setTimeout(() => setIsTransitioning(false), 300);
-  };
-
-  const handleNext = () => {
-    if (isTransitioning) return;
-    setIsTransitioning(true);
-    setCurrentIndex((prev) =>
-      prev + visibleBrands >= brands.length ? 0 : prev + visibleBrands
-    );
-    setTimeout(() => setIsTransitioning(false), 300);
-  };
-
-  const goToSlide = (index) => {
-    if (isTransitioning) return;
-    setIsTransitioning(true);
-    setCurrentIndex(index * visibleBrands);
-    setTimeout(() => setIsTransitioning(false), 300);
-  };
-
-  const getVisibleBrands = () => {
-    let endIndex = currentIndex + visibleBrands;
-    if (endIndex > brands.length) {
-      return [...brands.slice(currentIndex), ...brands.slice(0, endIndex % brands.length)];
-    }
-    return brands.slice(currentIndex, endIndex);
-  };
-
   return (
     <section id="services-section" className="py-8 bg-blue-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -154,11 +80,22 @@ function Services() {
 
         <div className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
           {services.map((service) => (
-            <div key={service.id} className="bg-white rounded-lg shadow-md hover:scale-105 transition-transform">
-              <img src={service.image} alt={service.title} className="w-full h-32 object-cover" />
+            <div key={service.id} className="bg-white rounded-lg shadow-md overflow-hidden">
+              {/* Image Container with Hover Effect */}
+              <div className="relative group">
+                <img
+                  src={service.image}
+                  alt={service.title}
+                  className="w-full h-32 object-cover transition-transform duration-300 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <h3 className="text-lg font-bold text-white">{service.title}</h3>
+                </div>
+              </div>
+
+              {/* Service Description */}
               <div className="p-4 flex flex-col justify-between h-46">
                 <div>
-                  <h3 className="text-md font-semibold text-gray-900">{service.title}</h3>
                   <p className="mt-1 text-sm text-gray-600 line-clamp-3">{service.description}</p>
                 </div>
                 <div className="mt-2 self-end">
@@ -172,57 +109,6 @@ function Services() {
               </div>
             </div>
           ))}
-        </div>
-
-        {/* Top Brands Carousel */}
-        <div
-          className="mt-16 bg-cover bg-center bg-no-repeat py-4 px-2 sm:px-6 lg:px-8"
-          style={{
-            backgroundImage:
-              "url('https://images.pexels.com/photos/1534604/pexels-photo-1534604.jpeg?auto=compress&cs=tinysrgb&w=600')",
-          }}
-        >
-          <h3 className="text-3xl font-bold text-center text-black mb-6">Our Top Brands</h3>
-
-          <div className="relative max-w-4xl mx-auto">
-            {/* Desktop Arrows */}
-            <button
-              onClick={handlePrev}
-              className="hidden sm:flex absolute left-0 top-1/2 -translate-y-1/2 bg-yellow-100 p-2 rounded-full z-10 shadow hover:bg-gray-100"
-            >
-              <FiChevronLeft className="w-6 h-6 text-black" />
-            </button>
-            <button
-              onClick={handleNext}
-              className="hidden sm:flex absolute right-0 top-1/2 -translate-y-1/2 bg-yellow-100 p-2 rounded-full z-10 shadow hover:bg-gray-100"
-            >
-              <FiChevronRight className="w-6 h-6 text-black" />
-            </button>
-
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-1 justify-center">
-              {getVisibleBrands().map((brand) => (
-                <div key={brand.id} className="flex flex-col items-center transition hover:scale-110">
-                  <div className="w-16 h-16 sm:w-28 sm:h-28 p-2 sm:p-4 bg-white rounded-lg shadow">
-                    <img src={brand.logo} alt={brand.name} className="max-h-full max-w-full object-contain" />
-                  </div>
-                  <p className="mt-2 text-sm sm:text-lg font-bold text-white">{brand.name}</p>
-                </div>
-              ))}
-            </div>
-
-            {/* Pagination Dots */}
-            <div className="flex justify-center gap-2 mt-6">
-              {Array.from({ length: totalSlides }).map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => goToSlide(index)}
-                  className={`w-3 h-3 rounded-full ${
-                    currentIndex / visibleBrands === index ? 'bg-black w-2' : 'bg-gray-300'
-                  } transition-all`}
-                />
-              ))}
-            </div>
-          </div>
         </div>
       </div>
     </section>
