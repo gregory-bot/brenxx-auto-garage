@@ -15,7 +15,8 @@ const services = [
   { id: 8, name: "Vehicle Detailing" },
   { id: 9, name: "Brake & Suspension Services" },
   { id: 10, name: "Battery Check & Replacement" },
-  { id: 11, name: "Offers" },
+  { id: 11, name: "Conversion & Facelift" },
+  { id: 12, name: "Offers" },
 ];
 
 const SearchBar = ({ onSearch }) => {
@@ -66,10 +67,10 @@ const SearchBar = ({ onSearch }) => {
 
   const navigateToService = (serviceId) => {
     // Navigate to the service's page using the service ID
-    if (serviceId === 11) {
-      navigate(`/offers`);
+    if (serviceId === 12) {
+      navigate(`/offers`); // Navigate to the Offers section
     } else {
-      navigate(`/services/${serviceId}`);
+      navigate(`/services/${serviceId}`); // Navigate to the specific service
     }
   };
 

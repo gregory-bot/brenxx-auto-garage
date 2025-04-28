@@ -915,6 +915,57 @@ const batteryServices = [
     image: 'https://media.istockphoto.com/id/1292288024/photo/a-pallet-with-used-car-batteries-awaiting-recycling.jpg?s=612x612&w=0&k=20&c=WX6rSFPWWGAp0p6Jg2eJrjN-okbZ_9gUn2RwNCKXHrQ='
   }
 ];
+const carConversionAndFaceliftServices = [
+{
+  id: 'cf01',
+  title: 'Front and Rear Bumper Upgrades',
+  description: 'Upgrade your vehicle’s look with modern bumper designs and materials.',
+  image: 'https://i.postimg.cc/c17XKJZX/44.jpg'
+},
+{
+  id: 'cf02',
+  title: 'Headlight and Taillight Conversions',
+  description: 'Install the latest LED, Xenon, or custom lights for enhanced style and visibility.',
+  image: 'https://i.postimg.cc/KzmjYQmG/111.jpg'
+},
+{
+  id: 'cf03',
+  title: 'Grille Replacement and Customization',
+  description: 'Refresh your car’s front end with new grilles matching the latest models.',
+  image: 'https://i.postimg.cc/NGVPTjzX/ttt.jpg'
+},
+{
+  id: 'cf04',
+  title: 'Full Body Kit Installation',
+  description: 'Transform your car’s appearance with aggressive, aerodynamic body kits.',
+  image: 'https://i.postimg.cc/65YG783V/body.jpg'
+},
+{
+  id: 'cf05',
+  title: 'Interior Dashboard and Trim Upgrades',
+  description: 'Modernize your cabin with premium dashboard and interior trim conversions.',
+  image: 'https://i.postimg.cc/d1MMFSDx/fefe.jpg'
+},
+{
+  id: 'cf06',
+  title: 'Alloy Wheel and Tire Customization',
+  description: 'Boost your ride’s stance with custom alloy wheels and performance tires.',
+  image: 'https://i.postimg.cc/PJjCRjZf/555.jpg'
+},
+{
+  id: 'cf07',
+  title: 'Paintwork and Color Change Services',
+  description: 'Refresh your vehicle’s exterior with high-quality paint jobs or wraps.',
+  image: 'https://i.postimg.cc/Y05Lz7Sx/qq.jpg'
+},
+{
+  id: 'cf08',
+  title: 'Model Conversion and Body Facelift',
+  description: 'Convert older models to the latest look with complete facelift packages.',
+  image: 'https://i.postimg.cc/4dCyYgWv/wq.jpg'
+}
+];
+
 function ServiceDetails() {
   const { id } = useParams();
   const navigate = useNavigate(); // Initialize navigate
@@ -932,6 +983,7 @@ function ServiceDetails() {
       case '8': return vehicleDetailingAndTuningServices;
       case '9': return brakeAndSuspensionServices;
       case '10': return batteryServices;
+      case '11': return carConversionAndFaceliftServices;
       default: return [];
     }
   };
