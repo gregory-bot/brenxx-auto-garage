@@ -236,7 +236,43 @@ const paintBodyServices = [
     title: 'Ceramic Coating',
     description: 'Protect your vehicle’s paint with a long-lasting ceramic shield.',
     image: 'https://i.postimg.cc/1XmwC8VY/IMG-20250228-WA0000.jpg'
-  }
+  },
+  {
+    id: 'pb15',
+    title: 'Full Body Respray',
+    description: 'Transform your car with a complete body respray using premium automotive paints.',
+    image: 'https://i.postimg.cc/3rZcHxyF/qw.jpg'
+  },
+  {
+    id: 'pb16',
+    title: 'Scratch and Dent Repaint',
+    description: 'Touch up scratched or dented areas with precise color-matched painting.',
+    image: 'https://i.postimg.cc/kGD1cxnM/scratch.jpg'
+  },
+  {
+    id: 'pb17',
+    title: 'Two-Tone Paint Design',
+    description: 'Stand out with stylish dual-tone color combinations and clean line separation.',
+    image: 'https://i.postimg.cc/Y9J7QqHP/xz.jpg'
+  },
+  {
+    id: 'pb18',
+    title: 'Custom Color Mixing',
+    description: 'Choose from thousands of shades or create a signature color just for your vehicle.',
+    image: 'https://i.postimg.cc/3wF0LVR9/cut.jpg'
+  },
+  {
+    id: 'pb19',
+    title: 'Paint Protection Film (PPF)',
+    description: 'Add an invisible protective layer to preserve your vehicle’s original paintwork.',
+    image: 'https://i.postimg.cc/kgctsLDs/bv.jpg'
+  },
+  {
+    id: 'pb20',
+    title: 'Alloy Wheel Color Matching',
+    description: 'Repaint or restore rims to perfectly match or contrast your vehicle’s body.',
+    image: 'https://i.postimg.cc/kGD1cxnM/scratch.jpg'
+  }  
 ];
 
 
@@ -924,9 +960,9 @@ const carConversionAndFaceliftServices = [
 },
 {
   id: 'cf02',
-  title: 'Headlight and Taillight Conversions',
-  description: 'Install the latest LED, Xenon, or custom lights for enhanced style and visibility.',
-  image: 'https://i.postimg.cc/KzmjYQmG/111.jpg'
+  title: 'Alloy Wheel and Rim Replacement',
+  description: 'Enhance style and performance with customized alloy wheels and rims.',
+  image: 'https://i.postimg.cc/htnd3t1Z/allo.jpg'
 },
 {
   id: 'cf03',
@@ -963,7 +999,68 @@ const carConversionAndFaceliftServices = [
   title: 'Model Conversion and Body Facelift',
   description: 'Convert older models to the latest look with complete facelift packages.',
   image: 'https://i.postimg.cc/4dCyYgWv/wq.jpg'
+},
+{
+  id: 'cf09',
+  title: 'Headlight and Taillight Upgrades',
+  description: 'Modernize your vehicle’s look with LED or projector light conversions.',
+  image: 'https://i.postimg.cc/pV9zm7dC/rer.jpg'
+},
+{
+  id: 'cf10',
+  title: 'Headlight and Taillight Conversions',
+  description: 'Install the latest LED, Xenon, or custom lights for enhanced style and visibility.',
+  image: 'https://i.postimg.cc/KzmjYQmG/111.jpg'
+},
+{
+  id: 'cf11',
+  title: 'Grille and Bumper Redesign',
+  description: 'Give your car a bold front look with custom grille and bumper options.',
+  image: 'https://i.postimg.cc/pdpXsw41/bumb.jpg'
+},
+{
+  id: 'cf12',
+  title: 'Roof Wraps and Spoiler Add-ons',
+  description: 'Add sporty or luxury appeal with custom roof wraps and aerodynamic spoilers.',
+  image: 'https://i.postimg.cc/L6KmFy0h/rooftop.jpg'
+},
+{
+  id: 'cf13',
+  title: 'Rear Diffuser and Skirt Installation',
+  description: 'Upgrade the back end with sportier diffusers and rear skirts for improved aerodynamics.',
+  image: 'https://i.postimg.cc/pdpXsw41/bumb.jpg'
+},
+{
+  id: 'cf14',
+  title: 'Trunk Lid and Tailgate Redesign',
+  description: 'Modernize your trunk with electric lift options or redesigned tailgate panels.',
+  image: 'https://i.postimg.cc/52JvySj2/ccv.jpg'
+},
+{
+  id: 'cf15',
+  title: 'Exhaust Tip Styling',
+  description: 'Enhance the rear look with chrome or matte custom exhaust tips and fascia updates.',
+  image: 'https://i.postimg.cc/HLRkcT39/w.jpg'
+},
+{
+  id: 'cf16',
+  title: 'Bonnet Scoop and Hood Vent Installation',
+  description: 'Add aggressive aesthetics and airflow with hood scoops or vented bonnets.',
+  image: 'https://i.postimg.cc/RZ2kwq5h/nb.jpg'
+},
+{
+  id: 'cf17',
+  title: 'Engine Bay Detailing and Covers',
+  description: 'Give your engine a showroom look with detailed cleaning, paintwork, and performance covers.',
+  image: 'https://i.postimg.cc/NfMSVRQL/bay.jpg'
+},
+{
+  id: 'cf18',
+  title: 'Rear Camera and Sensor Integration',
+  description: 'Upgrade your car’s tech with sleek backup cameras and parking sensors.',
+  image: 'https://i.postimg.cc/MKrGGxch/77.jpg'
 }
+
 ];
 
 function ServiceDetails() {
@@ -1021,7 +1118,7 @@ function ServiceDetails() {
                 <div className="flex justify-end">
                   <button
                     onClick={() => handleBookService(item.id)} // Pass the service ID
-                    className="bg-red-500 hover:bg-green-600 text-white px-3 py-1 rounded text-sm transition-colors duration-300"
+                    className="bg-red-500 hover:bg-gray-900 text-white px-3 py-1 rounded text-sm transition-colors duration-300"
                   >
                     Book Service
                   </button>
