@@ -17,16 +17,10 @@ import {
 import { useCart } from '../context/CartContext';
 
 const services = [
-  { id: 1, name: 'Car Repair & Service' },
+  { id: 1, name: 'Paint and Body works' },
   { id: 2, name: 'Mechanical & Electrical Repairs' },
-  { id: 3, name: 'Paint & Body Work' },
-  { id: 4, name: 'Vehicle Diagnostics' },
-  { id: 5, name: 'Accident Repairs' },
-  { id: 6, name: 'Maintenance Services' },
-  { id: 7, name: 'Tire Services' },
-  { id: 8, name: 'Vehicle Detailing' },
-  { id: 9, name: 'Brake & Suspension Services' },
-  { id: 10, name: 'Battery Check & Replacement' },
+  { id: 3, name: 'Facelift and conversions' },
+  { id: 4, name: 'Others' },
 ];
 
 function Navbar() {
@@ -90,17 +84,17 @@ function Navbar() {
             <img
               src="https://i.postimg.cc/gJCNMjt8/brenxlogo.jpg"
               alt="brenxx-auto-services"
-              className="h-10 w-20 sm:h-12 sm:w-24 lg:h-16 lg:w-36 mr-2" 
+              className="h-10 w-24 sm:h-20 sm:w-30 lg:h-16 lg:w-56 mr-2" 
             />
-            <Link to="/" className="text-2xl">
-              <span className="text-white font-bold">BRENXX AUTO</span>
-            </Link>
           </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex text-white font-bold items-center space-x-8">
             <Link to="/" className="nav-link text-white hover:text-blue-600 transition-colors duration-200">
               HOME
+            </Link>
+            <Link to="/our-items" className="nav-link hover:text-blue-600 transition-colors duration-200">
+              PRODUCTS
             </Link>
             <Link to="/aboutus" className="nav-link hover:text-blue-600 transition-colors duration-200">
               ABOUT US
@@ -127,9 +121,6 @@ function Navbar() {
                 </div>
               )}
             </div>
-            <Link to="/offers" className="nav-link hover:text-blue-600 transition-colors duration-200">
-              OFFERS
-            </Link>
             <Link to="/gallery" className="nav-link hover:text-blue-600 transition-colors duration-200">
               GALLERY
             </Link>

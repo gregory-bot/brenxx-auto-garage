@@ -60,7 +60,7 @@ const ContactSection = () => {
       <footer
         className="bg-gray-800 text-white py-12"
         style={{
-          backgroundImage: "url('https://images.pexels.com/photos/1534604/pexels-photo-1534604.jpeg?auto=compress&cs=tinysrgb&w=600')",
+          backgroundImage: "url('https://images.pexels.com/photos/1534604/pexels-photo-1534604.jpeg?auto=compress&cs=tinysrgb&w=1200')",
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundAttachment: 'fixed',

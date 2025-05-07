@@ -1,74 +1,30 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import OffersSection from '../components/OffersSection'; // Imported OffersSection
-import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 
 const services = [
   {
     id: 1,
-    title: 'Car Repair & Service',
-    description: 'Comprehensive car repair and routine servicing for all vehicle models.',
-    image: 'https://i.postimg.cc/02C2fmtz/xx.jpg',
+    title: 'Paint and Body works',
+    description: 'Professional body repairs and refinishing for all types of vehicles.',
+    image: 'https://i.postimg.cc/nhHBHy31/qw.jpg',
   },
   {
     id: 2,
     title: 'Mechanical & Electrical Repairs',
     description: 'Expert mechanical and electrical fault diagnosis and repair.',
-    image: 'https://images.pexels.com/photos/159293/car-engine-motor-clean-customized-159293.jpeg?auto=compress&cs=tinysrgb&w=600',
+    image: 'https://i.postimg.cc/RFKtZg99/deder.jpg',
   },
   {
     id: 3,
-    title: 'Paint & Body Work',
-    description: 'Professional spray painting and body restoration to factory finish.',
-    image: 'https://i.postimg.cc/ryxVnW0Z/paint.jpg',
+    title: 'Facelift and conversions',
+    description: 'Upgrade your vehicle’s look with expert facelifts and model conversions for a modern, refreshed style.',
+    image: 'https://i.postimg.cc/jqhW3wS8/wr.jpg',
   },
   {
     id: 4,
-    title: 'Vehicle Diagnostics',
+    title: 'Other Services',
     description: 'Modern diagnostic systems to pinpoint issues quickly and accurately.',
-    image: 'https://i.postimg.cc/xCLwRvxK/diagnostics.jpg',
-  },
-  {
-    id: 5,
-    title: 'Accident Repairs',
-    description: 'Full accident recovery and repairs with attention to detail.',
-    image: 'https://i.postimg.cc/nzDJWs21/acc.jpg',
-  },
-  {
-    id: 6,
-    title: 'Maintenance Services',
-    description: 'Oil changes, brake checks, and full vehicle maintenance.',
-    image: 'https://i.postimg.cc/2y0Pd9L4/fgh.jpg',
-  },
-  {
-    id: 7,
-    title: 'Tire Services',
-    description: 'Tire fitting, balancing, and puncture repairs for all vehicles.',
-    image: 'https://i.postimg.cc/hvhDNJbr/tire.jpg',
-  },
-  {
-    id: 8,
-    title: 'Vehicle Detailing',
-    description: 'Professional car detailing and valeting services.',
-    image: 'https://i.postimg.cc/cCtBW41Q/lux.jpg',
-  },
-  {
-    id: 9,
-    title: 'Brake & Suspension Services',
-    description: 'Top-notch brake system and suspension repair for safe driving.',
-    image: 'https://media.istockphoto.com/id/2103765709/photo/a-car-is-on-a-lift-showing-its-underside-with-a-wheel-leaf-spring-and-suspension-components.jpg?s=612x612&w=0&k=20&c=iLKidByskn3d_8pl82nEKiEIjBGg2mmqD-De949MGBw=',
-  },
-  {
-    id: 10,
-    title: 'Battery Check & Replacement',
-    description: 'Testing, jump-starting, and replacement of car batteries.',
-    image: 'https://images.pexels.com/photos/4374843/pexels-photo-4374843.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-  },
-  {
-    id: 11,
-    title: 'Conversion and Facelift',
-    description: 'Professional car facelift services for all models, including Land Cruiser, Toyota, and many more.',
-    image: 'https://i.postimg.cc/Pqzc4qhf/3451.jpg',
+    image: 'https://i.postimg.cc/3R2zKQcB/bay.jpg',
   },
 ];
 
@@ -77,37 +33,32 @@ function Services() {
     <section id="services-section" className="py-8 bg-blue-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Offers Section */}
-        <OffersSection />
-
-        <h2 className="text-3xl font-bold text-center text-black mb-2">Our Services</h2>
+        <h2 className="text-4xl font-bold text-center text-black mb-2">Our Services</h2>
         <p className="mt-2 text-lg text-center text-gray-600 mb-2">
           Comprehensive motor vehicle repair and maintenance garage
         </p>
 
-        <div className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
+        {/* Service Cards */}
+        <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-8">
           {services.map((service) => (
-            <div key={service.id} className="bg-white rounded-lg shadow-md overflow-hidden">
+            <div key={service.id} className="bg-white rounded-lg shadow-lg overflow-hidden">
               {/* Image Container with Hover Effect */}
               <div className="relative group">
                 <img
                   src={service.image}
                   alt={service.title}
-                  className="w-full h-32 object-cover transition-transform duration-300 group-hover:scale-110"
+                  className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <h3 className="text-lg font-bold text-white">{service.title}</h3>
-                </div>
               </div>
 
-              {/* Service Description */}
-              <div className="p-4 flex flex-col justify-between h-46">
-                <div>
-                  <p className="mt-1 text-sm text-gray-600 line-clamp-3">{service.description}</p>
-                </div>
-                <div className="mt-2 self-end">
+              {/* Service Title and Description */}
+              <div className="p-6 flex flex-col justify-between">
+                <h3 className="text-2xl font-bold text-gray-900">{service.title}</h3>
+                <p className="mt-2 text-lg text-gray-600">{service.description}</p>
+                <div className="mt-4 self-end">
                   <Link
                     to={`/services/${service.id}`}
-                    className="text-sm px-3 py-1 bg-red-600 text-white hover:bg-gray-700 rounded-md"
+                    className="text-lg px-4 py-2 bg-red-600 text-white hover:bg-gray-700 rounded-md"
                   >
                     More
                   </Link>

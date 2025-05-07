@@ -3,8 +3,8 @@ import Typewriter from "typewriter-effect";
 import SearchBar from "./SearchBar";
 
 const backgroundImages = [
-  "https://images.pexels.com/photos/16180417/pexels-photo-16180417/free-photo-of-luxury-black-jaguar-car.jpeg?auto=compress&cs=tinysrgb&w=600",
-  "https://images.pexels.com/photos/4480505/pexels-photo-4480505.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+  "https://i.postimg.cc/8zpHcJZ9/432.avif", // Use a higher resolution URL
+  "https://i.postimg.cc/vZ440GTD/bre.avif",
 ];
 
 function Hero() {
@@ -35,7 +35,11 @@ function Hero() {
           className={`absolute inset-0 bg-cover bg-center bg-no-repeat transition-transform duration-1000 ${
             index === currentImageIndex ? "zoom-in" : "zoom-out"
           }`}
-          style={{ backgroundImage: `url(${image})` }}
+          style={{
+            backgroundImage: `url(${image})`,
+            backgroundSize: "cover", // Ensures the image covers the container
+            backgroundPosition: "center", // Centers the image
+          }}
         ></div>
       ))}
 

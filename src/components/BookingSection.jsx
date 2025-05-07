@@ -17,7 +17,7 @@ const BookingSection = () => {
         <div className="relative rounded-xl overflow-hidden h-96">
           {/* Background Image */}
           <img 
-            src="https://i.postimg.cc/MKfQtgJm/opo.jpg"
+            src="https://images.pexels.com/photos/162553/keys-workshop-mechanic-tools-162553.jpeg?auto=compress&cs=tinysrgb&w=1200"
             alt="Professional Auto Service"
             className="w-full h-full object-cover rounded-xl transition-transform duration-500 transform hover:scale-105"
           />
