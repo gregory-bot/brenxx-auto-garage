@@ -41,7 +41,7 @@ const Gallery = () => {
     {
       id: 6,
       url: 'https://i.postimg.cc/g0w127qd/hi.jpg',
-      title: 'Brake Inspection',
+      title: 'Suspension and Inspection',
       serviceType: 'Safety'
     },
     {
@@ -133,12 +133,6 @@ const Gallery = () => {
       url: 'https://i.postimg.cc/BQF6jqs7/fgh.jpg',
       title: 'Fleet Maintenance',
       serviceType: 'Commercial'
-    },
-    {
-      id: 22,
-      url: 'https://i.postimg.cc/sDJ2YTQ5/ggt.jpg',
-      title: 'Diagnostic Scan',
-      serviceType: 'Diagnostic'
     },
     {
         id: 23,

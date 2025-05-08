@@ -75,8 +75,6 @@ const paintAndBodyServices = [
   },
 ];
 
-
-
 const mechanicalElectricalServices = [
   {
     id: 'mes1',
@@ -129,7 +127,7 @@ const faceliftAndConversionServices = [
     id: 'fcs1',
     title: 'Fabrication and Customization',
     description: 'Custom fabrication for unique vehicle modifications.',
-    image: 'https://i.postimg.cc/SNNC8GNm/fabr.jpg'
+    image: 'https://i.postimg.cc/dV8q9mZN/cust.jpg'
   },
   {
     id: 'fcs2',
@@ -138,22 +136,10 @@ const faceliftAndConversionServices = [
     image: 'https://i.postimg.cc/TY32HKZc/111.jpg'
   },
   {
-    id: 'fcs3',
-    title: 'Exhaust Tip upgrade',
-    description: 'Upgrade to stylish exhaust tips for a sportier sound and look.',
-    image: 'https://i.postimg.cc/QNRtQmM5/2121.jpg'
-  },
-  {
     id: 'fcs4',
     title: 'Grille Replacement',
     description: 'Install stylish grilles for a more aggressive or modern appearance.',
-    image: 'https://i.postimg.cc/5yXfJqGJ/sensor.jpg'
-  },
-  {
-    id: 'fcs5',
-    title: 'Bonnet and Boot Conversions',
-    description: 'Update hoods and trunk lids to sportier or newer model designs.',
-    image: 'https://i.postimg.cc/wjj551SN/bbb.jpg'
+    image: 'https://i.postimg.cc/wBMmMjBk/grill.jpg'
   },
   {
     id: 'fcs6',
@@ -165,13 +151,37 @@ const faceliftAndConversionServices = [
     id: 'fcs7',
     title: 'Full Body Kit Installation',
     description: 'Transform the entire exterior with customized body kits.',
-    image: 'https://i.postimg.cc/XJs4CDFd/44.jpg'
+    image: 'https://i.postimg.cc/L41pNkqM/sus.jpg'
   },
   {
     id: 'fcs8',
     title: 'Wheel & Rim Upgrade',
     description: 'Switch to modern alloy wheels or larger rims for a bold look.',
     image: 'https://i.postimg.cc/8zpHcJZ9/432.avif'
+  },
+  {
+    id: 'fcs8',
+    title: 'Suspension Upgrades',
+    description: 'Install lift kits for off-road vehicles to enhance ground clearance.',
+    image: 'https://i.postimg.cc/5yq33r1N/susp.jpg'
+  },
+  {
+    id: 'fcs9',
+    title: 'Performance Tuning',
+    description: 'Performance upgrades for enhanced power and efficiency.',
+    image: 'https://i.postimg.cc/DZ2y0C53/fere.jpg'
+  },
+  {
+    id: 'fcs9',
+    title: 'Full Reconstruction',
+    description: 'Complete body repair after accidents, including frame straightening and paint matching.',
+    image: 'https://i.postimg.cc/90wSh7Kw/ft.jpg'
+  },
+  {
+    id: 'fcs9',
+    title: 'Custom Body Kits',
+    description: 'Install aerodynamic body kits for aggressive styling.',
+    image: 'https://i.postimg.cc/2SC1VFGY/bhy.jpg'
   },
   {
     id: 'fcs9',
@@ -230,6 +240,13 @@ const otherServices = [
     description: 'Restoring and resurfacing vehicle interiors and exteriors for a fresh look.',
     image: 'https://i.postimg.cc/631pnB1L/int.jpg'
   },
+  {
+    id: 'os9',
+    title: 'Roadside Rescue & Towing',
+    description: '24/7 emergency towing and on-site assistance for vehicle breakdowns, flat tires, or accidents.',
+    image: 'https://i.postimg.cc/QN08fGk2/iu.jpg'
+  }
+  
 ];
 
 function ServiceDetails() {

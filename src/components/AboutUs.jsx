@@ -17,8 +17,8 @@ const testimonials = [
     feedback: "Professional and reliable.",
   },
   {
-    image: "https://i.postimg.cc/xCLwRvxK/diagnostics.jpg",
-    name: "Michael Mwangi",
+    image: "https://i.postimg.cc/d3xpyBP0/teta.jpg",
+    name: "Group",
     feedback: "Great customer service and attention to detail.",
   },
   {
@@ -27,7 +27,7 @@ const testimonials = [
     feedback: "Quick and efficient service.",
   },
   {
-    image: "https://i.postimg.cc/QNY6FB3Y/gall.jpg",
+    image: "https://i.postimg.cc/PJWKtQXc/yty.jpg",
     name: "Chris Wilson",
     feedback: "Affordable and trustworthy. Will come back again!",
   },
@@ -102,8 +102,8 @@ function AboutUs() {
 
         {/* Testimonials Section */}
         <div className="mt-10">
-          <h3 className="text-2xl text-center text-black mb-8">
-            What Our Clients Say
+          <h3 className="text-4xl font-bold text-center text-black mb-8">
+            Our Partners
           </h3>
           <div className="flex justify-center items-center space-x-[-20px]">
             {testimonials.map((testimonial, index) => (
@@ -124,7 +124,7 @@ function AboutUs() {
             ))}
           </div>
 
-          {/* Selected Testimonial Text */}
+          {/* Selected Testimonial Image and Text */}
           {selectedTestimonial && (
             <div
               id="testimonial-overlay"
@@ -132,12 +132,17 @@ function AboutUs() {
               onClick={handleOutsideClick}
             >
               <motion.div
-                className="bg-white p-6 rounded-lg shadow-lg text-center"
+                className="bg-white p-6 rounded-lg shadow-lg text-center max-w-lg"
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.8 }}
                 transition={{ duration: 0.5 }}
               >
+                <img
+                  src={selectedTestimonial.image}
+                  alt={selectedTestimonial.name}
+                  className="w-full h-64 object-cover rounded-lg mb-4"
+                />
                 <p className="italic text-lg md:text-xl">
                   "{selectedTestimonial.feedback}"
                 </p>

@@ -113,8 +113,8 @@ const ContactSection = () => {
                     <FaMapMarkerAlt className="mt-1 mr-2 text-red-400" />
                     <div>
                       <p className="font-medium">Location:</p>
-                      <p>Garden Estate, Limasi Villas</p>
-                      <p>Castle Gardens, Nairobi</p>
+                      <p>2nd Avenue</p>
+                      <p>Garden Estate, Nairobi</p>
                       <a
                         href="https://maps.app.goo.gl/C2Nck5qf7G3N3dAE7"
                         target="_blank"
