@@ -127,7 +127,7 @@ const faceliftAndConversionServices = [
     id: 'fcs1',
     title: 'Fabrication and Customization',
     description: 'Custom fabrication for unique vehicle modifications.',
-    image: 'https://i.postimg.cc/dV8q9mZN/cust.jpg'
+    image: 'https://i.postimg.cc/PqnC9Sts/fa.jpg'
   },
   {
     id: 'fcs2',
@@ -173,8 +173,8 @@ const faceliftAndConversionServices = [
   },
   {
     id: 'fcs9',
-    title: 'Full Reconstruction',
-    description: 'Complete body repair after accidents, including frame straightening and paint matching.',
+    title: 'Landcruiser Conversions',
+    description: 'Transform your Toyota Land Cruiser with our premium conversion services.',
     image: 'https://i.postimg.cc/90wSh7Kw/ft.jpg'
   },
   {
@@ -245,6 +245,12 @@ const otherServices = [
     title: 'Roadside Rescue & Towing',
     description: '24/7 emergency towing and on-site assistance for vehicle breakdowns, flat tires, or accidents.',
     image: 'https://i.postimg.cc/QN08fGk2/iu.jpg'
+  },
+  {
+    id: 'os9',
+    title: 'Towing Services',
+    description: 'Reliable 24/7 towing services for breakdowns, accidents, and vehicle transport.',
+    image: 'https://i.postimg.cc/vHVc37GR/trt.jpg'
   }
   
 ];

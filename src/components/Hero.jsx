@@ -1,9 +1,7 @@
 import { useEffect, useState } from "react";
-import Typewriter from "typewriter-effect";
-import SearchBar from "./SearchBar";
 
 const backgroundImages = [
-  "https://i.postimg.cc/8zpHcJZ9/432.avif", // Use a higher resolution URL
+  "https://i.postimg.cc/8zpHcJZ9/432.avif",
   "https://i.postimg.cc/vZ440GTD/bre.avif",
 ];
 
@@ -37,8 +35,8 @@ function Hero() {
           }`}
           style={{
             backgroundImage: `url(${image})`,
-            backgroundSize: "cover", // Ensures the image covers the container
-            backgroundPosition: "center", // Centers the image
+            backgroundSize: "cover",
+            backgroundPosition: "center",
           }}
         ></div>
       ))}
@@ -46,29 +44,9 @@ function Hero() {
       <div className="absolute inset-0 bg-black opacity-40 z-0"></div>
 
       <div className="relative z-10 h-full flex flex-col items-center justify-center text-white px-4">
-        {/* Search Bar */}
-        <div className="absolute top-24 w-full flex justify-center">
-          <SearchBar onSearch={(query) => console.log("Searching for:", query)} />
-        </div>
+        {/* Optional: Add a static headline if needed */}
 
-        {/* Typewriter */}
-        <div className="text-2xl md:text-6xl mb-12 text-center">
-          <Typewriter
-            options={{
-              strings: [
-                "Expert Auto Repair & Maintenance",
-                "Keeping you on the road – One Fix at a Time",
-                "Where Quality Repairs Meet Exceptional Service",
-              ],
-              autoStart: true,
-              loop: true,
-              delay: 80,
-              deleteSpeed: 60,
-            }}
-          />
-        </div>
-
-        {/* CTA */}
+        {/* CTA Button */}
         <div className="absolute bottom-8 flex justify-center w-full z-20">
           <button
             onClick={scrollToServices}

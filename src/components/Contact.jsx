@@ -104,7 +104,8 @@ const ContactSection = () => {
                 <h3 className="text-xl font-bold mb-4 text-blue-600">Contact Information</h3>
                 <div className="space-y-4">
                   <p>
-                    <span className="font-medium">Phone:</span> +254 799 686363
+                    <span className="font-medium">Phone:</span> +254 799 686363 /
+                     +254 728 676013
                   </p>
                   <p>
                     <span className="font-medium">Email:</span> brenxxautogarage@gmail.com

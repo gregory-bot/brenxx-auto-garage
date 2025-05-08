@@ -83,19 +83,13 @@ function AboutUs() {
           {/* About Us Content */}
           <div>
             <p className="text-black mb-6">
-              We are a fully fledged and registered motor vehicle repair and
-              maintenance garage run by highly specialists in different fields.
+            At Brenxx Auto Garage, our passion for cars drives everything we do.
             </p>
             <p className="text-black mb-6">
-              From motor vehicle diagnostics, mechanical repairs, maintenance
-              service, accident repairs plus professional spray painting, Brenxx
-              Auto got you covered.
+            With a team of highly skilled specialists and a commitment to excellence, we deliver superior vehicle repair and maintenance services—from advanced diagnostics and mechanical repairs to accident restoration and professional spray painting.
             </p>
             <p className="text-black mb-6">
-              Located in Nairobi County along the 2nd Avenue – Garden estate,
-              with state of the art security system (including CCTV
-              Surveillance) that ensures our clients' vehicles are safe and
-              secure while they are at Brenxx Auto.
+            Every job we take on reflects our dedication to precision, performance, and quality craftsmanship, ensuring your vehicle receives the care it truly deserves.
             </p>
           </div>
         </div>
