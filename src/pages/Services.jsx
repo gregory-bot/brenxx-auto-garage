@@ -16,7 +16,7 @@ const services = [
   },
   {
     id: 3,
-    title: 'Facelift and conversions',
+    title: 'Conversions and Facelift',
     description: 'Upgrade your vehicle’s look with expert facelifts and model conversions for a modern, refreshed style.',
     image: 'https://i.postimg.cc/jqhW3wS8/wr.jpg',
   },
@@ -24,7 +24,7 @@ const services = [
     id: 4,
     title: 'Other Services',
     description: 'Modern diagnostic systems to pinpoint issues quickly and accurately.',
-    image: 'https://i.postimg.cc/3R2zKQcB/bay.jpg',
+    image: 'https://i.postimg.cc/NLqhh004/dent.jpg',
   },
 ];
 
@@ -41,7 +41,7 @@ function Services() {
         {/* Service Cards */}
         <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-8">
           {services.map((service) => (
-            <div key={service.id} className="bg-white rounded-lg shadow-lg overflow-hidden">
+            <div key={service.id} className="bg-blue-100 rounded-lg shadow-lg overflow-hidden">
               {/* Image Container with Hover Effect */}
               <div className="relative group">
                 <img

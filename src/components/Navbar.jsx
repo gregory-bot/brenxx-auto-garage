@@ -13,14 +13,15 @@ import {
   FiHelpCircle,
   FiCalendar,
   FiChevronDown,
+  FiBox, // Icon for Products
 } from 'react-icons/fi';
 import { useCart } from '../context/CartContext';
 
 const services = [
   { id: 1, name: 'Paint and Body works' },
   { id: 2, name: 'Mechanical & Electrical Repairs' },
-  { id: 3, name: 'Facelift and conversions' },
-  { id: 4, name: 'Others' },
+  { id: 3, name: 'Conversion and Facelift' },
+  { id: 4, name: 'Other Services' },
 ];
 
 function Navbar() {
@@ -84,7 +85,7 @@ function Navbar() {
             <img
               src="https://i.postimg.cc/gJCNMjt8/brenxlogo.jpg"
               alt="brenxx-auto-services"
-              className="h-10 w-24 sm:h-20 sm:w-30 lg:h-16 lg:w-56 mr-2" 
+              className="h-10 w-24 sm:h-20 sm:w-30 lg:h-16 lg:w-56 mr-2"
             />
           </div>
 
@@ -169,6 +170,12 @@ function Navbar() {
               className="flex items-center nav-link bg-white text-black px-3 py-2 rounded-md hover:bg-yellow-100 transition-colors w-full"
             >
               <FiHome className="mr-2" /> Home
+            </button>
+            <button
+              onClick={() => handleNavigation('/our-items')}
+              className="flex items-center nav-link bg-white text-black px-3 py-2 rounded-md hover:bg-blue-700 transition-colors w-full"
+            >
+              <FiBox className="mr-2" /> Products
             </button>
             <div className="w-full">
               <button

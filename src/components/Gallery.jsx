@@ -215,39 +215,33 @@ const Gallery = () => {
       serviceType: 'Suspension'
     },
     {
-      id: 35,
-      url: 'https://i.postimg.cc/c4qN9zDT/bbh.jpg',
-      title: 'AdBlue System Service',
-      serviceType: 'Mechanical'
-    },
-    {
-      id: 36,
+      id: 37,
       url: 'https://i.postimg.cc/QCQYnftn/zz.jpg',
       title: 'Start-Stop System Repair',
       serviceType: 'Electrical'
     },
     {
-      id: 37,
+      id: 38,
       url: 'https://i.postimg.cc/rsMNzMVQ/nnv.jpg',
       title: 'EV Battery Check',
       serviceType: 'Electrical',
       premium: true
     },
     {
-      id: 38,
+      id: 39,
       url: 'https://i.postimg.cc/D0SyrbwZ/tyu.jpg',
       title: 'Advanced ECU Remapping',
       serviceType: 'Performance',
       premium: true
     },
     {
-      id: 39,
+      id: 40,
       url: 'https://i.postimg.cc/y8H3HvNy/loli.jpg',
       title: 'Leather Restoration',
       serviceType: 'Restoration'
     },
     {
-      id: 40,
+      id: 41,
       url: 'https://media.istockphoto.com/id/2176130640/photo/close-up-view-of-car-undercarriage-in-a-repair-workshop.jpg?s=612x612&w=0&k=20&c=fWgc5wrPTx57ASr5QWXddhIejlrcg_VJBL-m6ii7bTg=',
       title: 'Undercarriage Cleaning',
       serviceType: 'Detailing'
@@ -300,7 +294,7 @@ const Gallery = () => {
         </div>
 
         {/* Responsive Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {images.map((image) => (
             <div
               key={image.id}

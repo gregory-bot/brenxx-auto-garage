@@ -17,9 +17,7 @@ export function CartProvider({ children }) {
     setCartItems((prevItems) => {
       const existingItem = prevItems.find(
         (i) =>
-          i.id === item.id &&
-          i.serviceType === item.serviceType &&
-          i.vehicleType === item.vehicleType
+          i.id === item.id
       );
       if (existingItem) {
         return prevItems; // If the item already exists, don't add it again
@@ -28,14 +26,12 @@ export function CartProvider({ children }) {
     });
   };
 
-  const removeFromCart = (itemId, serviceType, vehicleType) => {
+  const removeFromCart = (itemId) => {
     setCartItems((prevItems) =>
       prevItems.filter(
         (item) =>
           !(
-            item.id === itemId &&
-            item.serviceType === serviceType &&
-            item.vehicleType === vehicleType
+            item.id === itemId
           )
       )
     );

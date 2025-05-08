@@ -59,16 +59,11 @@ export default function ChatWidget() {
       ];
 
       const services = [
-        { id: 1, name: "Car Repair & Service" },
+        { id: 1, name: "Paint and Body works" },
         { id: 2, name: "Mechanical & Electrical Repairs" },
-        { id: 3, name: "Paint & Body Work" },
-        { id: 4, name: "Vehicle Diagnostics" },
-        { id: 5, name: "Accident Repairs" },
-        { id: 6, name: "Maintenance Services" },
-        { id: 7, name: "Tire Services" },
-        { id: 8, name: "Vehicle Detailing" },
-        { id: 9, name: "Brake & Suspension Services" },
-        { id: 10, name: "Battery Check & Replacement" },
+        { id: 3, name: "Conversions and Facelift" },
+        { id: 4, name: "Other Services" },
+        { id: 5, name: "Products"}, // Scroll target
       ];
 
       const userRequest = newMessage.trim().toLowerCase();

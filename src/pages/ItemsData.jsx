@@ -1,10 +1,19 @@
 const ourItemsData = [
-    {
-      id: 1,
-      title: 'Alloy Rims',
-      description: 'Premium alloy rims for enhanced performance and aesthetics.',
-      image: 'https://i.postimg.cc/NFjWT6vn/alloyreem.jpg'
-    },
+  {
+    id: 1,
+    title: 'Alloy Rims',
+    description: 'Premium alloy rims for enhanced performance and aesthetics.',
+    images: [
+      'https://i.postimg.cc/NFjWT6vn/alloyreem.jpg',
+      'https://i.postimg.cc/2SfnXfC7/rim-1.jpg',
+      'https://i.postimg.cc/bJMtx76b/rim-2.jpg',
+      'https://i.postimg.cc/85hFqZNf/rim-3.jpg',
+      'https://i.postimg.cc/xTjk4G7q/rim-4.jpg',
+      'https://i.postimg.cc/CK8dqcZr/rim-5.jpg',
+      'https://i.postimg.cc/Bbmv0yyb/rim-6.jpg',
+      'https://i.postimg.cc/13k3sDWG/rim-7.jpg',
+    ]
+  },
     {
       id: 2,
       title: 'Tires',
@@ -37,7 +46,7 @@ const ourItemsData = [
     },
     {
       id: 7,
-      title: 'Engine Oil (5W-30)',
+      title: 'Engine Oil',
       description: 'Synthetic engine oil for better mileage and performance.',
       image: 'https://media.istockphoto.com/id/518901244/photo/motor-oil.jpg?b=1&s=612x612&w=0&k=20&c=9XP8VxHOqe1MX10HHsOuWf85giDFhBfwvQQst47ANsM='
     },
@@ -45,38 +54,32 @@ const ourItemsData = [
       id: 8,
       title: 'Air Filters',
       description: 'OEM quality air filters for clean engine airflow.',
-      image: 'https://i.postimg.cc/63fqMk7g/air-filter.jpg'
+      image: 'https://images.pexels.com/photos/12658303/pexels-photo-12658303.jpeg?auto=compress&cs=tinysrgb&w=1200'
     },
     {
       id: 9,
       title: 'Coolant/Antifreeze',
       description: 'Protects engine from overheating and freezing.',
-      image: 'https://i.postimg.cc/Nj0ZdKyd/antifreeze.jpg'
+      image: 'https://images.pexels.com/photos/20710361/pexels-photo-20710361/free-photo-of-a-car-engine.jpeg?auto=compress&cs=tinysrgb&w=600'
     },
     {
       id: 10,
       title: 'Seat Covers',
       description: 'Stylish and protective seat covers for all car models.',
-      image: 'https://i.postimg.cc/dtW3b3rB/seat-covers.jpg'
+      image: 'https://images.pexels.com/photos/1633602/pexels-photo-1633602.jpeg?auto=compress&cs=tinysrgb&w=1200'
     },
     {
       id: 11,
       title: 'Floor Mats',
       description: 'Durable all-weather floor mats to protect your car interior.',
-      image: 'https://i.postimg.cc/15ZksRtH/floor-mats.jpg'
+      image: 'https://media.istockphoto.com/id/1264513868/photo/dirty-car-rug-made-of-dark-blue-fabric-material-with-gas-brake-and-clutch-pedals-in-a-auto.jpg?b=1&s=612x612&w=0&k=20&c=TCzzSs1v1khlcUnhM_HrH9jZHH7izmCjUrkFLsY2MRA='
     },
     {
       id: 12,
       title: 'Car Jack',
       description: 'Heavy-duty car jack for quick and safe lifting.',
-      image: 'https://i.postimg.cc/sXyzCRg6/car-jack.jpg'
-    },
-    {
-        id: 13,
-        title: 'Premium Car Seats',
-        description: 'Comfortable and durable replacement car seats with modern designs.',
-        image: 'https://i.postimg.cc/c42wpdCg/seats.jpg'
-      }
+      image: 'https://images.pexels.com/photos/4116206/pexels-photo-4116206.jpeg?cs=srgb&dl=pexels-lumierestudiomx-4116206.jpg&fm=jpg&_gl=1*j68yg2*_ga*MjAzNTQzOTUxMi4xNzM3NjE4Mjg5*_ga_8JE65Q40S6*czE3NDY2ODkwMDgkbzE0MiRnMSR0MTc0NjY4OTMxNSRqMCRsMCRoMA..'
+    }
   ];
   
   export default ourItemsData;
