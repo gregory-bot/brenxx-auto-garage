@@ -29,7 +29,7 @@ const Gallery = () => {
     {
       id: 4,
       url: 'https://i.postimg.cc/4dgHxDkh/wheel.jpg',
-      title: 'Tire Service',
+      title: 'Tyre Service',
       serviceType: 'Maintenance'
     },
     {

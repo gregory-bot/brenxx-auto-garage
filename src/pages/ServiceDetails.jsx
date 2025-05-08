@@ -190,8 +190,8 @@ const otherServices = [
   },
   {
     id: 'os2',
-    title: 'Tire Installation and tire services',
-    description: 'New tire sales, fitting, and balancing for all vehicle types.',
+    title: 'Tyre Installation and tyre services',
+    description: 'New tyre sales, fitting, and balancing for all vehicle types.',
     image: 'https://i.postimg.cc/x1BWWVG6/were.jpg'
   },
   {

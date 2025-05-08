@@ -16,8 +16,8 @@ const ourItemsData = [
   },
     {
       id: 2,
-      title: 'Tires',
-      description: 'Durable tires.',
+      title: 'Tyres',
+      description: 'Durable tyres.',
       image: 'https://media.istockphoto.com/id/95757561/photo/car-wheel.jpg?b=1&s=612x612&w=0&k=20&c=L0PuuY5wNycAnnqGGx3iSucAlHPNaOpGldRfHOiiYYU='
     },
     {
