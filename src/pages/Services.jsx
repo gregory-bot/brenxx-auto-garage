@@ -24,7 +24,7 @@ const services = [
     id: 4,
     title: 'Other Services',
     description: 'Modern diagnostic systems to pinpoint issues quickly and accurately.',
-    image: 'https://i.postimg.cc/NLqhh004/dent.jpg',
+    image: 'https://i.postimg.cc/J0fVcbdr/body.jpg',
   },
 ];
 
