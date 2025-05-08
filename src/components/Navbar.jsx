@@ -1,3 +1,4 @@
+// At the top remains unchanged
 import { useState, useEffect, useRef } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import {
@@ -13,7 +14,7 @@ import {
   FiHelpCircle,
   FiCalendar,
   FiChevronDown,
-  FiBox, // Icon for Products
+  FiBox,
 } from 'react-icons/fi';
 import { useCart } from '../context/CartContext';
 
@@ -27,12 +28,12 @@ const services = [
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
-  const [showDropdown, setShowDropdown] = useState(false); // For desktop dropdown
-  const [showMobileDropdown, setShowMobileDropdown] = useState(false); // For mobile dropdown
+  const [showDropdown, setShowDropdown] = useState(false);
+  const [showMobileDropdown, setShowMobileDropdown] = useState(false);
   const { cartItems } = useCart();
   const navigate = useNavigate();
-  const mobileMenuRef = useRef(null); // Reference for the mobile menu
-  let dropdownTimeout; // Timeout for dropdown delay
+  const mobileMenuRef = useRef(null);
+  let dropdownTimeout;
 
   useEffect(() => {
     const handleResize = () => {
@@ -46,7 +47,7 @@ function Navbar() {
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (mobileMenuRef.current && !mobileMenuRef.current.contains(event.target)) {
-        setIsOpen(false); // Close the mobile menu if clicked outside
+        setIsOpen(false);
       }
     };
 
@@ -61,20 +62,20 @@ function Navbar() {
 
   const handleNavigation = (path) => {
     navigate(path);
-    setIsOpen(false); // Close the mobile menu
+    setIsOpen(false);
     setShowDropdown(false);
     setShowMobileDropdown(false);
   };
 
   const handleMouseEnter = () => {
-    clearTimeout(dropdownTimeout); // Clear any existing timeout
+    clearTimeout(dropdownTimeout);
     setShowDropdown(true);
   };
 
   const handleMouseLeave = () => {
     dropdownTimeout = setTimeout(() => {
       setShowDropdown(false);
-    }, 300); // Delay closing by 300ms
+    }, 300);
   };
 
   return (
@@ -144,8 +145,16 @@ function Navbar() {
             </Link>
           </div>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile Menu Button with Cart Icon */}
           <div className="md:hidden flex items-center space-x-4">
+            <Link to="/cart" className="relative text-white">
+              <FiShoppingCart className="h-6 w-6" />
+              {cartItems.length > 0 && (
+                <span className="absolute -top-2 -right-2 bg-red-500 text-white rounded-full h-4 w-4 flex items-center justify-center text-xs">
+                  {cartItems.length}
+                </span>
+              )}
+            </Link>
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="p-2 bg-red-600 text-white rounded-full w-10 h-10 flex items-center justify-center"
@@ -156,7 +165,7 @@ function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Navigation */}
+      {/* Mobile Navigation Drawer */}
       {isMobile && (
         <div
           ref={mobileMenuRef}
@@ -165,74 +174,46 @@ function Navbar() {
           } z-50`}
         >
           <div className="flex flex-col items-start p-6 space-y-4">
-            <button
-              onClick={() => handleNavigation('/')}
-              className="flex items-center nav-link bg-white text-black px-3 py-2 rounded-md hover:bg-yellow-100 transition-colors w-full"
-            >
+            <button onClick={() => handleNavigation('/')} className="flex items-center nav-link bg-white text-black px-3 py-2 rounded-md hover:bg-yellow-100 transition-colors w-full">
               <FiHome className="mr-2" /> Home
             </button>
-            <button
-              onClick={() => handleNavigation('/our-items')}
-              className="flex items-center nav-link bg-white text-black px-3 py-2 rounded-md hover:bg-blue-700 transition-colors w-full"
-            >
+            <button onClick={() => handleNavigation('/our-items')} className="flex items-center nav-link bg-white text-black px-3 py-2 rounded-md hover:bg-blue-700 transition-colors w-full">
               <FiBox className="mr-2" /> Products
             </button>
             <div className="w-full">
-              <button
-                className="flex items-center nav-link bg-white text-black px-3 py-2 rounded-md hover:bg-blue-700 transition-colors w-full"
-                onClick={() => setShowMobileDropdown(!showMobileDropdown)}
-              >
+              <button className="flex items-center nav-link bg-white text-black px-3 py-2 rounded-md hover:bg-blue-700 transition-colors w-full" onClick={() => setShowMobileDropdown(!showMobileDropdown)}>
                 <FiTool className="mr-2" /> Services <FiChevronDown className="ml-1" />
               </button>
               {showMobileDropdown && (
                 <ul className="bg-white shadow-lg rounded-lg mt-2 w-full text-black">
                   {services.map((service) => (
-                    <li
-                      key={service.id}
-                      onClick={() => handleNavigation(`/services/${service.id}`)}
-                      className="px-4 py-2 hover:bg-blue-100 cursor-pointer"
-                    >
+                    <li key={service.id} onClick={() => handleNavigation(`/services/${service.id}`)} className="px-4 py-2 hover:bg-blue-100 cursor-pointer">
                       {service.name}
                     </li>
                   ))}
                 </ul>
               )}
             </div>
-            <button
-              onClick={() => handleNavigation('/gallery')}
-              className="flex items-center nav-link bg-white text-black px-3 py-2 rounded-md hover:bg-blue-700 transition-colors w-full"
-            >
+            <button onClick={() => handleNavigation('/gallery')} className="flex items-center nav-link bg-white text-black px-3 py-2 rounded-md hover:bg-blue-700 transition-colors w-full">
               <FiImage className="mr-2" /> Gallery
             </button>
-            <button
-              onClick={() => handleNavigation('/aboutus')}
-              className="flex items-center nav-link bg-white text-black px-3 py-2 rounded-md hover:bg-blue-700 transition-colors w-full"
-            >
+            <button onClick={() => handleNavigation('/aboutus')} className="flex items-center nav-link bg-white text-black px-3 py-2 rounded-md hover:bg-blue-700 transition-colors w-full">
               <FiInfo className="mr-2" /> About Us
             </button>
-            <button
-              onClick={() => handleNavigation('/contact')}
-              className="flex items-center nav-link bg-white text-black px-3 py-2 rounded-md hover:bg-blue-700 transition-colors w-full"
-            >
+            <button onClick={() => handleNavigation('/contact')} className="flex items-center nav-link bg-white text-black px-3 py-2 rounded-md hover:bg-blue-700 transition-colors w-full">
               <FiMail className="mr-2" /> Contact
             </button>
-            <button
-              onClick={() => handleNavigation('/offers')}
-              className="flex items-center nav-link bg-white text-black px-3 py-2 rounded-md hover:bg-blue-700 transition-colors w-full"
-            >
+            <button onClick={() => handleNavigation('/offers')} className="flex items-center nav-link bg-white text-black px-3 py-2 rounded-md hover:bg-blue-700 transition-colors w-full">
               <FiTag className="mr-2" /> Offers
             </button>
-            <button
-              onClick={() => handleNavigation('/faq')}
-              className="flex items-center nav-link bg-white text-black px-3 py-2 rounded-md hover:bg-blue-700 transition-colors w-full"
-            >
+            <button onClick={() => handleNavigation('/faq')} className="flex items-center nav-link bg-white text-black px-3 py-2 rounded-md hover:bg-blue-700 transition-colors w-full">
               <FiHelpCircle className="mr-2" /> FAQ
             </button>
-            <button
-              onClick={() => handleNavigation('/book-appointment')}
-              className="flex items-center nav-link bg-white text-black px-3 py-2 rounded-md hover:bg-blue-700 transition-colors w-full"
-            >
+            <button onClick={() => handleNavigation('/book-appointment')} className="flex items-center nav-link bg-white text-black px-3 py-2 rounded-md hover:bg-blue-700 transition-colors w-full">
               <FiCalendar className="mr-2" /> Book Now
+            </button>
+            <button onClick={() => handleNavigation('/cart')} className="flex items-center nav-link bg-white text-black px-3 py-2 rounded-md hover:bg-yellow-400 transition-colors w-full">
+              <FiShoppingCart className="mr-2" /> Cart
             </button>
           </div>
         </div>
