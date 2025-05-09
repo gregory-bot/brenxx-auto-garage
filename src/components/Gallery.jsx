@@ -39,6 +39,18 @@ const Gallery = () => {
       serviceType: 'Detailing'
     },
     {
+      id: 5,
+      url: 'https://i.postimg.cc/mgM1MbnV/cvbn.jpg',
+      title: 'Facelift',
+      serviceType: 'facelift'
+    },
+    {
+      id: 5,
+      url: 'https://i.postimg.cc/NF9jcDqb/tow3.jpg',
+      title: 'towing truck',
+      serviceType: 'Emergency'
+    },
+    {
       id: 6,
       url: 'https://i.postimg.cc/g0w127qd/hi.jpg',
       title: 'Suspension and Inspection',
@@ -135,12 +147,6 @@ const Gallery = () => {
       serviceType: 'Commercial'
     },
     {
-        id: 23,
-        url: 'https://media.istockphoto.com/id/946261062/photo/bottom-view-of-wheel-and-shock-absorber-of-vehicle.jpg?s=612x612&w=0&k=20&c=w-1POmKRJGzBLYRRDmyUPUcW0-2fGRuIDuLmyHsEP8U=',
-        title: 'Car Facelift',
-        serviceType: 'Cosmetic Upgrade'
-      },
-    {
       id: 24,
       url: 'https://i.postimg.cc/SNVy2j3r/corr.jpg',
       title: 'Paint Correction',
@@ -222,24 +228,11 @@ const Gallery = () => {
       premium: true
     },
     {
-      id: 39,
-      url: 'https://i.postimg.cc/D0SyrbwZ/tyu.jpg',
-      title: 'Advanced ECU Remapping',
-      serviceType: 'Performance',
-      premium: true
-    },
-    {
       id: 40,
       url: 'https://i.postimg.cc/y8H3HvNy/loli.jpg',
       title: 'Leather Restoration',
       serviceType: 'Restoration'
-    },
-    {
-      id: 41,
-      url: 'https://media.istockphoto.com/id/2176130640/photo/close-up-view-of-car-undercarriage-in-a-repair-workshop.jpg?s=612x612&w=0&k=20&c=fWgc5wrPTx57ASr5QWXddhIejlrcg_VJBL-m6ii7bTg=',
-      title: 'Undercarriage Cleaning',
-      serviceType: 'Detailing'
-    }    
+    } 
   ]);
 
   // Group images into pairs for horizontal display

@@ -7,27 +7,22 @@ const GalleryPreview = () => {
     {
       id: 1,
       url: 'https://i.postimg.cc/50GbcGfx/ga.jpg',
-      alt: 'Body Repair',
     },
     {
       id: 2,
       url: 'https://i.postimg.cc/X76XpG0n/gal2.jpg',
-      alt: 'Engine Maintenance',
     },
     {
       id: 3,
       url: 'https://i.postimg.cc/0jR5M3FV/gal3.jpg',
-      alt: 'Wheel Upgrade',
     },
     {
       id: 4,
       url: 'https://i.postimg.cc/YSXwYSDn/gal4.jpg',
-      alt: 'Fabrication',
     },
     {
       id: 5,
-      url: 'https://i.postimg.cc/zBW05thC/gallery.jpg',
-      alt: 'Facelift Service',
+      url: 'https://i.postimg.cc/yxtCyCGy/cvb.jpg',
     },
   ];
 

@@ -12,7 +12,7 @@ const BookingSection = () => {
     <section id="booking" className="py-4 bg-gray-50">
       <div className="container mx-auto px-4">
         {/* "Book" heading before the image */}
-        <h2 className="text-4xl text-center font-bold mb-6 text-black">Book</h2>
+        <h2 className="text-4xl text-center font-bold mb-6 text-black">Book Service</h2>
         
         <div className="relative rounded-xl overflow-hidden h-96">
           {/* Background Image */}

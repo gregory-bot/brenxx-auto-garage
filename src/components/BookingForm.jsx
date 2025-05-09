@@ -4,6 +4,9 @@ import 'react-datepicker/dist/react-datepicker.css';
 
 const services = [
   'Oil Change',
+  'Paint and Body works',
+  'Mechanical & Electrical Repairs',
+  'Conversions and Facelift',
   'Tire Rotation',
   'Brake Inspection',
   'Engine Tune-up',

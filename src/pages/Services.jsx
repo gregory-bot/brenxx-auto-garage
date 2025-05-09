@@ -39,7 +39,7 @@ function Services() {
         </p>
 
         {/* Service Cards */}
-        <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-4">
           {services.map((service) => (
             <div key={service.id} className="bg-blue-100 rounded-lg shadow-lg overflow-hidden">
               {/* Image Container with Hover Effect */}
